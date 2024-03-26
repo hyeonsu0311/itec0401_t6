@@ -1,0 +1,179 @@
+.logo {
+  margin: 0;
+  height: 80px;
+  width: 236px;
+  position: relative;
+  font-size: inherit;
+  line-height: 57px;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.label {
+  align-self: stretch;
+  font-size: 18px;
+  height: 20px;
+  position: relative;
+  line-height: 20px;
+  white-space: nowrap;
+  display: inline-block;
+  flex-shrink: 0;
+  
+}
+.labelWrapper {
+  width: 97px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) 0px 0px;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--color-black);
+}
+.frameChild {
+  height: 28.5px;
+  width: 0.5px;
+  position: relative;
+  border-right: 0.5px solid var(--color-black);
+  box-sizing: border-box;
+
+}
+
+.frameChild1 {
+  height: 28.5px;
+  width: 0.5px;
+  position: relative;
+  border-right: 0.5px solid var(--color-black);
+  box-sizing: border-box;
+  margin-left: 22px;
+
+}
+.label1 {
+  width: 82px;
+  height: 20px;
+  position: relative;
+  line-height: 20px;
+  display: inline-block;
+  min-width: 82px;
+  white-space: nowrap;
+  font-size: 18px;
+}
+.labelContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) 0px 0px;
+}
+.label2 {
+  align-self: stretch;
+  height: 20px;
+  position: relative;
+  font-size: 18px;
+  line-height: 20px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.labelFrame {
+  width: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) 0px 0px;
+  box-sizing: border-box;
+}
+.frameParent {
+  width: 337px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: var(--gap-xl);
+}
+.searchBox {
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) 0px 0px;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: var(--font-size-sm);
+  color: var(--neutral-900);
+  font-family: var(--font-average-sans);
+}
+.background {
+  height: 40px;
+  width: 87px;
+  position: relative;
+  border-radius: var(--br-7xs);
+  border: 1px solid var(--color-gray-100);
+  box-sizing: border-box;
+  display: none;
+}
+.logIn {
+  height: 20px;
+  width: 39px;
+  position: relative;
+  font-size: var(--font-size-smi);
+  font-weight: 600;
+  font-family: var(--font-poppins);
+  color: var(--color-gray-100);
+  text-align: center;
+  display: inline-block;
+  min-width: 39px;
+  z-index: 1;
+}
+.button1 {
+  cursor: pointer;
+  border: 1px solid var(--color-gray-100);
+  padding: var(--padding-3xs) var(--padding-5xl);
+  background-color: transparent;
+  border-radius: var(--br-7xs);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+.button1:hover {
+  background-color: var(--color-dimgray-200);
+  border: 1px solid var(--color-dimgray-100);
+  box-sizing: border-box;
+}
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) 0px 0px;
+}
+.navbar {
+  align-self: stretch;
+  height: 80px;
+  background-color: var(--color-white);
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-3xs) var(--padding-23xl) var(--padding-xl)
+    var(--padding-42xl);
+  box-sizing: border-box;
+  top: 0;
+  z-index: 99;
+  position: sticky;
+  gap: var(--gap-xl);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-29xl);
+  color: var(--color-black);
+  font-family: var(--font-dm-sans);
+}
+

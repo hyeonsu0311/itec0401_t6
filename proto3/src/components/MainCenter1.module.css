@@ -1,0 +1,155 @@
+.h1 {
+    margin: 0;
+    height: 49px;
+    width: 227.5px;
+    position: relative;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    display: inline-block;
+    flex-shrink: 0;
+    mix-blend-mode: normal;
+  }
+  .wrapper {
+    width: 228px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-mini) 0 var(--padding-5xl) var(--padding-3xs-5);
+    box-sizing: border-box;
+  }
+  .div {
+    height: 52px;
+    position: relative;
+    font-size: var(--font-size-21xl);
+    font-family: var(--font-average-sans);
+    color: var(--color-white);
+    text-align: left;
+    display: inline-block;
+  }
+  .copyrightNotice {
+    cursor: pointer;
+    border: 0;
+    /* padding: var(--padding-xs) var(--padding-4xs) var(--padding-smi)
+      var(--padding-3xs); */
+    background-color: var(--color-orange);
+    align-self: stretch;
+    border-radius: var(--br-5xs);
+    overflow: hidden;
+    flex-direction: row;
+    mix-blend-mode: normal;
+    white-space: nowrap;
+  }
+  .copyrightNotice:hover {
+    background-color: var(--color-darkgoldenrod);
+  }
+  .appDownloads,
+  .copyrightNotice,
+  .copyrightNoticeWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .copyrightNoticeWrapper {
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-12xs) 0 0;
+    box-sizing: border-box;
+    min-width: 144px;
+  }
+  .appDownloads {
+    width: 449px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: calc(100% - 134px);
+    row-gap: 20px;
+  }
+  .baseIcon {
+    height: 36px;
+    width: 114px;
+    position: relative;
+    border-radius: var(--br-26xl);
+    display: none;
+  }
+  .arrowRightIcon,
+  .button {
+    position: relative;
+    z-index: 1;
+  }
+  .button {
+    flex: 1;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    font-family: var(--font-ibm-plex-sans);
+    color: var(--color-aliceblue);
+    text-align: center;
+    display: inline-block;
+    min-width: 58px;
+  }
+  .arrowRightIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .baseParent,
+  .professorsStudentsLibraries {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .professorsStudentsLibraries {
+    height: 21px;
+    flex-direction: column;
+    padding: var(--padding-12xs) 0 0;
+    box-sizing: border-box;
+  }
+  .baseParent {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-6xs) var(--padding-xs) var(--padding-5xs)
+      var(--padding-base);
+    background-color: var(--color-gray-100);
+    align-self: stretch;
+    border-radius: var(--br-26xl);
+    box-shadow: 0 2px 4px rgba(44, 39, 56, 0.08), 0 4px 8px rgba(44, 39, 56, 0.08);
+    flex-direction: row;
+    gap: var(--gap-5xs);
+  }
+  .appDownloadsParent,
+  .frameWrapper {
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  .frameWrapper {
+    width: 114px;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--padding-lg) 0 0;
+  }
+  .appDownloadsParent {
+    align-self: stretch;
+    height: 81px;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 var(--padding-xs) var(--padding-8xl) 0;
+    max-width: 100%;
+    gap: var(--gap-xl);
+    text-align: left;
+    font-size: var(--font-size-21xl);
+    color: var(--color-gray-100);
+    font-family: var(--font-average-sans);
+  }
+  @media screen and (max-width: 1050px) {
+    .h1 {
+      font-size: var(--font-size-13xl);
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .h1 {
+      font-size: var(--font-size-5xl);
+    }}
