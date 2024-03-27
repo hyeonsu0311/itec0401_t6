@@ -1,0 +1,34 @@
+.inputFieldIcon {
+    height: 1080px;
+    width: 960px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    max-width: 100%;
+  }
+  .inputField,
+  .signupmain {
+    display: flex;
+    justify-content: center;
+  }
+  .inputField {
+    width: 714px;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 714px;
+    min-height: 897px;
+    max-width: 100%;
+  }
+  .signupmain {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    overflow: hidden;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 122px;
+    letter-spacing: normal;
+  }
+ 
+ 

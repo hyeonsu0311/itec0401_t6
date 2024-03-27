@@ -18,6 +18,9 @@ body {
   --font-poppins: Poppins;
   --font-dm-sans: "DM Sans";
 
+
+  
+
   /* font sizes */
   --font-size-sm: 14px;
   --font-size-mini: 15px;
@@ -59,6 +62,7 @@ body {
   --color-black: #000;
   --color-aliceblue: #ebf4f8;
   --color-darkgoldenrod: #c48200;
+  --color-darkslateblue-100: #3e4772;
   /*signin*/
   --color-white: #fff;
   --color-darkslateblue: #183d68;

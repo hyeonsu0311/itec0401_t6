@@ -10,6 +10,7 @@ import Signin from "./pages/Signin"
 import Sites from "./pages/Sites"
 import TravelRoute from "./pages/TravelRoute";
 import Community from "./pages/Community";
+import Signup from "./pages/Signup";
 
 function App() {
   const action = useNavigationType();
@@ -54,6 +55,7 @@ function App() {
       <Route path="/sites" element={<Sites/>}/>
       <Route path="/routes" element={<TravelRoute/>}/>
       <Route path="/community" element={<Community/>}/>
+      <Route path="/register" element={<Signup/>}/>
     </Routes>
   );
 }
