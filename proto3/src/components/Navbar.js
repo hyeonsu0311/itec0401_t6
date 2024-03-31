@@ -1,9 +1,14 @@
 import { useCallback } from "react";
 import { useNavigate  } from "react-router-dom";
+import { useContext } from 'react'
+import React, { useState } from "react";
 import styles from "./Navbar.module.css";
+import { useIsLogin } from "../IsLoginContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { isLogin,setIsLogin } = useIsLogin();
+
   const onButtonClickLogin = () => {
     navigate("/login");
   };
@@ -21,6 +26,17 @@ const Navbar = () => {
 
   const onButtonClickCommunity = () => {
     navigate("/community");
+  };
+
+
+  const onLogout = () => {
+    // 로그아웃 로직을 구현하고, 로그아웃 상태를 설정합니다.
+    setIsLogin(false)
+  };
+
+  
+  const onUserPage = () => {
+    navigate("/user"); // 사용자 페이지로 이동하는 경로
   };
 
 
@@ -47,11 +63,23 @@ const Navbar = () => {
         </div>
       </div>
       <div className={styles.button}>
-        <button className={styles.button1} onClick={onButtonClickLogin}>
-          <div className={styles.background} />
-          <div className={styles.logIn}>
-         Log in</div>
-        </button>
+      {isLogin ? (
+            <>
+              <button className={styles.button2} onClick={onUserPage}>
+                <div className={styles.background} />
+                <div className={styles.logIn}>User Page</div>
+              </button>
+              <button className={styles.button1} onClick={onLogout}>
+                <div className={styles.background} />
+                <div className={styles.logIn}>Logout</div>
+              </button>
+            </>
+          ) : (
+            <button className={styles.button1} onClick={onButtonClickLogin}>
+              <div className={styles.background} />
+              <div className={styles.logIn}>Log in</div>
+            </button>
+        )}
       </div>
     </header>
   );

@@ -200,7 +200,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-2xs) var(--padding-41xl);
-  background-color: #2a05fa;
+  background-color:  var(--color-steelblue-100);
   border-radius: var(--br-11xl);
 }
 .rectangleParent:hover {

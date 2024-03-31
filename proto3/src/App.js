@@ -12,6 +12,7 @@ import TravelRoute from "./pages/TravelRoute";
 import Community from "./pages/Community";
 import Signup from "./pages/Signup";
 
+
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -49,14 +50,16 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route path="/" element={<SurfacePro8 />} />
-      <Route path="/login" element={<Signin/>} />
-      <Route path="/sites" element={<Sites/>}/>
-      <Route path="/routes" element={<TravelRoute/>}/>
-      <Route path="/community" element={<Community/>}/>
-      <Route path="/register" element={<Signup/>}/>
-    </Routes>
+
+      <Routes>
+        <Route path="/" element={<SurfacePro8 />} />
+        <Route path="/login" element={<Signin/>} />
+        <Route path="/sites" element={<Sites/>}/>
+        <Route path="/routes" element={<TravelRoute/>}/>
+        <Route path="/community" element={<Community/>}/>
+        <Route path="/register" element={<Signup/>}/>
+      </Routes>
+    
   );
 }
 export default App;

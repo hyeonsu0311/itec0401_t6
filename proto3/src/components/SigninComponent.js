@@ -1,11 +1,16 @@
 import styles from "./SigninComponent.module.css";
 import { useNavigate  } from "react-router-dom";
 import React, { useState } from "react";
+import { useIsLogin } from '../IsLoginContext'
+
+
+
 const SigninComponent = () => {
 
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {isLogin,setIsLogin} = useIsLogin()
 
 
   const onButtonClickRegister = () => {
@@ -34,6 +39,8 @@ const SigninComponent = () => {
 
     setEmail("");
     setPassword("");
+    setIsLogin(true);
+    document.location.href = '/'
   };
 
 
