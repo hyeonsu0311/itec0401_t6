@@ -1,4 +1,4 @@
-.h1 {
+.h1 {  /*여행경로찾기 문구 스타일*/
     margin: 0;
     color: #ffffff;
     width: 381px;
@@ -53,7 +53,7 @@
     background-color: var(--color-gray-400);
   }
   .searchButton,
-  .whatAreYouLookingForParent {
+  .whatAreYouLookingForParent {  /*검색창을 포함중인 프레임*/
 
 
     overflow: hidden;
@@ -74,7 +74,7 @@
     position: relative;
     top: -30px;
   }
-  .searchButton {
+  .searchButton { /*여행경로찾기 문구, 검색창을 포함중인 프레임*/
     align-self: flex-start;
     flex-direction: column;
     align-items: center;
@@ -85,7 +85,7 @@
     min-height: 321px;
   }
 
-  .backgroundWrapper {
+  .backgroundWrapper {  /*배경이미지*/
     background-image: url('/public/loginImg2.jpg');
     filter: brightness(100%); /* 이미지의 밝기를 70%로 설정 */
     background-size: cover;
@@ -117,7 +117,7 @@
     display: flex;
     align-items: flex-start;
   }
-  .frameWrapper {
+  .frameWrapper {  /*아직 비어있는 프레임, 앞으로 내용물을 추가할 용도로 만듦*/
     width: 1300px;
     height: 1000px;
     flex-direction: row;
@@ -137,7 +137,8 @@
   margin: 22px;
   }
 
-  .searchButtonParent {
+  .searchButtonParent {  /*네비게이션바,메뉴바,하단정보프레임을 
+    제외한 여행경로페이지의 메인프레임*/
     flex: 1;
     height: 1441px;
     flex-direction: column;
@@ -152,7 +153,7 @@
     flex-wrap: wrap;
   }
   
-  .frameWrapperButton {
+  .frameWrapperButton { /*더보기 버튼 영역*/
     width: 1300px;
     height: 118px;
   

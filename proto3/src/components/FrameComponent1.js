@@ -3,7 +3,7 @@ import styles from "./FrameComponent1.module.css";
 const FrameComponent1 = () => {
   return (
     <div className={styles.image20Parent}>
-      <img className={styles.image20Icon} alt="" src="/image-20@2x.png" />
+      <img className={styles.image20Icon} alt="" src="/backgroundMain.jpg" />
       <h1 className={styles.h1}>
         <span>100곳 이상의</span>
         <span className={styles.span}>

@@ -1,4 +1,4 @@
-.logo {
+.logo {  /*메인로고 스타일*/
   margin: 0;
   height: 80px;
   width: 236px;
@@ -11,7 +11,7 @@
   flex-shrink: 0;
   white-space: nowrap;
 }
-.label {
+.label {  /* 여행지 탐색 라벨 스타일, 1,2는 각각 여행경로찾기, 커뮤니티 라벨의 스타일*/
   align-self: stretch;
   font-size: 18px;
   height: 20px;
@@ -22,7 +22,7 @@
   flex-shrink: 0;
   
 }
-.labelWrapper {
+.labelWrapper { /*여행지탐색 문구를 포함하는 프레임*/
   width: 97px;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@
   text-align: center;
   color: var(--color-black);
 }
-.frameChild {
+.frameChild {   /*라벨간 구분선*/
   height: 28.5px;
   width: 0.5px;
   position: relative;
@@ -42,7 +42,7 @@
 
 }
 
-.frameChild1 {
+.frameChild1 {  /*라벨간 구분선*/
   height: 28.5px;
   width: 0.5px;
   position: relative;
@@ -61,7 +61,7 @@
   white-space: nowrap;
   font-size: 18px;
 }
-.labelContainer {
+.labelContainer {  /*여행경로찾기 라벨을 포함중인 프레임*/
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -77,7 +77,7 @@
   white-space: nowrap;
   display: inline-block;
 }
-.labelFrame {
+.labelFrame {  /*커뮤니티 라벨을 포함중인 프레임*/
   width: 56px;
   display: flex;
   flex-direction: column;
@@ -95,7 +95,7 @@
   max-width: 100%;
   gap: var(--gap-xl);
 }
-.searchBox {
+.searchBox {  /*여행지탐색 ㅣ 여행경로 찾기 ㅣ 커뮤니티  를 포함하는프레임*/
   width: 820px;
   display: flex;
   flex-direction: column;
@@ -108,16 +108,16 @@
   color: var(--neutral-900);
   font-family: var(--font-average-sans);
 }
-.background {
+/* .background {
   height: 40px;
   width: 87px;
   position: relative;
   border-radius: var(--br-7xs);
-  border: 1px solid var(--color-gray-100);
+  border: px solid var(--color-gray-100);
   box-sizing: border-box;
   display: none;
-}
-.logIn {
+} */
+.logIn {  /*  로그인 로그아웃 텍스트 서식    */
   height: 20px;
   width: 39px;
   position: relative;
@@ -130,9 +130,13 @@
   min-width: 39px;
   z-index: 1;
 }
-.button2 {
+.button2 {  /*사용자페이지로 이동하는 버튼*/
   cursor: pointer;
-  border: 1px solid var(--color-gray-100);
+  background-image: url(../../public/user\ 1.png);
+  background-repeat: no-repeat; /* 배경 이미지 반복 설정 */
+  border: none; /* 테두리 제거 */
+  width: 50px; /* 버튼의 너비 */
+  height: 50px; /* 버튼의 높이 */
   padding: var(--padding-3xs) var(--padding-5xl);
   background-color: transparent;
   border-radius: var(--br-7xs);
@@ -145,8 +149,9 @@
   text-align: left;
 }
 
-.button1 {
+.button1 { /*로그인 로그아웃버튼 스타일*/
   cursor: pointer;
+
   border: 1px solid var(--color-gray-100);
   padding: var(--padding-3xs) var(--padding-5xl);
   background-color: transparent;
@@ -170,7 +175,7 @@
   justify-content: flex-start;
   padding: var(--padding-3xs) 0px 0px;
 }
-.navbar {
+.navbar {  /*네비게이션바 메인프레임*/
   align-self: stretch;
   height: 80px;
   background-color: var(--color-white);

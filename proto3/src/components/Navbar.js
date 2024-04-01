@@ -66,17 +66,15 @@ const Navbar = () => {
       {isLogin ? (
             <>
               <button className={styles.button2} onClick={onUserPage}>
-                <div className={styles.background} />
-                <div className={styles.logIn}>User Page</div>
               </button>
               <button className={styles.button1} onClick={onLogout}>
-                <div className={styles.background} />
+         
                 <div className={styles.logIn}>Logout</div>
               </button>
             </>
           ) : (
             <button className={styles.button1} onClick={onButtonClickLogin}>
-              <div className={styles.background} />
+       
               <div className={styles.logIn}>Log in</div>
             </button>
         )}

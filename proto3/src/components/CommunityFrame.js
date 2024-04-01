@@ -21,8 +21,8 @@ const CommunityFrame = () => {
 
 
   return (
-    <div className={styles.searchButtonParent}>
-      
+    
+    <div className={styles.searchButtonParent}>     
       <div className={styles.backgroundWrapper}>
       <div className={styles.searchButton}>
         <h1 className={styles.h1}>커뮤니티</h1>

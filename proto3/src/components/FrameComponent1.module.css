@@ -1,4 +1,4 @@
-.image20Icon {
+.image20Icon {  /*메인페이지의 배경이미지 스타일*/
   width: 100%;
   height: 100%;
   position: absolute;
@@ -12,10 +12,10 @@
   max-height: 100%;
   object-fit: cover;
 }
-.span {
+.span {/*메인페이지의 문구 스타일*/
   color: var(--color-white);
 }
-.h1 {
+.h1 {/*메인페이지의 문구 스타일*/
   margin: 0;
   width: 564px;
   height: 171px;
@@ -40,7 +40,7 @@
   display: inline-block;
   flex-shrink: 0;
 }
-.professionalsAndPlaces {
+.professionalsAndPlaces { /*메인페이지 검색창*/
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@
   min-width: 367px;
   max-width: 100%;
 }
-.productInfoChild {
+.productInfoChild {  /*돋보기아이콘을 포함하는 프레임*/
   height: 75px;
   width: 75px;
   position: relative;
@@ -59,7 +59,7 @@
   background-color: var(--color-gray-100);
   display: none;
 }
-.searchIcon {
+.searchIcon {  /*돋보기아이콘스타일*/
   height: 41px;
   width: 43px;
   position: relative;
@@ -67,7 +67,7 @@
   flex-shrink: 0;
   z-index: 2;
 }
-.productInfo {
+.productInfo {   /*검색창돋보기아이콘을 포함중인 프레임*/
   height: 75px;
   border-radius: var(--br-xs);
   background-color: var(--color-gray-100);
@@ -78,9 +78,9 @@
   padding: var(--padding-base) var(--padding-base) var(--padding-lg);
   box-sizing: border-box;
   z-index: 1;
-  margin-left: -2px;
+  margin-left: -3px;
 }
-.globalMediaLandscape {
+.globalMediaLandscape {  /*메인페이지에 있는 검색창을 포함하고있는 프레임*/
   width: 737px;
   border-radius: var(--br-xs);
   background-color: var(--color-white);
@@ -98,7 +98,7 @@
   row-gap: 20px;
   z-index: 1;
 }
-.componentCard {
+.componentCard {  /*메인페이지에 있는 검색창을 포함하고있는 프레임*/
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -111,7 +111,7 @@
   color: var(--color-4);
   font-family: var(--font-poppins);
 }
-.image20Parent {
+.image20Parent {   /*메인페이지에서 문구,이미지, 검색창을 포함중인 프레임*/
   align-self: stretch;
   overflow: hidden;
   display: flex;

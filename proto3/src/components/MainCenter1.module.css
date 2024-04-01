@@ -1,4 +1,4 @@
-.h1 {
+.h1 {  /*'국내여행지'  문구*/
     margin: 0;
     height: 49px;
     width: 227.5px;
@@ -10,7 +10,7 @@
     flex-shrink: 0;
     mix-blend-mode: normal;
   }
-  .wrapper {
+  .wrapper {  /*국내여행지 문구를 포함중인프레임*/
     width: 228px;
     overflow: hidden;
     flex-shrink: 0;
@@ -21,7 +21,7 @@
     padding: var(--padding-mini) 0 var(--padding-5xl) var(--padding-3xs-5);
     box-sizing: border-box;
   }
-  .div {
+  .div {  /*'정보컨텐츠' 문구 스타일*/
     height: 52px;
     position: relative;
     font-size: var(--font-size-21xl);
@@ -30,7 +30,7 @@
     text-align: left;
     display: inline-block;
   }
-  .copyrightNotice {
+  .copyrightNotice { /*'정보컨텐츠' 뒤의 주황색 배경*/
     cursor: pointer;
     border: 0;
     /* padding: var(--padding-xs) var(--padding-4xs) var(--padding-smi)
@@ -43,12 +43,10 @@
     mix-blend-mode: normal;
     white-space: nowrap;
   }
-  .copyrightNotice:hover {
-    background-color: var(--color-darkgoldenrod);
-  }
+ 
   .appDownloads,
   .copyrightNotice,
-  .copyrightNoticeWrapper {
+  .copyrightNoticeWrapper {  /*'정보컨텐츠'문구 및 배경을 포함중인 프레임*/
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -60,7 +58,7 @@
     box-sizing: border-box;
     min-width: 144px;
   }
-  .appDownloads {
+  .appDownloads {  /*국내여행지정보콘텐츠 문구를 포함중인 프레임*/
     width: 449px;
     flex-direction: row;
     flex-wrap: wrap;
@@ -118,7 +116,8 @@
     gap: var(--gap-5xs);
   }
   .appDownloadsParent,
-  .frameWrapper {
+  .frameWrapper {  /*View All 버튼을 포함하고있는 프레임이며 
+    이것 밑에 있는 컴포넌트들도 다 그에 관한것입니다.*/
     display: flex;
     align-items: flex-start;
     box-sizing: border-box;
@@ -129,7 +128,7 @@
     justify-content: flex-start;
     padding: var(--padding-lg) 0 0;
   }
-  .appDownloadsParent {
+  .appDownloadsParent {  /*국내여행지 정보컨텐츠, view all 버튼 포함중인 프레임*/
     align-self: stretch;
     height: 81px;
     overflow: hidden;

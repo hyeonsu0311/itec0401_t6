@@ -1,4 +1,4 @@
-.h1 {
+.h1 {   /*커뮤니티 로고*/
     margin: 0;
     color: #ffffff;
     width: 381px;
@@ -12,7 +12,7 @@
     flex-shrink: 0;
     max-width: 100%;
   }
-  .whatAreYouLookingFor {
+  .whatAreYouLookingFor { /*검색창*/
     width: 232px;
     border: 0;
     outline: 0;
@@ -45,7 +45,7 @@
     overflow: hidden;
     z-index: 1;
   }
-  .vectorParent {
+  .vectorParent {  /*검색버튼(돋보기모양)을 포함하는프레임*/
     height: 48px;
     width: 48px;
     position: relative;
@@ -53,7 +53,7 @@
     background-color: var(--color-gray-400);
   }
   .searchButton,
-  .whatAreYouLookingForParent {
+  .whatAreYouLookingForParent {  /*검색창을포함하는프레임*/
 
 
     overflow: hidden;
@@ -74,6 +74,8 @@
     position: relative;
     top: -30px;
   }
+
+  /*배경이미지, 커뮤니티 로고, 검색창이 포함되어있는 프레임*/
   .searchButton {
     align-self: flex-start;
     flex-direction: column;
@@ -85,6 +87,7 @@
     min-height: 321px;
   }
 
+  /*배경이미지, 커뮤니티 로고, 검색창이 포함되어있는 프레임의 배경이미지*/
   .backgroundWrapper {
     background-image: url('/public/loginImg2.jpg');
     filter: brightness(100%); /* 이미지의 밝기를 70%로 설정 */
@@ -117,7 +120,8 @@
     display: flex;
     align-items: flex-start;
   }
-  .frameWrapper {
+  .frameWrapper {  /*검색창 하단에 비어있는 프레임, 앞으로 내용물을
+    추가하고자 만든 공간입니다.*/
     width: 1300px;
     height: 1000px;
     flex-direction: row;
@@ -137,6 +141,9 @@
   margin: 22px;
   }
 
+
+  /*좌측메뉴바, 상단네비게이션바, 하단정보프레임을 
+  제외한 페이지의 메인프레임*/
   .searchButtonParent {
     flex: 1;
     height: 1441px;
@@ -152,7 +159,7 @@
     flex-wrap: wrap;
   }
   
-  .frameWrapperButton {
+  .frameWrapperButton { /*더보기 버튼이 포함되어있는 프레임*/
     width: 1300px;
     height: 118px;
   
@@ -168,7 +175,7 @@
 
 
 
-  .button {
+  .button { /*더보기 버튼 스타일*/
     background-color: #000000;
     margin-top: 30px;
     color: white;

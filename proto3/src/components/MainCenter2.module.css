@@ -1,4 +1,5 @@
-.componentcardglobalmediaIcon {
+.componentcardglobalmediaIcon { /*콘텐츠 카드의 배경이미지, 
+  1,2는 각각 두번째 세번째 카드의 배경이미지*/
     width: 258px;
     height: 200px;
     position: relative;
@@ -41,7 +42,8 @@
     min-width: 48px;
     z-index: 1;
   }
-  .controlsbuttonmediumbright {
+  .controlsbuttonmediumbright {  /*더보기 버튼, 
+    controlsbuttonmediumbright 1,2와 통합해보 될것 같음*/
     cursor: pointer;
     border: 1px solid var(--color-gray-200);
     padding: var(--padding-sm) var(--padding-25xl) var(--padding-smi)
@@ -69,7 +71,7 @@
     align-items: flex-start;
     justify-content: flex-start;
   }
-  .componentcardplacecardGen {
+  .componentcardplacecardGen {  /*첫번째 콘텐츠 카드(국내여행지 종합정보)*/
     align-self: stretch;
     flex: 1;
     border-radius: var(--br-3xs);
@@ -78,7 +80,7 @@
     padding: var(--padding-xs) var(--padding-7xs);
     gap: var(--gap-12xs);
   }
-  .componentcardplacecardGenWrapper {
+  .componentcardplacecardGenWrapper { /*첫번째 카드를 포함하는 프레임*/
     height: 361px;
     width: 286px;
     flex-shrink: 0;
@@ -147,7 +149,7 @@
     overflow: hidden;
     flex-direction: row;
   }
-  .componentcardplacecardGen1 {
+  .componentcardplacecardGen1 {  /*2번째 카드*/
     height: 361px;
     width: 276px;
     border-radius: var(--br-3xs);
@@ -229,7 +231,7 @@
     align-items: flex-start;
     box-sizing: border-box;
   }
-  .componentcardplacecardGen2 {
+  .componentcardplacecardGen2 {  /*세번째카드*/
     height: 361px;
     width: 276px;
     border-radius: var(--br-3xs);
@@ -247,14 +249,14 @@
     flex-direction: row;
     max-width: 100%;
   }
-  .frameParent {
+  .frameParent {  /*콘텐츠 카드 3개를 포함중인 프레임*/
     flex: 1;
     overflow-x: auto;
     justify-content: space-between;
     padding: var(--padding-24xl) 0 var(--padding-24xl) var(--padding-3xl);
     gap: var(--gap-xl);
   }
-  .frameWrapper {
+  .frameWrapper {  /*국내여행지정보컨텐츠와 하단 정보프레임사이의 프레임*/
     height: 477px;
     justify-content: flex-start;
     padding: 0 var(--padding-10xs);

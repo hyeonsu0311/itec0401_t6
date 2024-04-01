@@ -2,7 +2,7 @@ import styles from "./MainCenter2.module.css";
 
 const MainCenter2 = () => {
   return (
-    <div className={styles.frameWrapper}>
+    <div className={styles.frameWrapper}> 
       <div className={styles.frameParent}>
         <div className={styles.componentcardplacecardGenWrapper}>
           <div className={styles.componentcardplacecardGen}>

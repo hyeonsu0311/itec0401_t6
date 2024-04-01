@@ -1,35 +1,12 @@
-.menuItemDefaultsChild {
-    align-self: stretch;
-    height: 935px;
-    position: relative;
-    background-color: var(--color-gray-200);
-    display: none;
-  }
-  .menuItemDefaultsItem {
-    align-self: stretch;
-    height: 40px;
-    overflow: hidden;
-    flex-shrink: 0;
-    display: none;
-  }
-  .menuitemdefaultChild {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    margin: 0 !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .guideline {
+
+  .h1 {  /*여행지탐색 문구의 스타일, 2,3은 각각 여행경로찾기, 커뮤니티 문구의 스타일*/
     flex: 1;
     position: relative;
     line-height: 22px;
     font-weight: 500;
     z-index: 1;
   }
-  .menuitemdefault {
+  .menuitemdefault {   /*메뉴바의 여행지탐색, 1,2는 각각 여행경로찾기,커뮤니티이다.*/
     align-self: stretch;
     margin-top: 30px;
     display: flex;
@@ -50,13 +27,13 @@
     bottom: 0;
     left: 0;
   }
-  .color,
+  .h2,
   .menuitemdefault1 {
     position: relative;
     z-index: 1;
     margin-top: 18px;
   }
-  .color {
+  .h2 {
     flex: 1;
     line-height: 22px;
     font-weight: 500;
@@ -79,7 +56,7 @@
     bottom: 0;
     left: 0;
   }
-  .typography {
+  .h3 {
     flex: 1;
     position: relative;
     line-height: 22px;
@@ -100,7 +77,7 @@
     position: relative;
     z-index: 1;
   }
-  .menuItemDefaults {
+  .menuItemDefaults { /*메뉴바 전체 프레임, 현재 반응형 구현 안되어있음*/
     height: 1440px;
     width: 253px;
    
