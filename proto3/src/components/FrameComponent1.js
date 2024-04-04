@@ -13,9 +13,10 @@ const FrameComponent1 = () => {
       </h1>
       <div className={styles.componentCard}>
         <div className={styles.globalMediaLandscape}>
-          <div className={styles.professionalsAndPlaces}>
-            <h1 className={styles.h11}> 찾고 싶은 여행지 정보</h1>
-          </div>
+          <input className={styles.professionalsAndPlaces}
+           placeholder="검색어를 입력하세요">
+           
+          </input>
           <div className={styles.productInfo}>
             <div className={styles.productInfoChild} />
             <img

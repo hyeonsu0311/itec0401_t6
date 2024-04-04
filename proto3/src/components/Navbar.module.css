@@ -2,6 +2,7 @@
   margin: 0;
   height: 80px;
   width: 236px;
+  cursor: pointer;
   position: relative;
   font-size: inherit;
   line-height: 57px;
@@ -20,7 +21,7 @@
   white-space: nowrap;
   display: inline-block;
   flex-shrink: 0;
-  
+  cursor: pointer;
 }
 .labelWrapper { /*여행지탐색 문구를 포함하는 프레임*/
   width: 97px;
@@ -60,6 +61,7 @@
   min-width: 82px;
   white-space: nowrap;
   font-size: 18px;
+  cursor: pointer;
 }
 .labelContainer {  /*여행경로찾기 라벨을 포함중인 프레임*/
   display: flex;
@@ -76,6 +78,7 @@
   line-height: 20px;
   white-space: nowrap;
   display: inline-block;
+  cursor: pointer;
 }
 .labelFrame {  /*커뮤니티 라벨을 포함중인 프레임*/
   width: 56px;
