@@ -78,6 +78,7 @@
   overflow: hidden;
   flex-shrink: 0;
   z-index: 2;
+  cursor: pointer;
 }
 .productInfo {   /*검색창돋보기아이콘을 포함중인 프레임*/
   height: 75px;

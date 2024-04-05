@@ -29,6 +29,7 @@
     color: var(--color-white);
     text-align: left;
     display: inline-block;
+    cursor:default;
   }
   .copyrightNotice { /*'정보컨텐츠' 뒤의 주황색 배경*/
     cursor: pointer;

@@ -135,6 +135,7 @@
     height: 42px;
     position: relative;
     display: inline-block;
+    cursor: pointer;
   }
   .frameContainer,
   .frameParent,

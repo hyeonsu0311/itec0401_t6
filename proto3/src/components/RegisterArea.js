@@ -1,6 +1,49 @@
 import styles from "./RegisterArea.module.css";
+import { useNavigate  } from "react-router-dom";
+import React, { useState } from "react";
 
 const RegisterArea = () => {
+
+
+  const navigate = useNavigate();
+  const [emailr, setEmailr] = useState("");
+  const [passwordr, setPasswordr] = useState("");
+  const [passwordrc, setPasswordrc] = useState("");
+
+  const handleEmailChange = (event) => {
+    setEmailr(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPasswordr(event.target.value);
+  };
+
+  const handlePasswordConfirmChange = (event) => {
+    setPasswordrc(event.target.value);
+  };
+
+  const handleRegister = () => {
+   
+    if(passwordr==passwordrc&&emailr!=""&&passwordr!=""&&passwordrc!=""){
+    //서버에전송
+
+
+    
+
+    //
+
+    console.log(emailr);
+    console.log(passwordr);
+
+    setEmailr("");
+    setPasswordr("");
+    setPasswordrc("")
+
+    
+    }
+    document.location.href = '/login'
+  };
+
   return (
     <form className={styles.registerArea}>
       <h1 className={styles.registerYourAccount}>Register account</h1>
@@ -16,6 +59,8 @@ const RegisterArea = () => {
               className={styles.submitButton}
               placeholder="Please enter your email"
               type="text"
+              value={emailr}
+              onChange={handleEmailChange}
             />
 
           </div>
@@ -28,6 +73,8 @@ const RegisterArea = () => {
               className={styles.labelChild}
               placeholder="Please enter your password"
               type="password"
+              value={passwordr}
+              onChange={handlePasswordChange}
             />
           </div>
 
@@ -40,6 +87,8 @@ const RegisterArea = () => {
               className={styles.labelItem}
               placeholder="Confirm your password"
               type="password"
+              value={passwordrc}
+              onChange={handlePasswordConfirmChange}
             />
           </div>
 
@@ -52,7 +101,8 @@ const RegisterArea = () => {
           <div className={styles.alreadyRegisteredWrapper}>
             <div className={styles.alreadyRegistered}>Already Registered?</div>
           </div>
-          <button className={styles.rectangleParent}>
+          <button className={styles.rectangleParent}
+          onClick={handleRegister}>
             <div className={styles.frameChild} />
             <b className={styles.submit}>Submit</b>
           </button>

@@ -28,6 +28,15 @@ const SigninComponent = () => {
 
   const handleSubmit = () => {
    
+    if(email===""||password===""){
+       window.alert("ID , PASSWORD 를 입력해주세요")
+    }
+    else if(email===""){
+      //db와 비교시 불일치
+    }
+
+
+    else{
     //서버에전송
 
 
@@ -40,7 +49,9 @@ const SigninComponent = () => {
     setEmail("");
     setPassword("");
     setIsLogin(true);
-    document.location.href = '/'
+
+
+    document.location.href = '/'}
   };
 
 
