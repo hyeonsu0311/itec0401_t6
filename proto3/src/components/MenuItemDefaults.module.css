@@ -1,0 +1,95 @@
+
+  .h1 {  /*여행지탐색 문구의 스타일, 2,3은 각각 여행경로찾기, 커뮤니티 문구의 스타일*/
+    flex: 1;
+    position: relative;
+    line-height: 22px;
+    font-weight: 500;
+    z-index: 1;
+  }
+  .menuitemdefault {   /*메뉴바의 여행지탐색, 1,2는 각각 여행경로찾기,커뮤니티이다.*/
+    align-self: stretch;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-4xs) var(--padding-5xl) var(--padding-3xs);
+    position: relative;
+    z-index: 1;
+  }
+  .menuitemdefaultItem {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .h2,
+  .menuitemdefault1 {
+    position: relative;
+    z-index: 1;
+    margin-top: 18px;
+  }
+  .h2 {
+    flex: 1;
+    line-height: 22px;
+    font-weight: 500;
+  }
+  .menuitemdefault1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-4xs) var(--padding-5xl) var(--padding-3xs);
+  }
+  .menuitemdefaultInner {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .h3 {
+    flex: 1;
+    position: relative;
+    line-height: 22px;
+    font-weight: 500;
+    z-index: 1;
+  }
+
+  .menuitemdefault2 {
+    margin-top: 35px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .menuitemdefault2 {
+    align-self: stretch;
+    flex-direction: row;
+    padding: var(--padding-4xs) var(--padding-5xl) var(--padding-3xs);
+    position: relative;
+    z-index: 1;
+  }
+  .menuItemDefaults { /*메뉴바 전체 프레임, 현재 반응형 구현 안되어있음*/
+    height: 1440px;
+    width: 253px;
+   
+    background-color: #272643;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-direction: column;
+    padding: var(--padding-29xl) 0;
+    box-sizing: border-box;
+    gap: var(--gap-36xl);
+    text-align: left;
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+    font-family: var(--pt-bold);
+  }
