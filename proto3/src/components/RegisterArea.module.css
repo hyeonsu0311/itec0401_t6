@@ -1,0 +1,277 @@
+.email,
+.registerYourAccount {
+  position: relative;
+
+  font-family: var(--font-poppins);
+  text-align: center;
+  display: inline-block;
+}
+.registerYourAccount {
+  margin: 0;
+  margin-bottom: 20px;
+  
+  left: 10%;
+  width: 700px;
+  font-size: var(--font-size-41xl);
+  font-weight: 700;
+  color: var(--color-darkslateblue-100);
+  max-width: 100%;
+  box-sizing: border-box;
+
+}
+.email {
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  min-width: 82px;
+}
+.label1 {
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-28xl);
+}
+.label,
+.label1,
+.submitButton {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.submitButton {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: var(--color-whitesmoke);
+  height: 89px;
+  border-radius: var(--br-11xl);
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: var(--padding-3xl) var(--padding-15xl);
+  box-sizing: border-box;
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-11xl);
+  color: var(--color-gray);
+  min-width: 250px;
+}
+.label {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.password {
+  position: relative;
+  font-size: var(--font-size-11xl);
+  font-family: var(--font-poppins);
+  color: var(--color-black);
+  text-align: left;
+}
+.passwordWrapper {
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-28xl);
+}
+.label2,
+.labelChild,
+.passwordWrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.labelChild {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: var(--color-whitesmoke);
+  height: 89px;
+  border-radius: var(--br-11xl);
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: var(--padding-5xl) var(--padding-15xl) var(--padding-xl);
+  box-sizing: border-box;
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-11xl);
+  color: var(--color-gray);
+  min-width: 250px;
+}
+.label2 {
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-base);
+  gap: var(--gap-5xs);
+}
+.confirmPassword {
+  position: relative;
+  font-size: var(--font-size-11xl);
+  font-family: var(--font-poppins);
+  color: var(--color-black);
+  text-align: left;
+}
+.confirmPasswordWrapper {
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-28xl);
+}
+.confirmPasswordWrapper,
+.label3,
+.labelItem {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.labelItem {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: var(--color-whitesmoke);
+  height: 89px;
+  border-radius: var(--br-11xl);
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: var(--padding-6xl) var(--padding-15xl) var(--padding-lgi);
+  box-sizing: border-box;
+  font-family: var(--font-poppins);
+  font-size: var(--font-size-11xl);
+  color: var(--color-gray);
+  min-width: 250px;
+}
+.label3 {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.confirmInput,
+.confirmInputWrapper {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.confirmInput {
+  width: 620px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-xl);
+  gap: var(--gap-lg);
+}
+.confirmInputWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-15xl);
+}
+.alreadyRegistered {
+  position: relative;
+  right: 100%;
+  font-size: var(--font-size-6xl);
+  font-family: var(--font-poppins);
+  color: var(--color-steelblue-200);
+  text-align: left;
+}
+.alreadyRegisteredWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-lgi) 0 0;
+}
+.frameChild {
+  height: 75px;
+  width: 252px;
+  position: relative;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-darkslateblue-200);
+  display: none;
+}
+.submit {
+  position: relative;
+  font-size: var(--font-size-16xl);
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: left;
+  z-index: 1;
+}
+.alreadyRegisteredArea,
+.rectangleParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleParent {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-2xs) var(--padding-41xl);
+  background-color:  var(--color-steelblue-100);
+  border-radius: var(--br-11xl);
+}
+.rectangleParent:hover {
+  background-color: var(--color-steelblue-100);
+}
+.alreadyRegisteredArea {
+  margin-top: 30px;
+  padding: 0 0 0 var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-14xl);
+  max-width: 100%;
+}
+.alreadyRegisteredAreaWrapper,
+.registerArea {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.alreadyRegisteredAreaWrapper {
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-mini);
+  box-sizing: border-box;
+}
+.registerArea {
+  margin: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+}
+@media screen and (max-width: 900px) {
+  .registerYourAccount {
+    font-size: var(--font-size-29xl);
+  }
+  .confirmPassword,
+  .email,
+  .password {
+    font-size: var(--font-size-5xl);
+  }
+  .submit {
+    font-size: var(--font-size-9xl);
+  }
+  .alreadyRegisteredArea {
+    flex-wrap: wrap;
+    gap: 33px 16px;
+  }
+  .registerArea {
+    gap: 16px 32px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .registerYourAccount {
+    font-size: var(--font-size-17xl);
+  }
+  .confirmPassword,
+  .email,
+  .password {
+    font-size: var(--font-size-lg);
+  }
+  .confirmPasswordWrapper {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .alreadyRegistered {
+    font-size: var(--font-size-xl);
+  }
+  .submit {
+    font-size: var(--font-size-2xl);
+  }
+  .rectangleParent {
+    padding-left: var(--padding-xl);
+  }}
