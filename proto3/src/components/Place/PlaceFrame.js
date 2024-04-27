@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Place from '../components/Place';
-import SelectComponent from '../components/SelectComponent'; 
-import GoogleMapComponent from '../components/GooglemapComponent';
+import Place from './Place';
+import SelectComponent from './SelectComponent'; 
+import GoogleMapComponent from './GooglemapComponent';
 
 const countriesWithCities = {
   '한국': ['서울', '부산'],
@@ -16,7 +16,7 @@ const placesByCity = {
   '파리': [{ id: '3', name: '에펠탑', category: '관광지', latitude: 48.858370, longitude: 2.294481, content: `프랑스와 파리의 과거와 현재를 상징하는 에펠탑` }],
 };
 
-const PlaceContainer = () => {
+const PlaceFrame = () => {
   const [selectedCountry, setSelectedCountry] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
   const [cities, setCities] = useState([]);
@@ -83,4 +83,4 @@ const PlaceContainer = () => {
   );
 };
 
-export default PlaceContainer;
+export default PlaceFrame;

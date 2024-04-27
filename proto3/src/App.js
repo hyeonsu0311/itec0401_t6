@@ -5,12 +5,15 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import SurfacePro8 from "./pages/SurfacePro8";
-import Signin from "./pages/Signin"
-import Sites from "./pages/Sites"
-import TravelRoute from "./pages/TravelRoute";
-import Community from "./pages/Community";
-import Signup from "./pages/Signup";
+import SurfacePro8 from "./Pages/SurfacePro8";
+import Signin from "./Pages/Signin";
+import Sites from "./Pages/Sites";
+import TravelRoute from "./Pages/TravelRoute";
+import Community from "./Pages/Community";
+import Signup from "./Pages/Signup";
+import Planner from './Pages/Planner';
+import Plan_create from './Pages/PlanCreation';
+import PlacePage from './Pages/PlacePage';
 
 
 function App() {
@@ -58,6 +61,10 @@ function App() {
         <Route path="/routes" element={<TravelRoute/>}/>
         <Route path="/community" element={<Community/>}/>
         <Route path="/register" element={<Signup/>}/>
+        <Route path='/plan' element={<Planner/>} />
+        <Route path='/create-plan' element={<Plan_create/>} />
+        <Route path='/place' element={<PlacePage/>} />
+
       </Routes>
     
   );

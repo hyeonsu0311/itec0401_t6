@@ -28,6 +28,10 @@ const Navbar = () => {
     navigate("/community");
   };
 
+  const onButtonClickTest = () => {
+    navigate("/test");
+  }
+
 
   const onLogout = () => {
     // 로그아웃 로직을 구현하고, 로그아웃 상태를 설정합니다.

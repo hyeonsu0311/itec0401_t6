@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import FrameComponent1 from "../components/FrameComponent1";
-
 import FrameComponent from "../components/FrameComponent";
 import styles from "./SurfacePro8.module.css";
 import MainCenter1 from "../components/MainCenter1";

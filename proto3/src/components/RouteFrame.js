@@ -3,23 +3,6 @@ import React, { useState } from 'react';
 
 const RouteFrame = () => {
 
-    const [items, setItems] = useState(["item1", "item2"]); // 초기 상태 설정
-  
-    const addItem = () => {
-      const newItem = `item${items.length + 1}`;
-      setItems([...items, newItem]); // 새로운 요소를 배열에 추가
-    };
-  
-    const removeItem = () => {
-      if (items.length > 0) {
-        setItems(items.slice(0, -1)); // 배열에서 마지막 요소를 제거
-      }
-    };
-  
-
-
-
-
   return (
     <div className={styles.searchButtonParent}>
       
