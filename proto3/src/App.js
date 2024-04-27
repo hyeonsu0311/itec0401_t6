@@ -11,6 +11,8 @@ import Sites from "./pages/Sites"
 import TravelRoute from "./pages/TravelRoute";
 import Community from "./pages/Community";
 import Signup from "./pages/Signup";
+import UserPage from "./pages/UserPage";
+
 
 
 function App() {
@@ -58,6 +60,7 @@ function App() {
         <Route path="/routes" element={<TravelRoute/>}/>
         <Route path="/community" element={<Community/>}/>
         <Route path="/register" element={<Signup/>}/>
+        <Route path="/user" element={<UserPage/>}/>
       </Routes>
     
   );

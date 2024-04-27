@@ -4,10 +4,11 @@ import { useContext } from 'react'
 import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import { useIsLogin } from "../IsLoginContext";
+import { useAuth } from "../Auth";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { isLogin,setIsLogin } = useIsLogin();
+  const { isLogin,setIsLogin } = useAuth();
 
   const onButtonClickLogin = () => {
     navigate("/login");
@@ -31,7 +32,8 @@ const Navbar = () => {
 
   const onLogout = () => {
     // 로그아웃 로직을 구현하고, 로그아웃 상태를 설정합니다.
-    setIsLogin(false)
+    clearToken();
+    setIsLogin(false);
   };
 
   
