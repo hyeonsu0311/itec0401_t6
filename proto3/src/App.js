@@ -12,6 +12,8 @@ import TravelRoute from "./pages/TravelRoute";
 import Community from "./pages/Community";
 import Signup from "./pages/Signup";
 import UserPage from "./pages/UserPage";
+import { initKakao } from 'kakao-js-sdk';
+
 
 
 
@@ -19,6 +21,9 @@ function App() {
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
+  initKakao('68fe7438066563f9c4e543c48f689ae0');
+ 
+
 
   useEffect(() => {
     if (action !== "POP") {
@@ -27,6 +32,7 @@ function App() {
   }, [action, pathname]);
 
   useEffect(() => {
+  
     let title = "";
     let metaDescription = "";
 

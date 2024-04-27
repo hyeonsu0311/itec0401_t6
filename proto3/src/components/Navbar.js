@@ -4,11 +4,11 @@ import { useContext } from 'react'
 import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import { useIsLogin } from "../IsLoginContext";
-import { useAuth } from "../Auth";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { isLogin,setIsLogin } = useAuth();
+  const { isLogin,setIsLogin } = useIsLogin();
 
   const onButtonClickLogin = () => {
     navigate("/login");
@@ -29,14 +29,18 @@ const Navbar = () => {
     navigate("/community");
   };
 
-
   const onLogout = () => {
-    // 로그아웃 로직을 구현하고, 로그아웃 상태를 설정합니다.
-    clearToken();
-    setIsLogin(false);
+    if (window.confirm("로그아웃합니다")){ 
+    // 세션 스토리지나 쿠키에서 액세스 토큰 삭제
+  sessionStorage.removeItem('accessToken');
+  // 또는 쿠키 삭제
+  document.cookie = 'accessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  
+  // 로그인 상태 변경
+    setIsLogin(false); // 로그인 상태 업데이트
+    }
   };
 
-  
   const onUserPage = () => {
     navigate("/user"); // 사용자 페이지로 이동하는 경로
   };
@@ -73,6 +77,8 @@ const Navbar = () => {
          
                 <div className={styles.logIn}>Logout</div>
               </button>
+              {/* 로그아웃 알림창 */}
+      
             </>
           ) : (
             <button className={styles.button1} onClick={onButtonClickLogin}>

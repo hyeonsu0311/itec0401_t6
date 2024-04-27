@@ -1,24 +1,33 @@
 import styles from "./SigninComponent.module.css";
 import { useNavigate  } from "react-router-dom";
 import React, { useState } from "react";
-import { useIsLogin } from '../IsLoginContext'
-import { useEffect } from 'react';
+import { useIsLogin } from '../IsLoginContext';
+import { useEffect } from "react";
 
+import { initKakao } from 'kakao-js-sdk';
+initKakao('68fe7438066563f9c4e543c48f689ae0');
 
 
 
 const SigninComponent = () => {
-
+  
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {isLogin,setIsLogin} = useIsLogin()
+  const { isLogin, setIsLogin } = useIsLogin();
+
 
 
   const REST_API_KEY = '68fe7438066563f9c4e543c48f689ae0';
   const REDIRECT_URI = 'http://localhost:3000';
-  const link = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+  const link = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&prompt=login`;
   
+
+  
+
+  
+  
+
 
   const onButtonClickRegister = () => {
     navigate("/register");
@@ -32,14 +41,11 @@ const SigninComponent = () => {
     setPassword(event.target.value);
   };
 
-
-  const handleSubmit = () => {
-   
+  const toMain = () => {
+    navigate("/");
+  };
+  const handleSubmit = () => { 
     window.location.href = link;
-      
-
-
-
     // if(email===""||password===""){
     //    window.alert("ID , PASSWORD 를 입력해주세요")
     // }
@@ -68,48 +74,16 @@ const SigninComponent = () => {
 
 
   return (
-    <div className={styles.frameParent}>
-      <div className={styles.signInWrapper}>
-        <h1 className={styles.signIn}>Sign in</h1>
-      </div>
-      <div className={styles.frameWrapper}>
-        <div className={styles.frameGroup}>
-          
-          <div className={styles.emailParent}>
-            <div className={styles.email}>{`Email `}</div>
-            <input
-              className={styles.submitButton}
-              placeholder="Please enter your email"
-              type="text"
-              value={email}
-              onChange={handleEmailChange}
-            />
-          </div>
-          <div className={styles.passwordParent}>
-            <div className={styles.password}>Password</div>
-            <input
-              className={styles.frameChild}
-              placeholder="Please enter your password"
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
-          </div>
-        </div>
-      </div>
-      <div className={styles.frameContainer}>
-        <button className={styles.rectangleParent}
-         onClick={handleSubmit}>
-          <div className={styles.frameItem} />
-          <b className={styles.submit}>Submit</b>
-        </button>
-        <div className={styles.signUpWrapper}>
-          <div className={styles.signUp}
-          onClick={onButtonClickRegister}>Sign up</div>
-        </div>
-        
-      </div>
-      
-    </div>);
+
+    <div className={styles.container}>
+    <div className={styles.title}>간편 로그인</div>
+    <button className={styles.buttonToMain} onClick={toMain}>메인화면으로</button>
+      <img src="/kakao.png" alt="Kakao Login" className={styles.button} onClick={handleSubmit}/>
+    </div>
+
+
+
+
+  );
     };
-    export default SigninComponent;
+ export default SigninComponent;
