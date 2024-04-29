@@ -12,7 +12,7 @@ const PlaceList = () => {
     return (
       <div className={styles.container}>
         {places.map(place => (
-            <PlaceItem key={place.id} place={place}/>
+            place.image !== '' && <PlaceItem key={place.id} place={place}/>
         ))}
       </div>
     );

@@ -3,8 +3,19 @@ import axios from 'axios';
 
 export const fetchPlaces = createAsyncThunk(
     'places/fetchPlaces',
-    async () => {
-        const response = await axios.get('https://apis.data.go.kr/B551011/KorService1/areaBasedSyncList1?numOfRows=50&pageNo=10&MobileOS=ETC&MobileApp=trip&serviceKey=XUwyR%2FmV8IUBoZtsh7NeDQG18pmA1%2FUY40IWuP1MZt3A%2B%2Fs%2BxihFUEsy7bMXZ66sNmDVWxcTRu%2Fjbm8Gu0r8qw%3D%3D&_type=json&arrange=O%3D%EC%A0%9C%EB%AA%A9%EC%88%9C%2C%20Q%3D%EC%88%98%EC%A0%95%EC%9D%BC%EC%88%9C%2C%20R%3D%EC%83%9D%EC%84%B1%EC%9D%BC%EC%88%9C');
+    async (area) => {
+        const response = await axios.get('https://apis.data.go.kr/B551011/KorService1/areaBasedList1', {
+            params: {
+              numOfRows: 100,
+              MobileOS: 'ETC',
+              MobileApp: 'trip',
+              serviceKey: 'XUwyR/mV8IUBoZtsh7NeDQG18pmA1/UY40IWuP1MZt3A+/s+xihFUEsy7bMXZ66sNmDVWxcTRu/jbm8Gu0r8qw==',
+              _type: 'json',
+              arrange: 'O, Q, R',
+              areaCode: area.code,
+            }
+          });
+        console.log(response);
         const items = response.data.response.body.items.item;
         return items;
     }
@@ -13,11 +24,16 @@ export const fetchPlaces = createAsyncThunk(
 const placeSlice = createSlice({
     name: 'places',
     initialState: {
+        selectedArea: { code: '', name: '전체'},
         places: [],
         status: 'idle', //'idle', 'loading', 'succeeded'
         error: null
     },
-    reducers: {},
+    reducers: {
+        setSelectedArea(state, action) {
+        state.selectedArea = action.payload;
+      },
+    },
     extraReducers(builder) {
         builder
             .addCase(fetchPlaces.pending, (state) => {
@@ -29,7 +45,8 @@ const placeSlice = createSlice({
                 state.places = action.payload.map(place => ({
                     addr : place.addr1,
                     image : place.firstimage || '',
-                    title: place.title
+                    title: place.title,
+                    contentid: place.contentid
                 }));
             } else {
                 state.error = 'Data is not an array';
@@ -42,4 +59,5 @@ const placeSlice = createSlice({
     }
 });
 
+export const { setSelectedArea } = placeSlice.actions;
 export default placeSlice.reducer;

@@ -1,4 +1,9 @@
 .item {
     flex: 1 1 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.title {
+    align-items: flex-end;
+    justify-content: flex-end;
 }
