@@ -76,7 +76,7 @@ const SigninComponent = () => {
   return (
 
     <div className={styles.container}>
-    <div className={styles.title}>간편 로그인</div>
+    <div className={styles.title}></div>
     <button className={styles.buttonToMain} onClick={toMain}>메인화면으로</button>
       <img src="/kakao.png" alt="Kakao Login" className={styles.button} onClick={handleSubmit}/>
     </div>
