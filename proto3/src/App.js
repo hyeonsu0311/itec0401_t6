@@ -14,6 +14,7 @@ import Signup from "./Pages/Signup";
 import Planner from './Pages/Planner';
 import Plan_create from './Pages/PlanCreation';
 import PlacePage from './Pages/PlacePage';
+import Test from './Pages/test';
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
         <Route path='/plan' element={<Planner/>} />
         <Route path='/create-plan' element={<Plan_create/>} />
         <Route path='/place' element={<PlacePage/>} />
+        <Route path='/test' element={<Test/>} />
 
       </Routes>
     

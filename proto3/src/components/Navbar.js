@@ -13,7 +13,7 @@ const Navbar = () => {
     navigate("/login");
   };
   const onButtonClickSites = () => {
-    navigate("/sites");
+    navigate("/place");
   };
 
   const onButtonClickMain = () => {

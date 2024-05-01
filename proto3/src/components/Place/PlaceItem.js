@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from './PlaceItem.module.css';
 import AspectRatio from '@mui/joy/AspectRatio';
-import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
 import IconButton from '@mui/joy/IconButton';
@@ -10,6 +9,7 @@ import CardContent from '@mui/joy/CardContent';
 import Favorite from '@mui/icons-material/Favorite';
 import { flexBox } from '@mui/system'
 import { useNavigate } from 'react-router-dom';
+import Box from '@mui/joy/Box';
 
 const PlaceItem = ({place}) => {
     const navigate = useNavigate();
@@ -23,10 +23,11 @@ const PlaceItem = ({place}) => {
             <Card
                 variant="plain"
                 sx={{
-                    width: 250,
+                    width: 240,
                     bgcolor: 'initial',
                     p: 0,
                     position: 'relative', // 추가: 카드 상대 위치 설정
+                    margin: '1vw'
                 }}
             >
                 <Box sx={{ position: 'relative' }}>
@@ -54,13 +55,11 @@ const PlaceItem = ({place}) => {
                     >     
                         <Box className={styles.title}
                             sx={{
-                                display: 'flex',
                                 flexDirection: 'column',
-                                alignItems: 'flex-end',
-                                justifyContent: 'flex-end',
                                 p: 2,
                                 gap: 1.5,
-                                flexGrow: 1,
+                                alignItems: 'flex-start',
+                                justifyContent: 'flex-end'
                             }}>
                             <Typography level="h2" overlay sx={{ fontSize: 'md', color: '#fff'}}>
                                 {place.title}
@@ -69,21 +68,13 @@ const PlaceItem = ({place}) => {
                                 {place.addr}    
                             </Typography>
                         </Box>
-                        <Box
-                            sx={{
-                                display: 'block',
-                                p: 2,
-                                gap: 1.5,
-                            }}
-                        >
                             <IconButton size="sm" variant="solid" sx={{ 
                                 color: 'neutral', 
                                 bgcolor: 'rgba(255, 255, 255, 0.5)',
-                                display: 'block'
+                                display: 'flex'
                                 }}>
                                 <Favorite />
                             </IconButton>
-                        </Box>
                     </CardCover> 
                 </Box>        
             </Card>
