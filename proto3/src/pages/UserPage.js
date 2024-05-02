@@ -16,6 +16,7 @@ function UserPage() {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }
+            
         }).then(response => {
             console.log(response.data);
        
