@@ -16,19 +16,9 @@ function UserPage() {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }
-            
         }).then(response => {
             console.log(response.data);
-       
-                // 데이터가 존재할 경우에만 닉네임을 가져옴
-                const ageRange = response.data.kakao_account.age_range;
-                const email = response.data.kakao_account.email;
-        
-                setUserInfo({
-                    ageState: ageRange,
-                    emailState: email
-                });
-          
+            setUserInfo(response.data); // 전체 응답 데이터를 userInfo 상태에 저장
         }).catch(error => {
             console.error("사용자 정보 가져오기 실패:", error);
         });
@@ -38,8 +28,8 @@ function UserPage() {
         <div>
             {userInfo ? (
                 <div>
-                    <p>나이: {userInfo.ageState}</p>
-                    <p>이메일: {userInfo.emailState}</p>
+                    <p>사용자 정보:</p>
+                    <pre>{JSON.stringify(userInfo, null, 2)}</pre> {/* JSON 데이터를 보기 좋게 출력 */}
                 </div>
             ) : (
                 <p>사용자 정보를 불러오는 중...</p>
