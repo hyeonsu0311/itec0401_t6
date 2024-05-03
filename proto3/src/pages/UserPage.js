@@ -1,46 +1,40 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Box, Paper, Typography, TextField } from '@mui/material';
-
-
+import axios from 'axios';
+import { Box, Paper, Typography, TextField, Avatar, List, ListItem, ListItemText, ListItemAvatar, Divider, Button, IconButton } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import Navbar from "../components/Navbar";
 
 function UserPage() {
-    const [userInfo, setUserInfo] = useState(null);
-
-      // 여기에 사용자 데이터를 더미 데이터로 설정합니다.
-     
-
-
     const [user, setUser] = useState({
         name: 'Jane Doe',
         nickname: 'Janey',
         gender: 'Female',
         age: 29,
-        email: 'jane.doe@example.com'
+        email: 'jane.doe@example.com',
+        avatarUrl: 'https://via.placeholder.com/150'
     });
 
     // 닉네임 변경 핸들러
- 
     const handleNicknameChange = (event) => {
         setUser({ ...user, nickname: event.target.value });
     };
 
-
+    // 세션 스토리지에서 액세스 토큰 가져오기
     useEffect(() => {
-        const accessToken = sessionStorage.getItem('accessToken'); // 세션 스토리지에서 액세스 토큰 가져오기
+        const accessToken = sessionStorage.getItem('accessToken');
         if (accessToken) {
             fetchUserInfo(accessToken);
         }
     }, []);
 
+    // 사용자 정보를 가져오는 함수
     const fetchUserInfo = (accessToken) => {
         axios.get('https://kapi.kakao.com/v2/user/me', {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }
         }).then(response => {
-            console.log(response.data);
-            setUserInfo(response.data); // 전체 응답 데이터를 userInfo 상태에 저장
+            setUser({...user, ...response.data}); // 응답 데이터를 user 상태에 저장
         }).catch(error => {
             console.error("사용자 정보 가져오기 실패:", error);
         });
@@ -48,53 +42,53 @@ function UserPage() {
 
     return (
         <div>
-            {userInfo ? (
-                <div>
-                    <p>사용자 정보:</p>
-                    <pre>{JSON.stringify(userInfo, null, 2)}</pre> {/* JSON 데이터를 보기 좋게 출력 */}
-            
-
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', p: 3, height: '100vh' }}>
-            <Paper elevation={3} sx={{ p: 2, mb: 2, width: '100%' }}>
-                <Typography variant="h4" component="h1">
-                    User Information
-                </Typography>
-            </Paper>
-            <Paper elevation={3} sx={{ p: 2, mb: 2, width: '100%' }}>
-                <Typography variant="subtitle1">
-                    Name: {user.name}
-                </Typography>
-            </Paper>
-            <Paper elevation={3} sx={{ p: 2, mb: 2, width: '100%' }}>
-                <TextField
-                    label="Nickname"
-                    variant="outlined"
-                    fullWidth
-                    value={user.nickname}
-                    onChange={handleNicknameChange}
-                />
-            </Paper>
-            <Paper elevation={3} sx={{ p: 2, mb: 2, width: '100%' }}>
-                <Typography variant="subtitle1">
-                    Gender: {user.gender}
-                </Typography>
-            </Paper>
-            <Paper elevation={3} sx={{ p: 2, mb: 2, width: '100%' }}>
-                <Typography variant="subtitle1">
-                    Age: {user.age}
-                </Typography>
-            </Paper>
-            <Paper elevation={3} sx={{ p: 2, width: '100%' }}>
-                <Typography variant="subtitle1">
-                    Email: {user.email}
-                </Typography>
-            </Paper>
-        </Box>
-                   
-                </div>
-            ) : (
-                <p>사용자 정보를 불러오는 중...</p>
-            )}
+            <Navbar />
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3, mt: 4 }}>
+                <Avatar sx={{ width: 90, height: 90, mb: 2 }} src={user.avatarUrl} alt="Profile Picture" />
+                <Paper elevation={3} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <EditIcon />
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Name" secondary={user.name} />
+                        </ListItem>
+                        <Divider variant="inset" component="li" />
+                        <ListItem>
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <EditIcon />
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="Nickname" secondary={
+                                <TextField
+                                    variant="standard"
+                                    fullWidth
+                                    value={user.nickname}
+                                    onChange={handleNicknameChange}
+                                />
+                            } />
+                        </ListItem>
+                        <Divider variant="inset" component="li" />
+                        <ListItem>
+                            <ListItemText primary="Gender" secondary={user.gender} />
+                        </ListItem>
+                        <Divider variant="inset" component="li" />
+                        <ListItem>
+                            <ListItemText primary="Age" secondary={user.age} />
+                        </ListItem>
+                        <Divider variant="inset" component="li" />
+                        <ListItem>
+                            <ListItemText primary="Email" secondary={user.email} />
+                        </ListItem>
+                    </List>
+                </Paper>
+                <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+                    Update Profile
+                </Button>
+            </Box>
         </div>
     );
 }
