@@ -14,6 +14,18 @@ function UserPage() {
         avatarUrl: 'https://via.placeholder.com/150'
     });
 
+    // 파일 입력 핸들러
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setUser({ ...user, avatarUrl: reader.result });
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     // 닉네임 변경 핸들러
     const handleNicknameChange = (event) => {
         setUser({ ...user, nickname: event.target.value });
@@ -45,6 +57,18 @@ function UserPage() {
             <Navbar />
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3, mt: 4 }}>
                 <Avatar sx={{ width: 90, height: 90, mb: 2 }} src={user.avatarUrl} alt="Profile Picture" />
+                <input
+                    accept="image/*"
+                    style={{ display: 'none' }}
+                    id="file-input"
+                    type="file"
+                    onChange={handleFileChange}
+                />
+                <label htmlFor="file-input">
+                    <Button variant="contained" component="span" color="primary" sx={{ mt: 2, mb: 4  }}>
+                        Update Profile
+                    </Button>
+                </label>
                 <Paper elevation={3} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                         <ListItem>
@@ -85,9 +109,6 @@ function UserPage() {
                         </ListItem>
                     </List>
                 </Paper>
-                <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-                    Update Profile
-                </Button>
             </Box>
         </div>
     );
