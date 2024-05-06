@@ -46,7 +46,9 @@ function UserPage() {
                 Authorization: `Bearer ${accessToken}`
             }
         }).then(response => {
-            setUser({...user, ...response.data}); // 응답 데이터를 user 상태에 저장
+            const { id } = response.data; 
+            console.log(id);
+
         }).catch(error => {
             console.error("사용자 정보 가져오기 실패:", error);
         });
@@ -65,7 +67,7 @@ function UserPage() {
                     onChange={handleFileChange}
                 />
                 <label htmlFor="file-input">
-                    <Button variant="contained" component="span" color="primary" sx={{ mt: 2, mb: 4  }}>
+                    <Button variant="contained" component="span" color="primary" sx={{ mt: 2, mb: 4 }}>
                         Update Profile
                     </Button>
                 </label>
@@ -86,14 +88,14 @@ function UserPage() {
                                     <EditIcon />
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText primary="Nickname" secondary={
-                                <TextField
-                                    variant="standard"
-                                    fullWidth
-                                    value={user.nickname}
-                                    onChange={handleNicknameChange}
-                                />
-                            } />
+                            <ListItemText primary="Nickname" />
+                            <TextField
+                                variant="standard"
+                                fullWidth
+                                value={user.nickname}
+                                onChange={handleNicknameChange}
+                                sx={{ ml: 2 }}  // 이 항목에 대해 좌측 여백을 추가하여 정렬을 유지합니다.
+                            />
                         </ListItem>
                         <Divider variant="inset" component="li" />
                         <ListItem>
@@ -112,6 +114,7 @@ function UserPage() {
             </Box>
         </div>
     );
+    
 }
 
 export default UserPage;
