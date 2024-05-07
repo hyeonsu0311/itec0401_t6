@@ -49,9 +49,33 @@ function UserPage() {
             const { id } = response.data; 
             console.log(id);
 
+            axios.get(`http://localhost:3001/user/${id}`, { // 예시로 사용자 ID '3456699916'를 직접 입력
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        }).then(response => {
+            const userData = response.data; 
+            setUser({
+                ...user,
+                name: userData.username,
+                nickname: userData.username, // 예시로 username을 nickname으로 사용
+                gender: userData.gender,
+                age: userData.age,
+                email: userData.email,
+                avatarUrl: user.avatarUrl // 이미지 URL은 변경 없음
+            });
         }).catch(error => {
             console.error("사용자 정보 가져오기 실패:", error);
         });
+
+        }).catch(error => {
+            console.error("사용자 정보 가져오기 실패:", error);
+        });
+    };
+
+
+    const fetchUserInfo1 = (accessToken) => {
+       
     };
 
     return (

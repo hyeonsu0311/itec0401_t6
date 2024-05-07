@@ -72,6 +72,25 @@ app.post('/get-token', async (req, res) => {
 });
 
 
+// server.js 파일 내에 추가
+app.get('/user/:id', (req, res) => {
+  const userId = req.params.id;
+  const query = "SELECT * FROM Users WHERE user_id = ?";
+  connection.query(query, [userId], (err, results) => {
+      if (err) {
+          console.error('Failed to retrieve user data:', err);
+          res.status(500).send('Failed to get user information');
+          return;
+      }
+      if (results.length > 0) {
+          res.json(results[0]);
+      } else {
+          res.status(404).send('User not found');
+      }
+  });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
