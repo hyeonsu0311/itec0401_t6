@@ -118,7 +118,7 @@ function UserPage() {
                                 fullWidth
                                 value={user.nickname}
                                 onChange={handleNicknameChange}
-                                sx={{ ml: 2 }}  // 이 항목에 대해 좌측 여백을 추가하여 정렬을 유지합니다.
+                                sx={{ ml: 5 }}  // 이 항목에 대해 좌측 여백을 추가하여 정렬을 유지합니다.
                             />
                         </ListItem>
                         <Divider variant="inset" component="li" />

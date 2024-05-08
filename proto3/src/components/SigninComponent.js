@@ -5,7 +5,7 @@ import { useIsLogin } from '../IsLoginContext';
 import { useEffect } from "react";
 
 import { initKakao } from 'kakao-js-sdk';
-initKakao('68fe7438066563f9c4e543c48f689ae0');
+initKakao(process.env.REACT_APP_KAKAO_APP_KEY);
 
 
 
@@ -18,7 +18,7 @@ const SigninComponent = () => {
 
 
 
-  const REST_API_KEY = '68fe7438066563f9c4e543c48f689ae0';
+  const REST_API_KEY = process.env.REACT_APP_KAKAO_APP_KEY;
   const REDIRECT_URI = 'http://localhost:3000';
   const link = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&prompt=login`;
   

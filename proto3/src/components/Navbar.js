@@ -38,6 +38,7 @@ const Navbar = () => {
   
   // 로그인 상태 변경
     setIsLogin(false); // 로그인 상태 업데이트
+    navigate("/");
     }
   };
 

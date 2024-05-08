@@ -21,7 +21,7 @@ function App() {
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
-  initKakao('68fe7438066563f9c4e543c48f689ae0');
+  initKakao(process.env.REACT_APP_KAKAO_APP_KEY);
  
 
 
