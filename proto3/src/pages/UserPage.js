@@ -14,6 +14,40 @@ function UserPage() {
         avatarUrl: 'https://via.placeholder.com/150'
     });
 
+    // 입력 핸들러
+const handleNameChange = (event) => {
+    setUser({ ...user, name: event.target.value });
+};
+
+const handleAgeChange = (event) => {
+    setUser({ ...user, age: event.target.value });
+};
+
+const handleGenderChange = (event) => {
+    setUser({ ...user, gender: event.target.value });
+};
+
+// 사용자 정보를 업데이트하는 함수
+const updateUserInfo = async () => {
+    const accessToken = sessionStorage.getItem('accessToken');
+    if (accessToken) {
+        try {
+            await axios.put(`http://localhost:3001/user/${user.id}`, {
+                name: user.name,
+                age: user.age,
+                gender: user.gender
+            }, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            });
+            alert('User information updated successfully.');
+        } catch (error) {
+            console.error('Failed to update user information:', error);
+        }
+    }
+};
+
     // 파일 입력 핸들러
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -135,6 +169,11 @@ function UserPage() {
                         </ListItem>
                     </List>
                 </Paper>
+
+            <TextField label="Name" variant="outlined" value={user.name} onChange={handleNameChange} />
+            <TextField label="Age" variant="outlined" type="number" value={user.age} onChange={handleAgeChange} />
+            <TextField label="Gender" variant="outlined" value={user.gender} onChange={handleGenderChange} />
+            <Button onClick={updateUserInfo}>Save Changes</Button>
             </Box>
         </div>
     );

@@ -52,7 +52,7 @@ app.post('/get-token', async (req, res) => {
     username=VALUES(username), age=VALUES(age), gender=VALUES(gender), country_of_residence=VALUES(country_of_residence),
     country_to_visit=VALUES(country_to_visit), travel_preference=VALUES(travel_preference), password=VALUES(password),
     email=VALUES(email), phone_number=VALUES(phone_number)`;
-    const values = [userID, 'John Doe', 30, 'Male', 'South Korea', 'Japan', 'City', 'password123', 'email@example.com', '010-1234-5678'];
+    const values = [userID];
     
     connection.query(query, values, (insertError, insertResults) => {
       if (insertError) {
@@ -72,7 +72,7 @@ app.post('/get-token', async (req, res) => {
 });
 
 
-// server.js 파일 내에 추가
+
 app.get('/user/:id', (req, res) => {
   const userId = req.params.id;
   const query = "SELECT * FROM Users WHERE user_id = ?";
@@ -90,6 +90,23 @@ app.get('/user/:id', (req, res) => {
   });
 });
 
+// 사용자 정보를 업데이트하는 API 엔드포인트
+app.put('/user/:id', (req, res) => {
+  const { name, age, gender } = req.body;
+  const userId = req.params.id;
+
+  const query = `UPDATE Users SET username = ?, age = ?, gender = ? WHERE user_id = ?`;
+  const values = [name, age, gender, userId];
+
+  connection.query(query, values, (err, result) => {
+      if (err) {
+          console.error('Failed to update user data:', err);
+          res.status(500).send('Failed to update user information');
+          return;
+      }
+      res.send('User information updated successfully');
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
