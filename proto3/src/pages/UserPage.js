@@ -24,8 +24,11 @@ const handleAgeChange = (event) => {
     setUser({ ...user, age: event.target.value });
 };
 
-const handleGenderChange = (event) => {
-    setUser({ ...user, gender: event.target.value });
+const handleGenderChange = (newGender) => {
+    setUser(prevUser => ({
+        ...prevUser,
+        gender: newGender
+    }));
 };
 
 // 사용자 정보를 업데이트하는 함수
@@ -60,18 +63,14 @@ const updateUserInfo = async () => {
             };
             reader.readAsDataURL(file);
         }
-    };
-
-    // 닉네임 변경 핸들러
-    const handleNicknameChange = (event) => {
-        setUser({ ...user, nickname: event.target.value });
-    };
+    }
 
     // 세션 스토리지에서 액세스 토큰 가져오기
     useEffect(() => {
         const accessToken = sessionStorage.getItem('accessToken');
         if (accessToken) {
             fetchUserInfo(accessToken);
+            fetchUserProfile();
         }
     }, []);
 
@@ -82,7 +81,7 @@ const updateUserInfo = async () => {
                 Authorization: `Bearer ${accessToken}`
             }
         }).then(response => {
-            const { id } = response.data; 
+            const { id  } = response.data; 
             console.log(id);
             user.id=id
 
@@ -95,7 +94,6 @@ const updateUserInfo = async () => {
             setUser({
                 ...user,
                 name: userData.username,
-                nickname: userData.username, // 예시로 username을 nickname으로 사용
                 gender: userData.gender,
                 age: userData.age,
                 email: userData.email,
@@ -111,15 +109,28 @@ const updateUserInfo = async () => {
     };
 
 
-    const fetchUserInfo1 = (accessToken) => {
-       
+    const fetchUserProfile = async () => {
+        const accessToken = sessionStorage.getItem('accessToken'); // 세션에서 액세스 토큰 가져오기
+        if (!accessToken) return;
+
+        try {
+            const response = await axios.get('https://kapi.kakao.com/v2/user/me', {
+                headers: { Authorization: `Bearer ${accessToken}` }
+            });
+            const profileImageUrl = response.data.properties.profile_image;
+            setUser(prev => ({ ...prev, avatarUrl: profileImageUrl }));
+        } catch (error) {
+            console.error('Failed to fetch user profile:', error);
+        }
     };
+
+
 
     return (
         <div>
             <Navbar />
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3, mt: 4 }}>
-                <Avatar sx={{ width: 90, height: 90, mb: 2 }} src={user.avatarUrl} alt="Profile Picture" />
+            <Avatar sx={{ width: 90, height: 90, mb: 2 }} src={user.avatarUrl} alt="Profile Picture" />
                 <input
                     accept="image/*"
                     style={{ display: 'none' }}
@@ -127,56 +138,77 @@ const updateUserInfo = async () => {
                     type="file"
                     onChange={handleFileChange}
                 />
-                <label htmlFor="file-input">
-                    <Button variant="contained" component="span" color="primary" sx={{ mt: 2, mb: 4 }}>
-                        Update Profile
+      
+                    <Button onClick={updateUserInfo} variant="contained" component="span" color="primary" sx={{ mt: 2, mb: 4 }}>
+                        프로필 저장
                     </Button>
-                </label>
+             
                 <Paper elevation={3} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                        <ListItem>
+                        
+                        <ListItem>  
                             <ListItemAvatar>
                                 <Avatar>
                                     <EditIcon />
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText primary="Name" secondary={user.name} />
+                            <ListItemText primary="이름" secondary={user.name} sx={{ width: 'auto', flexShrink: 0, marginRight: 2 }} />
+                           
                         </ListItem>
+
                         <Divider variant="inset" component="li" />
+
+
                         <ListItem>
-                            <ListItemAvatar>
+                        <ListItemAvatar>
                                 <Avatar>
                                     <EditIcon />
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText primary="Nickname" />
-                            <TextField
-                                variant="standard"
-                                fullWidth
-                                value={user.nickname}
-                                onChange={handleNicknameChange}
-                                sx={{ ml: 5 }}  // 이 항목에 대해 좌측 여백을 추가하여 정렬을 유지합니다.
-                            />
+                            <ListItemText primary="성별" />
+                            <Button
+                                onClick={() => handleGenderChange('male')}
+                                sx={{ bgcolor: user.gender === 'male' ? 'lightblue' : 'grey.300', ml: 1 ,textTransform: 'none'}}
+                            >
+                                Male
+                            </Button>
+                            <Button
+                                onClick={() => handleGenderChange('female')}
+                                sx={{ bgcolor: user.gender === 'female' ? 'lightpink' : 'grey.300', ml: 1 ,textTransform: 'none'}}
+                            >
+                                Female
+                            </Button>
+                            <Button
+                                onClick={() => handleGenderChange('nonbinary')}
+                                sx={{ bgcolor: user.gender === 'nonbinary' ? 'grey' : 'grey.300', ml: 1 ,textTransform: 'none'}}
+                            >
+                                Non
+                            </Button>
                         </ListItem>
+
                         <Divider variant="inset" component="li" />
                         <ListItem>
-                            <ListItemText primary="Gender" secondary={user.gender} />
+                        <ListItemAvatar>
+                                <Avatar>
+                                    <EditIcon />
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText primary="나이" />
+                            <TextField label="Age" variant="outlined" type="number" value={user.age} onChange={handleAgeChange} />
                         </ListItem>
                         <Divider variant="inset" component="li" />
+                        
                         <ListItem>
-                            <ListItemText primary="Age" secondary={user.age} />
-                        </ListItem>
-                        <Divider variant="inset" component="li" />
-                        <ListItem>
-                            <ListItemText primary="Email" secondary={user.email} />
+                        <Avatar>
+                            <EditIcon />
+                        </Avatar>
+                            <ListItemText sx={{ ml: 2 }} primary="E-Mail" secondary={user.email} />
                         </ListItem>
                     </List>
                 </Paper>
 
-            <TextField label="Name" variant="outlined" value={user.name} onChange={handleNameChange} />
-            <TextField label="Age" variant="outlined" type="number" value={user.age} onChange={handleAgeChange} />
-            <TextField label="Gender" variant="outlined" value={user.gender} onChange={handleGenderChange} />
-            <Button onClick={updateUserInfo}>Save Changes</Button>
+            
+            
             </Box>
         </div>
     );
