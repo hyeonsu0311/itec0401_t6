@@ -44,15 +44,17 @@ app.post('/get-token', async (req, res) => {
         'Authorization': `Bearer ${response.data.access_token}`, // 헤더에 액세스 토큰 포함
         'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'}});
     const userID=userInfoResponse.data.id
+    const username = userInfoResponse.data.properties.nickname; // 예: 카카오 API에서 닉네임을 가져옴
+    const email = userInfoResponse.data.kakao_account.email; // 예: 카카오 API에서 이메일을 가져옴
     console.log(userID);
+    console.log(username);
+    console.log(email);
     
-    const query = `INSERT INTO Users (user_id, username, age, gender, country_of_residence, country_to_visit, travel_preference, password, email, phone_number)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    const query = `INSERT INTO Users (user_id, username, email)
+    VALUES (?, ?,?)
     ON DUPLICATE KEY UPDATE
-    username=VALUES(username), age=VALUES(age), gender=VALUES(gender), country_of_residence=VALUES(country_of_residence),
-    country_to_visit=VALUES(country_to_visit), travel_preference=VALUES(travel_preference), password=VALUES(password),
-    email=VALUES(email), phone_number=VALUES(phone_number)`;
-    const values = [userID];
+    username=VALUES(username), email=VALUES(email)`;
+    const values = [userID,username,email];
     
     connection.query(query, values, (insertError, insertResults) => {
       if (insertError) {
@@ -97,6 +99,10 @@ app.put('/user/:id', (req, res) => {
 
   const query = `UPDATE Users SET username = ?, age = ?, gender = ? WHERE user_id = ?`;
   const values = [name, age, gender, userId];
+  console.log(name)
+  console.log(age)
+  console.log(gender)
+  console.log(userId)
 
   connection.query(query, values, (err, result) => {
       if (err) {
@@ -105,6 +111,7 @@ app.put('/user/:id', (req, res) => {
           return;
       }
       res.send('User information updated successfully');
+      console.log('update success')
   });
 });
 

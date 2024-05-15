@@ -15,7 +15,7 @@ CREATE TABLE Users (
     country_to_visit VARCHAR(50), -- 방문할 국가 
     travel_preference VARCHAR(15), -- 도시, 자연 
     user_id VARCHAR(30) UNIQUE NOT NULL, -- 사용자 ID
-    password VARCHAR(255) NOT NULL, -- 사용자 비밀번호 
+   
     email VARCHAR(100), -- 사용자 이메일 
     phone_number VARCHAR(1024), -- 전화번호
     travel_type VARCHAR(50), -- 많이 걸어다니는것, 많이 걷지 않는것

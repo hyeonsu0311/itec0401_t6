@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 
 function UserPage() {
     const [user, setUser] = useState({
+        id: null,
         name: 'Jane Doe',
         nickname: 'Janey',
         gender: 'Female',
@@ -29,6 +30,7 @@ const handleGenderChange = (event) => {
 
 // 사용자 정보를 업데이트하는 함수
 const updateUserInfo = async () => {
+    console.log(user.id)
     const accessToken = sessionStorage.getItem('accessToken');
     if (accessToken) {
         try {
@@ -82,6 +84,7 @@ const updateUserInfo = async () => {
         }).then(response => {
             const { id } = response.data; 
             console.log(id);
+            user.id=id
 
             axios.get(`http://localhost:3001/user/${id}`, { // 예시로 사용자 ID '3456699916'를 직접 입력
             headers: {
