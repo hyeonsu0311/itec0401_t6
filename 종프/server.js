@@ -7,7 +7,7 @@ const mysql = require('mysql2');
 const PORT = process.env.PORT || 3001;
 
 
-//MySQL 데이터베이스 연결 설정
+//MySQL 데이터베이스 연결 설정. 로컬에 연결되어 있는데, 향후 DB 운용 방식에 따라 달라질 것 같습니다.
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'abc',  // 데이터베이스 사용자 이름
@@ -24,15 +24,15 @@ connection.connect(err => {
 app.use(cors());
 app.use(express.json());
 
-app.post('/get-token', async (req, res) => {
+app.post('/get-token', async (req, res) => {  //프론트에서 인가코드를 받아 카카오 api로부터 액세스 토큰을 수령 후 토큰을 프론트로 전송
   const { code } = req.body;
   try {
     const params = new URLSearchParams();
     params.append('grant_type', 'authorization_code');
-    params.append('client_id', 'f6b2dd564814692c3cd96e84e34f50d9');  // 실제 API 키로 교체 필요
-    params.append('redirect_uri', 'http://localhost:3000');  // 실제 리다이렉트 URI로 교체 필요
+    params.append('client_id', 'f6b2dd564814692c3cd96e84e34f50d9');  //api키가 하드코딩 되어있습니다. 나중에 배포시에 환경변수로 바꾸면 좋을것같습니다
+    params.append('redirect_uri', 'http://localhost:3000');  //리다이렉트 URI
     params.append('code', code);
-
+    
     const response = await axios.post('https://kauth.kakao.com/oauth/token', params.toString(), { //프론트에서 온 인가코드, 카카오 api를 사용하여 액세스토큰 수령
       headers: {
         'Content-type': 'application/x-www-form-urlencoded'
@@ -75,7 +75,7 @@ app.post('/get-token', async (req, res) => {
 
 
 
-app.get('/user/:id', (req, res) => {
+app.get('/user/:id', (req, res) => {    //프론트에서 user_id를 통해 해당 user_id 에 대한 정보 접근
   const userId = req.params.id;
   const query = "SELECT * FROM Users WHERE user_id = ?";
   connection.query(query, [userId], (err, results) => {
