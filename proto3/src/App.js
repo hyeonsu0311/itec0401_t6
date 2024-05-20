@@ -5,17 +5,15 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import SurfacePro8 from "./Pages/SurfacePro8";
-import Signin from "./Pages/Signin";
-import Sites from "./Pages/Sites";
-import TravelRoute from "./Pages/TravelRoute";
-import Community from "./Pages/Community";
-import Signup from "./Pages/Signup";
-import Planner from './Pages/Planner';
-import Plan_create from './Pages/PlanCreation';
-import PlacePage from './Pages/PlacePage';
-import Test from './Pages/test';
-import Recommend from './Pages/RecommendPage';
+import SurfacePro8 from "./pages/SurfacePro8";
+import Signin from "./pages/Signin"
+import Sites from "./pages/Sites"
+import TravelRoute from "./pages/TravelRoute";
+import Community from "./pages/Community";
+import Signup from "./pages/Signup";
+import Planner from './pages/Planner';
+import Plan_create from './pages/PlanCreation'
+import PlaceContainer from './pages/PlaceContainer';
 
 
 function App() {
@@ -54,8 +52,8 @@ function App() {
     }
   }, [pathname]);
 
+const App = () => {
   return (
-
       <Routes>
         <Route path="/" element={<SurfacePro8 />} />
         <Route path="/login" element={<Signin/>} />
@@ -72,5 +70,6 @@ function App() {
       </Routes>
     
   );
+};
 }
 export default App;
