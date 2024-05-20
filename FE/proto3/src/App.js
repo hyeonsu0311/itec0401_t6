@@ -30,6 +30,9 @@ import Planner from './Pages/Planner';
 import Plan_create from './Pages/PlanCreation';
 import PlacePage from './Pages/PlacePage';
 import Test from './Pages/test';
+<<<<<<< HEAD:FE/proto3/src/App.js
+>>>>>>> parent of 9ce92de (refactor: 코드정리):proto3/src/App.js
+=======
 >>>>>>> parent of 9ce92de (refactor: 코드정리):proto3/src/App.js
 
 
@@ -87,9 +90,12 @@ const App = () => {
         <Route path='/place' element={<PlacePage/>} />
         <Route path='/test' element={<Test/>} />
 <<<<<<< HEAD:FE/proto3/src/App.js
+<<<<<<< HEAD:FE/proto3/src/App.js
         <Route path='/recommend' element={<Recommend/>} />
         <Route path="/user" element={<UserPage/>}/>
 =======
+=======
+>>>>>>> parent of 9ce92de (refactor: 코드정리):proto3/src/App.js
 
 >>>>>>> parent of 9ce92de (refactor: 코드정리):proto3/src/App.js
       </Routes>
