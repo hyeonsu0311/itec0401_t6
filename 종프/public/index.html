@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Add User</title>
+</head>
+
+<body>
+  <h1>Add User</h1>
+  <form id="addUserForm">
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="number" id="age" placeholder="Age"><br>
+    <input type="text" id="gender" placeholder="Gender"><br>
+    <input type="text" id="country_of_residence" placeholder="Country of Residence"><br>
+    <input type="text" id="country_to_visit" placeholder="Country to Visit"><br>
+    <input type="text" id="travel_preference" placeholder="Travel Preference"><br>
+    <input type="text" id="user_id" placeholder="User ID"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <input type="email" id="email" placeholder="Email"><br>
+    <input type="text" id="phone_number" placeholder="Phone Number"><br>
+    <input type="text" id="travel_type" placeholder="Travel Type"><br>
+    <input type="text" id="activities" placeholder="Activities"><br>
+    <input type="text" id="travel_budget" placeholder="Travel Budget"><br>
+    <input type="text" id="available_dates" placeholder="Available Dates"><br>
+    <input type="date" id="start_date" placeholder="Start Date"><br>
+    <input type="number" id="duration_days" placeholder="Duration Days"><br>
+    <input type="text" id="accommodation_preferences" placeholder="Accommodation Preferences"><br>
+    <input type="text" id="dietary_preferences" placeholder="Dietary Preferences"><br>
+    <input type="text" id="transportation_preferences" placeholder="Transportation Preferences"><br>
+    <input type="text" id="social_media_profiles" placeholder="Social Media Profiles"><br>
+    <textarea id="introduction" placeholder="Introduction"></textarea><br>
+    <input type="text" id="communication_preferences" placeholder="Communication Preferences"><br>
+    <input type="text" id="emergency_contact_name" placeholder="Emergency Contact Name"><br>
+    <input type="text" id="emergency_contact_phone" placeholder="Emergency Contact Phone"><br>
+    <input type="text" id="health_status" placeholder="Health Status"><br>
+    <input type="number" id="previous_travels" placeholder="Previous Travels"><br>
+    <input type="text" id="occupation" placeholder="Occupation"><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('addUserForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const userData = {
+        username: document.getElementById('username').value,
+        age: document.getElementById('age').value,
+        gender: document.getElementById('gender').value,
+        country_of_residence: document.getElementById('country_of_residence').value,
+        country_to_visit: document.getElementById('country_to_visit').value,
+        travel_preference: document.getElementById('travel_preference').value,
+        user_id: document.getElementById('user_id').value,
+        password: document.getElementById('password').value,
+        email: document.getElementById('email').value,
+        phone_number: document.getElementById('phone_number').value,
+        travel_type: document.getElementById('travel_type').value,
+        activities: document.getElementById('activities').value,
+        travel_budget: document.getElementById('travel_budget').value,
+        available_dates: document.getElementById('available_dates').value,
+        start_date: document.getElementById('start_date').value,
+        duration_days: document.getElementById('duration_days').value,
+        accommodation_preferences: document.getElementById('accommodation_preferences').value,
+        dietary_preferences: document.getElementById('dietary_preferences').value,
+        transportation_preferences: document.getElementById('transportation_preferences').value,
+        social_media_profiles: document.getElementById('social_media_profiles').value,
+        introduction: document.getElementById('introduction').value,
+        communication_preferences: document.getElementById('communication_preferences').value,
+        emergency_contact_name: document.getElementById('emergency_contact_name').value,
+        emergency_contact_phone: document.getElementById('emergency_contact_phone').value,
+        health_status: document.getElementById('health_status').value,
+        previous_travels: document.getElementById('previous_travels').value,
+        occupation: document.getElementById('occupation').value,
+      };
+
+      fetch('/addUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      })
+        .then(response => response.text())
+        .then(data => {
+          alert(data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</body>
+
+</html>

@@ -4,6 +4,7 @@ import React, { createContext, useEffect ,useContext, useState, useMemo } from '
 const IsLoginContext = createContext();
 
 export const IsLoginProvider = ({ children }) => {
+  
   // useState를 사용하여 로그인 상태를 저장하고 업데이트하는 함수를 생성
   const [isLogin, setIsLogin] = useState(() => {
     // 로컬 스토리지에서 로그인 상태를 가져옴

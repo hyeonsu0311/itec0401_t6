@@ -14,12 +14,19 @@ import Signup from "./pages/Signup";
 import Planner from './pages/Planner';
 import Plan_create from './pages/PlanCreation'
 import PlaceContainer from './pages/PlaceContainer';
+import UserPage from "./pages/UserPage";
+import { initKakao } from 'kakao-js-sdk';
+
+
 
 
 function App() {
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
+  initKakao(process.env.REACT_APP_KAKAO_APP_KEY);
+ 
+
 
   useEffect(() => {
     if (action !== "POP") {
@@ -28,6 +35,7 @@ function App() {
   }, [action, pathname]);
 
   useEffect(() => {
+  
     let title = "";
     let metaDescription = "";
 
@@ -66,7 +74,7 @@ const App = () => {
         <Route path='/place' element={<PlacePage/>} />
         <Route path='/test' element={<Test/>} />
         <Route path='/recommend' element={<Recommend/>} />
-
+        <Route path="/user" element={<UserPage/>}/>
       </Routes>
     
   );
