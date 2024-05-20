@@ -15,6 +15,7 @@ import Planner from './Pages/Planner';
 import Plan_create from './Pages/PlanCreation';
 import PlacePage from './Pages/PlacePage';
 import Test from './Pages/test';
+import Recommend from './Pages/RecommendPage';
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
         <Route path='/create-plan' element={<Plan_create/>} />
         <Route path='/place' element={<PlacePage/>} />
         <Route path='/test' element={<Test/>} />
+        <Route path='/recommend' element={<Recommend/>} />
 
       </Routes>
     

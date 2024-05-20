@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styles from './PlaceItem.module.css';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
@@ -11,15 +10,15 @@ import { flexBox } from '@mui/system'
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/joy/Box';
 
-const PlaceItem = ({place}) => {
-    const navigate  = useNavigate();
+const RecommendItem = ({place}) => {
+    const navigate = useNavigate();
 
     const handleNavigate = () => {
         navigate('/places/${place.contentid}')
     };
 
     return (
-        <div className={styles.item} onClick={handleNavigate}>
+        <div onClick={handleNavigate}>
             <Card
                 variant="plain"
                 sx={{
@@ -53,7 +52,7 @@ const PlaceItem = ({place}) => {
                             background: 'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
                         }}
                     >     
-                        <Box className={styles.title}
+                        <Box 
                             sx={{
                                 flexDirection: 'column',
                                 p: 2,
@@ -71,7 +70,7 @@ const PlaceItem = ({place}) => {
                             <IconButton size="sm" variant="solid" sx={{ 
                                 color: 'neutral', 
                                 bgcolor: 'rgba(255, 255, 255, 0.5)',
-                                display: 'flex'
+                                display: 'inline-flex'
                                 }}>
                                 <Favorite />
                             </IconButton>
@@ -82,4 +81,4 @@ const PlaceItem = ({place}) => {
     );
 };
 
-export default PlaceItem;
+export default RecommendItem;
