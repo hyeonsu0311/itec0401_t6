@@ -49,6 +49,8 @@
   position: relative;
   border-right: 0.5px solid var(--color-black);
   box-sizing: border-box;
+  margin-left: 22px;
+
 }
 .label1 {
   width: 82px;
@@ -197,6 +199,5 @@
   font-size: var(--font-size-29xl);
   color: var(--color-black);
   font-family: var(--font-dm-sans);
-  box-shadow: 0px 0px 5px 0px rgba(51, 51, 51, 0.2)
 }
 

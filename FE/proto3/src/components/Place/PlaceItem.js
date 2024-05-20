@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import Box from '@mui/joy/Box';
 
 const PlaceItem = ({place}) => {
-    const navigate  = useNavigate();
+    const navigate = useNavigate();
 
     const handleNavigate = () => {
         navigate('/places/${place.contentid}')

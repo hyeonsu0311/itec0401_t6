@@ -60,17 +60,14 @@ const Navbar = () => {
         <div className={styles.frameParent}>
           <div className={styles.labelWrapper}>
             <div className={styles.label}
-            onClick={onButtonClickSites}> 여행지 정보 </div>
           </div>
           <div className={styles.frameChild} />
           <div className={styles.labelContainer}>
             <div className={styles.label1}
-            onClick={onButtonClickRoute}> 여행 코스 </div>
           </div>
           <div className={styles.frameChild1} />
           <div className={styles.labelFrame}>
             <div className={styles.label2}
-            onClick={onButtonClickCommunity}> 커뮤니티 </div>
           </div>
         </div>
       </div>
