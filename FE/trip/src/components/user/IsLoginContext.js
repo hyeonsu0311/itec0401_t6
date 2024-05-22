@@ -8,16 +8,20 @@ export const IsLoginProvider = ({ children }) => {
   
   // useState를 사용하여 로그인 상태를 저장하고 업데이트하는 함수를 생성
   const [isLogin, setIsLogin] = useState(() => {
-    // 로컬 스토리지에서 로그인 상태를 가져옴
-    const storedIsLogin = localStorage.getItem('isLogin');
-    // 저장된 로그인 상태가 존재하면 파싱하여 반환, 없으면 기본값 false 반환
-    return storedIsLogin ? JSON.parse(storedIsLogin) : false;
-  });
+    // 클라이언트 환경에서만 localStorage 접근
+    if (typeof window !== 'undefined') {
+        const storedIsLogin = localStorage.getItem('isLogin');
+        return storedIsLogin ? JSON.parse(storedIsLogin) : false;
+    }
+    return false; // 서버 환경일 때는 false 반환
+});
 
-  // 로그인 상태가 변경될 때마다 로컬 스토리지에 저장
-  useEffect(() => {
-    localStorage.setItem('isLogin', JSON.stringify(isLogin));
-  }, [isLogin]);
+// 로그인 상태 변경 시 로컬 스토리지 업데이트
+useEffect(() => {
+    if (typeof window !== 'undefined') {
+        localStorage.setItem('isLogin', JSON.stringify(isLogin));
+    }
+}, [isLogin]);
 
   // Provider가 자식 컴포넌트에게 제공할 값을 설정하여 반환
   return (

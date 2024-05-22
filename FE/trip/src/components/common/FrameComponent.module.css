@@ -1,0 +1,314 @@
+.useCases {
+  align-self: stretch;
+  height: 26px;
+  position: relative;
+  display: inline-block;
+}
+.professorsStudents {
+  width: 134px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+}
+.libraries {
+  width: 53px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 53px;
+}
+.bookstores {
+  width: 71px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 71px;
+}
+.publishers {
+  width: 65px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 65px;
+}
+.professorsStudentsParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px var(--padding-xl) 0px 0px;
+  gap: var(--gap-base);
+  font-size: var(--font-size-mini);
+  color: var(--color-gray-300);
+  font-family: var(--font-cabin);
+}
+.useCasesParent {
+  width: 180px;
+  margin: 0 !important;
+  position: absolute;
+  top: 97px;
+  left: 284px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-19xl);
+}
+.contacts {
+  width: 56px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 56px;
+}
+.aboutUs {
+  width: 57px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 57px;
+}
+.faq {
+  width: 28px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 28px;
+}
+.ourTeam {
+  width: 63px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 63px;
+}
+.termsOfService {
+  width: 103px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 103px;
+}
+.aboutParent {
+  width: 180px;
+  margin: 0 !important;
+  position: absolute;
+  top: 80px;
+  left: 516px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-19xl);
+}
+.termsOfUse {
+  width: 81px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 81px;
+}
+.privacyPolicy {
+  width: 87px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 87px;
+}
+.logIn {
+  width: 39px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 39px;
+  white-space: nowrap;
+}
+.productParent {
+  width: 180px;
+  margin: 0 !important;
+  position: absolute;
+  top: 114px;
+  left: 748px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-19xl);
+}
+.googlePlay {
+  width: 76px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 76px;
+  flex-shrink: 0;
+  debug_commit: 1cbd860;
+}
+.googlePlayWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0px 0px;
+}
+.subtractIcon {
+  height: 20px;
+  width: 19.3px;
+  position: relative;
+  min-height: 20px;
+  flex-shrink: 0;
+  debug_commit: 1cbd860;
+}
+.frameContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 0px var(--padding-xl);
+  gap: var(--gap-9xs-3);
+}
+.appleStore {
+  width: 75px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 75px;
+  flex-shrink: 0;
+  debug_commit: 1cbd860;
+}
+.frameDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 0px var(--padding-xl);
+  gap: var(--gap-8xs-3);
+}
+.union {
+  margin: 0;
+  height: 18px;
+  width: 21px;
+  position: relative;
+  background-color: var(--color-gray-300);
+  min-height: 18px;
+}
+.desktop {
+  height: 18px;
+  width: 54px;
+  position: relative;
+  display: inline-block;
+  min-width: 54px;
+}
+.unionParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px var(--padding-xl) 0px 0px;
+  gap: var(--gap-3xl);
+}
+.frameWrapper1 {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameGroup {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+}
+.frameWrapper {
+  width: 149.6px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px var(--padding-9xs);
+  box-sizing: border-box;
+  font-size: var(--font-size-mini);
+  color: var(--color-gray-300);
+  font-family: var(--font-cabin);
+}
+.downloadAppParent {
+  height: 173px;
+  width: 180px;
+  margin: 0 !important;
+  position: absolute;
+  top: 102.5px;
+  left: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-22xl);
+}
+.frameChild {
+  margin-right: -56.80000000000018px;
+  width: 180.3px;
+  height: 20px;
+  position: relative;
+}
+.uidesigntoAll {
+  align-self: stretch;
+  height: 17px;
+  position: relative;
+  display: inline-block;
+}
+.groupDiv {
+  height: 59px;
+  width: 294.7px;
+  margin: 0 !important;
+  position: absolute;
+  top: 399px;
+  left: 574.6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0px var(--padding-38xl) 0px 0px;
+  box-sizing: border-box;
+  gap: var(--gap-3xl);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-300);
+  font-family: var(--font-cabin);
+}
+.frameParent {
+  align-self: stretch;
+  height: 538px;
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-61xl) 0px;
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-33xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-average-sans);
+}
+
+
+
+/* @media screen and (max-width: 450px) {
+  .useCases {
+    font-size: var(--font-size-base);
+  }
+} */

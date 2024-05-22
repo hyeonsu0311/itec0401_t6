@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
-import FrameComponent1 from "../components/FrameComponent1";
+
+import FrameComponent1 from "./FrameComponent1";
 import axios from 'axios';
-import FrameComponent from "../components/FrameComponent";
+import FrameComponent from "./FrameComponent";
 import styles from "./SurfacePro8.module.css";
-import MainCenter1 from "../components/MainCenter1";
-import MainCenter2 from "../components/MainCenter2";
+import MainCenter1 from "./MainCenter1";
+import MainCenter2 from "./MainCenter2";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useIsLogin } from '../IsLoginContext';
