@@ -16,7 +16,29 @@ const PlaceItem = ({place}) => {
     const router = useRouter();
 
     const handleNavigate = () => {
-        navigate('/places/${place.contentid}')
+        router.push('/places/${place.contentid}')
+    };
+
+    const handleLike = async (event) => {
+        event.stopPropagation();
+        try {
+            const response = await fetch('/api/like', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ content_id: place.contentid }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            console.log(data.message);
+        } catch (error) {
+            console.error('Error liking the place:', error);
+        }
     };
 
     return (
@@ -73,7 +95,8 @@ const PlaceItem = ({place}) => {
                                 color: 'neutral', 
                                 bgcolor: 'rgba(255, 255, 255, 0.5)',
                                 display: 'flex'
-                                }}>
+                                }}
+                                onClick = {handleLike}>
                                 <Favorite />
                             </IconButton>
                     </CardCover> 
