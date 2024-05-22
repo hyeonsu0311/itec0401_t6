@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import ModeOutlinedIcon from '@mui/icons-material/ModeOutlined';
 import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import Tooltip from '@mui/material/Tooltip'; // Importing Tooltip for better accessibility
+import Tooltip from '@mui/material/Tooltip'; 
 
 function Write() {
   const navigate = useNavigate();

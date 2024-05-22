@@ -13,7 +13,7 @@ import {
 import { formatDistanceToNow, parseISO } from 'date-fns';
 import { ko } from 'date-fns/locale';
 
-const OPENCAGE_API_KEY = 'c603d421c0b64d6a83c499d11bba9429'; // Replace with your OpenCage API key
+const OPENCAGE_API_KEY = 'c603d421c0b64d6a83c499d11bba9429'; 
 
 function Community({ posts }) {
     const [currentPage, setCurrentPage] = useState(1);
@@ -21,7 +21,6 @@ function Community({ posts }) {
     const [showLocalPosts, setShowLocalPosts] = useState(false);
     const [location, setLocation] = useState('');
 
-    // Fetch user's location on component mount
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((position) => {
             const { latitude, longitude } = position.coords;
@@ -45,7 +44,7 @@ function Community({ posts }) {
 
     const handleToggleLocalPosts = () => {
         setShowLocalPosts(prevState => !prevState);
-        setCurrentPage(1); // Reset to first page on toggle
+        setCurrentPage(1); 
     };
 
     const filteredPosts = showLocalPosts
