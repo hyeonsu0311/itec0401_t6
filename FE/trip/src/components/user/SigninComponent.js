@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useRouter } from'next/navigation';
 
 import { initKakao } from 'kakao-js-sdk';
-initKakao(process.env.REACT_APP_KAKAO_APP_KEY);
+initKakao(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
 
 
 
