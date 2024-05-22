@@ -12,6 +12,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
+  console.log(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
   initKakao(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
 
   return (
