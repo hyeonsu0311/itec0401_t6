@@ -1,3 +1,4 @@
+'use client'
 
 import FrameComponent1 from "./FrameComponent1";
 import axios from 'axios';
@@ -7,14 +8,16 @@ import MainCenter1 from "./MainCenter1";
 import MainCenter2 from "./MainCenter2";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useIsLogin } from '../IsLoginContext';
+import { useIsLogin } from '../user/IsLoginContext';
+import { useRouter } from 'next/navigation'
+
 
 
 const SurfacePro8 = () => {
 
-  const location = useLocation();
+  const location = useRouter();
   const { isLogin, setIsLogin } = useIsLogin();
-
+  console.log(location);
 
   useEffect(() => {
     // URLSearchParams 객체를 사용하여 쿼리 파라미터를 파싱
@@ -45,7 +48,7 @@ const SurfacePro8 = () => {
   return (
     <div className={styles.surfacePro811}>
       <section className={styles.navbarParent}>
-        <Navbar />
+
         <FrameComponent1 />
       </section>
       <MainCenter1/>
