@@ -15,7 +15,7 @@ const MainCenter1 = () => {
       </div>
       <div className={styles.frameWrapper}>
         <button className={styles.baseParent}>
-          <img className={styles.baseIcon} alt="" src="/base.svg" />
+          <img className={styles.baseIcon} alt="" src="/icons/base.svg" />
           <div className={styles.button}>View all</div>
           <div className={styles.professorsStudentsLibraries}>
             <img

@@ -3,7 +3,7 @@ import styles from "./FrameComponent1.module.css";
 const FrameComponent1 = () => {
   return (
     <div className={styles.image20Parent}>
-      <img className={styles.image20Icon} alt="" src="/backgroundMain.jpg" />
+      <img className={styles.image20Icon} alt="" src="/images/backgroundMain.jpg" />
       <h1 className={styles.h1}>
         <span>100곳 이상의</span>
         <span className={styles.span}>
@@ -23,7 +23,7 @@ const FrameComponent1 = () => {
               className={styles.searchIcon}
               loading="lazy"
               alt=""
-              src="/search.svg"
+              src="/icons/search.svg"
             />
           </div>
         </div>
