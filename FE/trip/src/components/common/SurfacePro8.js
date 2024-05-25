@@ -15,12 +15,12 @@ import { useRouter } from 'next/navigation'
 
 const SurfacePro8 = () => {
 
-  const location = useRouter();
+  const router  = useRouter();
   const { isLogin, setIsLogin } = useIsLogin();
-  console.log(location);
+  console.log(router );
 
   useEffect(() => {
-    // URLSearchParams 객체를 사용하여 쿼리 파라미터를 파싱
+   
     const queryParams = new URLSearchParams(location.search);
     const code = queryParams.get('code');
     console.log('인가 코드:', code);
@@ -32,7 +32,7 @@ const SurfacePro8 = () => {
   }, [location]);
 
   const sendCodeToBackend = (code) => {
-    axios.post('http://localhost:3001/get-token', { code })
+    axios.post('http://localhost:8001/service2/get-token', { code })
       .then(response => {
         console.log('액세스 토큰:', response.data.access_token);
         sessionStorage.setItem('accessToken', response.data.access_token);

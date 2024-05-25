@@ -1,0 +1,37 @@
+body {
+  background-color: #282c34;
+  /* Dark gray background for the whole page */
+  color: #fff;
+  /* White text color to contrast with the dark background */
+  font-family: 'Roboto', sans-serif;
+  /* Sets a clean, modern font for the whole page */
+}
+.form-container {
+  background: #f3f4f6;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-button {
+  margin-top: 20px;
+  background-color: #0056b3;
+  color: white;
+}
+
+TextField {
+  margin-bottom: 12px;
+  /* Ensure consistent margin for all text fields */
+}
