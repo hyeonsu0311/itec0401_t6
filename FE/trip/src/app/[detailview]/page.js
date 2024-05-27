@@ -50,7 +50,7 @@ const DataLoad = () => {
         <div className="size">
           <TravelDestinationInfo info={data.title} />
           <ImageComponent firstimage={data.firstimage}/>
-          {/* <MapComponent latitude={data.mapy} longitude={data.mapx} address={data.addr1}/> */}
+          <MapComponent latitude={data.mapy} longitude={data.mapx} address={data.addr1}/>
           <DetailedInfoComponent overview={data.overview} detail={data2} />
         </div>
       ) : (
