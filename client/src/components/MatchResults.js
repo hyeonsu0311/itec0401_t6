@@ -37,20 +37,23 @@ function MatchResults() {
     setOpen(false);
   };
 
-const handleMessageSend = async () => {
+  const handleMessageSend = async () => {
     const message = document.getElementById("message").value;
     if (!message.trim()) {
-        setSnackbarMessage("빈 메시지는 전송할 수 없습니다.");
-        setSnackbarOpen(true);
-        return;
+      setSnackbarMessage("빈 메시지는 전송할 수 없습니다.");
+      setSnackbarOpen(true);
+      return;
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/api/sendMessage", {
-        sender: "보낸사람 아이디나 정보",
-        receiver: selectedTraveler.username,
-        message: message,
-      });
+      const response = await axios.post(
+        "http://localhost:8000/service1/api/sendMessage",
+        {
+          sender: "보낸사람 아이디나 정보",
+          receiver: selectedTraveler.username,
+          message: message,
+        }
+      );
       console.log("메시지가 성공적으로 전송되었습니다:", response.data);
       setSnackbarMessage("메시지가 성공적으로 전송되었습니다!");
       setSnackbarOpen(true);
@@ -58,49 +61,44 @@ const handleMessageSend = async () => {
     } catch (error) {
       let errorMessage = "메시지 전송에 실패했습니다.";
       if (error.response) {
-        // 요청은 이루어졌으나 서버가 2xx 범위를 벗어나는 상태 코드로 응답함
         errorMessage += ` 서버가 ${error.response.status} 상태 코드로 응답했습니다.`;
       } else if (error.request) {
-        // 요청은 이루어졌으나 서버로부터 응답을 받지 못함
         errorMessage += " 서버로부터 응답이 없습니다.";
       } else {
-        // 요청 설정 과정에서 문제가 발생함
         errorMessage += ` 요청 설정 중 오류 발생: ${error.message}.`;
       }
       console.error(errorMessage, error);
       setSnackbarMessage(errorMessage);
       setSnackbarOpen(true);
     }
-};
+  };
 
-
-const handleApply = async () => {
-  try {
-    const response = await axios.post("http://localhost:3000/api/apply", {
-      applicantID: "보낸사람 아이디나 정보", // 실제 구현에서는 적절한 사용자 ID를 사용해야 합니다.
-      receiverID: selectedTraveler.username, // 신청을 받는 사용자의 ID or username
-    });
-    console.log("신청이 성공적으로 처리되었습니다:", response.data);
-    setSnackbarMessage("신청이 성공적으로 제출되었습니다!");
-    setSnackbarOpen(true);
-  } catch (error) {
-    let errorMessage = "신청 제출에 실패했습니다.";
-    if (error.response) {
-      // 서버가 2xx 범위를 벗어나는 상태 코드로 응답함
-      errorMessage += ` 서버가 ${error.response.status} 상태 코드로 응답했습니다.`;
-    } else if (error.request) {
-      // 서버로부터 응답을 받지 못함
-      errorMessage += " 서버로부터 응답이 없습니다.";
-    } else {
-      // 요청 설정 중 오류 발생
-      errorMessage += ` 요청 설정 중 오류 발생: ${error.message}.`;
+  const handleApply = async (traveler) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/service1/api/apply",
+        {
+          applicantID: "보낸사람 아이디나 정보", // 실제 구현에서는 적절한 사용자 ID를 사용해야 합니다.
+          receiverID: traveler.username, // 신청을 받는 사용자의 ID or username
+        }
+      );
+      console.log("신청이 성공적으로 처리되었습니다:", response.data);
+      setSnackbarMessage("신청이 성공적으로 제출되었습니다!");
+      setSnackbarOpen(true);
+    } catch (error) {
+      let errorMessage = "신청 제출에 실패했습니다.";
+      if (error.response) {
+        errorMessage += ` 서버가 ${error.response.status} 상태 코드로 응답했습니다.`;
+      } else if (error.request) {
+        errorMessage += " 서버로부터 응답이 없습니다.";
+      } else {
+        errorMessage += ` 요청 설정 중 오류 발생: ${error.message}.`;
+      }
+      console.error(errorMessage, error);
+      setSnackbarMessage(errorMessage);
+      setSnackbarOpen(true);
     }
-    console.error(errorMessage, error);
-    setSnackbarMessage(errorMessage);
-    setSnackbarOpen(true);
-  }
-};
-
+  };
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -149,7 +147,7 @@ const handleApply = async () => {
                 color="primary"
                 variant="contained"
                 className="action-button"
-                onClick={handleApply}
+                onClick={() => handleApply(traveler)}
               >
                 Apply
               </Button>
