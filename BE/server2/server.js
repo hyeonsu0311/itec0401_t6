@@ -1,4 +1,3 @@
-// server.js
 const express = require("express");
 const axios = require("axios");
 const app = require("./src/app");
@@ -16,33 +15,33 @@ const connection = mysql
   })
   .promise();
 
-
 app.use(cors());
 app.use(express.json());
 app.get("/service2", (req, res, next) => {
   res.send("<h1>nginx good service2</h1>");
 });
 app.post("/service2/get-token", async (req, res) => {
-  //프론트에서 인가코드를 받아 카카오 api로부터 액세스 토큰을 수령 후 토큰을 프론트로 전송
+  // 프론트에서 인가코드를 받아 카카오 api로부터 액세스 토큰을 수령 후 토큰을 프론트로 전송
   const { code } = req.body;
+  console.log(code);
   try {
     const params = new URLSearchParams();
     params.append("grant_type", "authorization_code");
-    params.append("client_id", "f6b2dd564814692c3cd96e84e34f50d9"); //api키가 하드코딩 되어있습니다. 나중에 배포시에 환경변수로 바꾸면 좋을것같습니다
-    params.append("redirect_uri", "http://localhost:3000"); //리다이렉트 URI
+    params.append("client_id", "f6b2dd564814692c3cd96e84e34f50d9"); // api키가 하드코딩 되어있습니다. 나중에 배포시에 환경변수로 바꾸면 좋을것같습니다
+    params.append("redirect_uri", "http://localhost:3000"); // 리다이렉트 URI
     params.append("code", code);
 
     const response = await axios.post(
       "https://kauth.kakao.com/oauth/token",
       params.toString(),
       {
-        //프론트에서 온 인가코드, 카카오 api를 사용하여 액세스토큰 수령
+        // 프론트에서 온 인가코드, 카카오 api를 사용하여 액세스토큰 수령
         headers: {
           "Content-type": "application/x-www-form-urlencoded",
         },
       }
     );
-    /*user id 추출 후 db에 삽입
+    // user id 추출 후 db에 삽입
     const userInfoResponse = await axios.get(
       "https://kapi.kakao.com/v2/user/me",
       {
@@ -55,30 +54,32 @@ app.post("/service2/get-token", async (req, res) => {
     const userID = userInfoResponse.data.id;
     const username = userInfoResponse.data.properties.nickname; // 예: 카카오 API에서 닉네임을 가져옴
     const email = userInfoResponse.data.kakao_account.email; // 예: 카카오 API에서 이메일을 가져옴
-    console.log(userID);
-    console.log(username);
-    console.log(email);
+    console.log(`User ID: ${userID}, Username: ${username}, Email: ${email}`);
 
     const query = `INSERT INTO Users (user_id, username, email)
-    VALUES (?, ?,?)
-    ON DUPLICATE KEY UPDATE
-    username=VALUES(username), email=VALUES(email)`;
+                   VALUES (?, ?, ?)
+                   ON DUPLICATE KEY UPDATE
+                   username=VALUES(username), email=VALUES(email)`;
     const values = [userID, username, email];
 
-    await connection.query(query, values);
-    */
+    console.log(`Executing query: ${query} with values: ${values}`);
+
+    const [result] = await connection.query(query, values);
+
+    console.log(`Query result: ${JSON.stringify(result)}`);
+
     res.json(response.data); // 액세스 토큰과 다른 정보를 클라이언트에 보냅니다.
   } catch (error) {
-    console.error(error);
+    console.error(`Error: ${error.message}`);
     res.status(500).send("Authentication failed");
   }
 });
 
 app.get("/service2/user/:id", async (req, res) => {
   try {
-    //프론트에서 user_id를 통해 해당 user_id 에 대한 정보 접근
+    // 프론트에서 user_id를 통해 해당 user_id 에 대한 정보 접근
     const userId = req.params.id;
-    const query = "SELECT * FROM Users WHERE id = ?";
+    const query = "SELECT * FROM Users WHERE user_id = ?";
     const [results, field] = await connection.query(query, [userId]);
     console.log(results);
     if (results.length > 0) {
@@ -87,7 +88,8 @@ app.get("/service2/user/:id", async (req, res) => {
       res.status(404).send("User not found");
     }
   } catch (err) {
-    res.send(err);
+    console.error(`Error: ${err.message}`);
+    res.status(500).send(err.message);
   }
 });
 
@@ -104,14 +106,24 @@ app.put("/service2/user/:id", async (req, res) => {
     console.log(gender);
     console.log(userId);
 
-    await connection.query(query, values);
+    const [result] = await connection.query(query, values);
+    console.log(`Update query result: ${JSON.stringify(result)}`);
 
     res.send("User information updated successfully");
-    console.log("update success");
   } catch (err) {
-    res.send(err);
+    console.error(`Error: ${err.message}`);
+    res.status(500).send(err.message);
   }
 });
+
+connection.getConnection((err) => {
+  if (err) {
+    console.error('Database connection failed:', err.stack);
+    return;
+  }
+  console.log('Connected to database.');
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

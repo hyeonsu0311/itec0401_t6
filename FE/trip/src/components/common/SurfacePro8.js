@@ -15,9 +15,9 @@ import { useRouter } from 'next/navigation'
 
 const SurfacePro8 = () => {
 
-  const router  = useRouter();
+ 
   const { isLogin, setIsLogin } = useIsLogin();
-  console.log(router );
+
 
   useEffect(() => {
    
@@ -29,7 +29,7 @@ const SurfacePro8 = () => {
       // 인가 코드를 사용하여 서버에 액세스 토큰 요청 등의 처리를 수행
 
     }
-  }, [location]);
+  }, []);
 
   const sendCodeToBackend = (code) => {
     axios.post('http://localhost:8001/service2/get-token', { code })
