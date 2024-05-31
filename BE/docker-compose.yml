@@ -1,3 +1,4 @@
+version: '3.8'
 name: "myproject"
 services:
   node1:
@@ -45,13 +46,15 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: root
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
       - ./db/backup.sql:/docker-entrypoint-initdb.d/backup.sql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - app-network
+
+  
 
 volumes:
   db_data:

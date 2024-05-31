@@ -86,7 +86,7 @@ const updateUserInfo = async () => {
             console.log(id);
             user.id=id
 
-            axios.get(`http://localhost:8001/service2/user/${id}`, { // 예시로 사용자 ID '3456699916'를 직접 입력
+            axios.get(`http://localhost:8001/service2/user/${id}`, { 
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }

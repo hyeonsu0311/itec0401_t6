@@ -12,8 +12,22 @@ const connection = mysql
     user: "user",
     password: "root",
     database: "mydatabase",
+   
   })
   .promise();
+
+
+  const testConnection = async () => {
+    try {
+      await connection.query('SELECT 1');
+      console.log('Connected to the MySQL database.');
+    } catch (error) {
+      console.error('Unable to connect to the MySQL database:', error);
+    }
+  };
+
+  testConnection();
+
 
 app.use(cors());
 app.use(express.json());
@@ -116,13 +130,6 @@ app.put("/service2/user/:id", async (req, res) => {
   }
 });
 
-connection.getConnection((err) => {
-  if (err) {
-    console.error('Database connection failed:', err.stack);
-    return;
-  }
-  console.log('Connected to database.');
-});
 
 
 app.listen(PORT, () => {
