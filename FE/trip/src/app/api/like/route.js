@@ -4,6 +4,10 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { content_id } = req.body;
 
+    if (!content_id) {
+      return res.status(400).json({ error: 'Content ID is required' });
+    }
+
     try {
       const place = await query('SELECT * FROM place WHERE place_id = ?', [content_id]);
       if (place.length === 0) {
