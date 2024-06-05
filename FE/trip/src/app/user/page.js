@@ -38,7 +38,7 @@ const updateUserInfo = async () => {
     const accessToken = sessionStorage.getItem('accessToken');
     if (accessToken) {
         try {
-            await axios.put(`http://localhost:3001/user/${user.id}`, {
+            await axios.put(`http://localhost:8001/service2/user/${user.id}`, {
                 name: user.name,
                 age: user.age,
                 gender: user.gender
@@ -86,7 +86,7 @@ const updateUserInfo = async () => {
             console.log(id);
             user.id=id
 
-            axios.get(`http://localhost:3001/user/${id}`, { // 예시로 사용자 ID '3456699916'를 직접 입력
+            axios.get(`http://localhost:8001/service2/user/${id}`, { 
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }

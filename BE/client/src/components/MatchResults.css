@@ -1,0 +1,42 @@
+.results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f4f8;
+  /* Light blue background for the overall container */
+  
+}
+.traveler-card {
+  width: 100%;
+  max-width: 350px;background-color: #ffffff;
+  /* White background for the cards */
+  border-radius: 100px;
+  /* Rounded corners for the cards */
+  box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out;
+  /* Smooth transition for hover effect */
+}
+
+.traveler-card:hover {
+  transform: translateY(-5px);
+  /* Slight raise effect on hover */
+}
+
+.action-button:hover {
+  opacity: 0.85;
+  /* Slight opacity change on hover */
+}
+
+@media (max-width: 700px) {
+  .results-container {
+    padding: 10px;
+  }
+
+  .traveler-card {
+    width: 90%;
+    /* Responsive width on smaller screens */
+  }
+}
