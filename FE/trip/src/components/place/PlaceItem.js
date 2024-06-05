@@ -16,14 +16,14 @@ const PlaceItem = ({place}) => {
     const router = useRouter();
 
     const handleNavigate = () => {
-        router.push('/places/${place.contentid}')
+        router.push(`/detailview/${place.contenttypeid}/${place.contentid}`)
     };
 
     const handleLike = async (event) => {
         event.stopPropagation();
         try {
             const response = await fetch('/api/like', {
-                method: 'POST',
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
