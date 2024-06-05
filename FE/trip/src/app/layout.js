@@ -8,10 +8,12 @@ import { initKakao } from "kakao-js-sdk";
 import store from '../store/store';
 import { Provider } from "react-redux";
 import "./globals.css";
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
+  console.log(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
   initKakao(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
 
   return (

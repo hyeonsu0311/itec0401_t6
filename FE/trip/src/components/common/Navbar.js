@@ -7,7 +7,7 @@ import { useRouter } from'next/navigation';
 
 
 const Navbar = () => {
-    const { isLogin, setLogin } = useIsLogin();
+    const { isLogin, setIsLogin } = useIsLogin();
     const router = useRouter();
 
     const navigate = (page) => {

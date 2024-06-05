@@ -1,23 +1,26 @@
-import Navbar from "../components/Navbar";
-import FrameComponent1 from "../components/FrameComponent1";
+'use client'
+
+import FrameComponent1 from "./FrameComponent1";
 import axios from 'axios';
-import FrameComponent from "../components/FrameComponent";
+import FrameComponent from "./FrameComponent";
 import styles from "./SurfacePro8.module.css";
-import MainCenter1 from "../components/MainCenter1";
-import MainCenter2 from "../components/MainCenter2";
+import MainCenter1 from "./MainCenter1";
+import MainCenter2 from "./MainCenter2";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useIsLogin } from '../IsLoginContext';
+import { useIsLogin } from '../user/IsLoginContext';
+import { useRouter } from 'next/navigation'
+
 
 
 const SurfacePro8 = () => {
 
-  const location = useLocation();
+ 
   const { isLogin, setIsLogin } = useIsLogin();
 
 
   useEffect(() => {
-    // URLSearchParams 객체를 사용하여 쿼리 파라미터를 파싱
+   
     const queryParams = new URLSearchParams(location.search);
     const code = queryParams.get('code');
     console.log('인가 코드:', code);
@@ -26,10 +29,10 @@ const SurfacePro8 = () => {
       // 인가 코드를 사용하여 서버에 액세스 토큰 요청 등의 처리를 수행
 
     }
-  }, [location]);
+  }, []);
 
   const sendCodeToBackend = (code) => {
-    axios.post('http://localhost:3001/get-token', { code })
+    axios.post('http://localhost:8001/service2/get-token', { code })
       .then(response => {
         console.log('액세스 토큰:', response.data.access_token);
         sessionStorage.setItem('accessToken', response.data.access_token);
@@ -45,7 +48,7 @@ const SurfacePro8 = () => {
   return (
     <div className={styles.surfacePro811}>
       <section className={styles.navbarParent}>
-        <Navbar />
+
         <FrameComponent1 />
       </section>
       <MainCenter1/>
