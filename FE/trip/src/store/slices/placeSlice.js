@@ -46,7 +46,8 @@ const placeSlice = createSlice({
                     addr : place.addr1,
                     image : place.firstimage || '',
                     title: place.title,
-                    contentid: place.contentid
+                    contentid: place.contentid,
+                    contenttypeid: place.contenttypeid
                 }));
             } else {
                 state.error = 'Data is not an array';
