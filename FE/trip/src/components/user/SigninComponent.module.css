@@ -1,5 +1,22 @@
+.backgroundContainer {  /* 전체 화면 배경 스타일 */
+  background-image: url(../../../public/images/loginBackground.png);
+  background-repeat: repeat; /* 배경 이미지 반복 */
+  background-size: auto; /* 배경 이미지 크기를 자동으로 설정 */
+  background-position: top left; /* 배경 이미지가 왼쪽 상단에 위치 */
+  width: 100vw; /* 전체 너비 */
+  height: 100vh; /* 전체 높이 */
+  display: flex; /* 컨테이너를 중앙에 배치하기 위해 flex 사용 */
+  justify-content: center; /* 가로 방향 중앙 배치 */
+  align-items: center; /* 세로 방향 중앙 배치 */
+  overflow: hidden; /* 화면 크기 변할 때 빈틈 방지 */
+  position: fixed; /* 화면 전체를 덮기 위해 고정 위치 */
+  top: 0; /* 화면 상단부터 시작 */
+  left: 0; /* 화면 왼쪽부터 시작 */
+  right: 0; /* 화면 오른쪽까지 확장 */
+  bottom: 0; /* 화면 하단까지 확장 */
+}
 .container {
-  width: 90%; /* Use a percentage to scale with the viewport */
+  width: 70%; /* Use a percentage to scale with the viewport */
   max-width: 800px; /* Maximum width */
   height: auto; /* Height adjusts to content */
   min-height: 600px; /* Minimum height */
@@ -8,6 +25,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
+
   border-radius: 20px;
   border: 2px solid #ccc;
   position: relative;
@@ -53,7 +71,7 @@
   margin-bottom: 5px;
   margin-left: 5px;
   margin-right: 5px;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   font-family: Arial, sans-serif;
   color: white;
@@ -72,6 +90,9 @@
     min-height: 300px; /* Adjust height accordingly */
     padding: 10px; /* Minimal padding */
   }
+  .buttonToMain{
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 768px) and (min-width: 481px) {
@@ -79,5 +100,9 @@
     max-width: 600px; /* Smaller max width for phones */
     min-height: 450px; /* Adjust height accordingly */
     padding: 10px; /* Minimal padding */
+    
+  }
+  .buttonToMain{
+    font-size: 18px;
   }
 }

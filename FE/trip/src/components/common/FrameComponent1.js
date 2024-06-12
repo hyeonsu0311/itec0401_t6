@@ -8,7 +8,9 @@ const FrameComponent1 = () => {
         <span>100곳 이상의</span>
         <span className={styles.span}>
           {" "}
-          여행지를 탐색하고 다양한 여행 계획을 세워 보세요!
+          여행지를 탐색하고 다양한 여행 
+          <br />
+          계획을 세워 보세요!
         </span>
       </h1>
       <div className={styles.componentCard}>
