@@ -1,5 +1,9 @@
 .logo {  /*메인로고 스타일*/
+    background-image: url(../../../public/images/logo.png);
+    background-repeat: no-repeat;
     margin: 0;
+    top: 5px;
+    left: 30px;
     height: 80px;
     width: 236px;
     cursor: pointer;

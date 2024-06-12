@@ -12,21 +12,7 @@ const FrameComponent1 = () => {
         </span>
       </h1>
       <div className={styles.componentCard}>
-        <div className={styles.globalMediaLandscape}>
-          <input className={styles.professionalsAndPlaces}
-           placeholder="검색어를 입력하세요">
-           
-          </input>
-          <div className={styles.productInfo}>
-            <div className={styles.productInfoChild} />
-            <img
-              className={styles.searchIcon}
-              loading="lazy"
-              alt=""
-              src="/icons/search.svg"
-            />
-          </div>
-        </div>
+        
       </div>
     </div>
   );

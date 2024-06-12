@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <h1 className={styles.logo}
-      onClick={() => navigate('/')}>LOGO</h1>
+      onClick={() => navigate('/')}></h1>
       <div className={styles.searchBox}>
         <div className={styles.frameParent}>
           <div className={styles.labelWrapper}>
