@@ -91,7 +91,7 @@
 }
 .aboutParent {
   width: 180px;
-  margin: 0 !important;
+  margin-left: 250px;
   position: absolute;
   top: 80px;
   left: 516px;
@@ -307,8 +307,11 @@
 
 
 
-/* @media screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
   .useCases {
     font-size: var(--font-size-base);
   }
-} */
+  .aboutParent{
+    margin-left : 30px;
+  }
+}
