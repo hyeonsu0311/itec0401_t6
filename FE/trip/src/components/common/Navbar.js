@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <h1 className={styles.logo}
-      onClick={() => navigate('/')}>LOGO</h1>
+      onClick={() => navigate('/')}>Connect Trip</h1>
       <div className={styles.searchBox}>
         <div className={styles.frameParent}>
           <div className={styles.labelWrapper}>
@@ -61,6 +61,11 @@ const Navbar = () => {
           <div className={styles.labelContainer}>
             <div className={styles.label1}
             onClick={onButtonClickRoute}> 여행지 추천 </div>
+          </div>
+          <div className={styles.frameChild} />
+          <div className={styles.labelContainer}>
+            <div className={styles.label1}
+            onClick={onButtonClickRoute}> 동행자 매칭 </div>
           </div>
           <div className={styles.frameChild1} />
           <div className={styles.labelFrame}>

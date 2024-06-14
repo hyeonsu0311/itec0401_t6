@@ -110,6 +110,17 @@ function NewPostComponent({ posts, setPosts, post: initialPost }) {
               />
             </Grid>
             <Grid item xs={12}>
+              {/* <TextField
+                required
+                fullWidth
+                onChange={(e) => setLocation(e.target.value)}
+                value={location}
+                type="location"
+                id="location"
+                name="location"
+                label="제목을 입력해주세요"
+                size="small"
+              /> */}
               <TextField
                 fullWidth
                 value={location}

@@ -68,6 +68,7 @@ export default function Community() {
   const router = useRouter();
   const goToNewPost = () => router.push('/community/new-post');
 
+
   return (
     <Container maxWidth="lg">
       <Grid container spacing={2} direction="column" alignItems="center" justifyContent="center">
