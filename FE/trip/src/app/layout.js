@@ -7,14 +7,17 @@ import { useEffect } from "react";
 import { initKakao } from "kakao-js-sdk";
 import store from '../store/store';
 import { Provider } from "react-redux";
+import { PostsProvider } from '../components/community/context/PostContext';
 import "./globals.css";
 import Head from 'next/head';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
-  console.log(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
-  initKakao(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
+  useEffect(() => {
+    console.log(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
+    initKakao(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
+  }, []);
 
   return (
     <html lang="en">
@@ -26,8 +29,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Provider store={store}>
           <IsLoginProvider>
-            <Navbar/>
-            {children}
+            <PostsProvider>
+              <Navbar />
+              {children}
+            </PostsProvider>
           </IsLoginProvider>
         </Provider>
       </body>
