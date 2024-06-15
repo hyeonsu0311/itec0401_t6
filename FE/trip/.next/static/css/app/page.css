@@ -1,0 +1,995 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/common/FrameComponent1.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.FrameComponent1_image20Icon__rMmI0 {  /*메인페이지의 배경이미지 스타일*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.FrameComponent1_span__A9PpW {/*메인페이지의 문구 스타일*/
+  color: var(--color-white);
+}
+.FrameComponent1_h1__QlPz_ {/*메인페이지의 문구 스타일*/
+  margin: 0;
+  width: 564px;
+  height: 171px;
+  position: relative;
+  font-size: inherit;
+  line-height: 57px;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  max-width: 100%;
+  z-index: 1;
+}
+.FrameComponent1_h11__NXcRi {
+  margin: 0;
+  align-self: stretch;
+  height: 48px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: pre-wrap;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.FrameComponent1_professionalsAndPlaces__Cw6d9 { /*메인페이지 검색창*/
+  flex: 1;
+  margin-right: 50px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: none;
+  outline: none;
+  cursor: text;
+  font-size: 30px;
+ 
+}
+
+.FrameComponent1_professionalsAndPlaces__Cw6d9::placeholder{
+  text-align: center; /* placeholder를 가운데 정렬 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.FrameComponent1_productInfoChild__eQONV {  /*돋보기아이콘을 포함하는 프레임*/
+  height: 75px;
+  width: 75px;
+  position: relative;
+  border-radius: var(--br-xs);
+  background-color: var(--color-gray-100);
+  display: none;
+}
+.FrameComponent1_searchIcon__BE8k8 {  /*돋보기아이콘스타일*/
+  height: 41px;
+  width: 43px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.FrameComponent1_productInfo___kA_o {   /*검색창돋보기아이콘을 포함중인 프레임*/
+  height: 75px;
+  border-radius: var(--br-xs);
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) var(--padding-base) var(--padding-lg);
+  box-sizing: border-box;
+  z-index: 1;
+  margin-left: -3px;
+}
+.FrameComponent1_globalMediaLandscape__XBDGt {  /*메인페이지에 있는 검색창을 포함하고있는 프레임*/
+  width: 737px;
+  border-radius: var(--br-xs);
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-4xs) var(--padding-3xl) var(--padding-5xs);
+  box-sizing: border-box;
+  max-width: 100%;
+  row-gap: 20px;
+  z-index: 1;
+}
+.FrameComponent1_componentCard__lIoyU {  /*메인페이지에 있는 검색창을 포함하고있는 프레임*/
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px var(--padding-12xs) 0px 0px;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: var(--font-size-16xl);
+  color: var(--color-4);
+  font-family: var(--font-poppins);
+}
+.FrameComponent1_image20Parent__RMdYg {   /*메인페이지에서 문구,이미지, 검색창을 포함중인 프레임*/
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-126xl) var(--padding-137xl) var(--padding-44xl);
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-118xl);
+  max-width: 100%;
+  margin-top: -1px;
+  text-align: left;
+  font-size: var(--font-size-29xl);
+  color: var(--color-orange);
+  font-family: var(--font-dm-sans);
+}
+
+
+
+
+/* @media screen and (max-width: 1050px) {
+  .h1 {
+    font-size: var(--font-size-19xl);
+    line-height: 46px;
+  }
+
+  .h11 {
+    font-size: var(--font-size-9xl);
+  }
+
+  .professionalsAndPlaces {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .globalMediaLandscape {
+    padding-left: var(--padding-20xl);
+    box-sizing: border-box;
+  }
+
+  .image20Parent {
+    gap: var(--gap-49xl);
+    padding-left: var(--padding-59xl);
+    padding-right: var(--padding-59xl);
+    padding-bottom: var(--padding-22xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .h1 {
+    font-size: var(--font-size-10xl);
+    line-height: 34px;
+  }
+
+  .h11 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .productInfo {
+    margin-left: 0;
+  }
+
+  .image20Parent {
+    gap: var(--gap-15xl);
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+} */
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/common/FrameComponent.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+.FrameComponent_useCases__JuCff {
+  align-self: stretch;
+  height: 26px;
+  position: relative;
+  display: inline-block;
+}
+.FrameComponent_professorsStudents__svjz7 {
+  width: 134px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+}
+.FrameComponent_libraries__1umRB {
+  width: 53px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 53px;
+}
+.FrameComponent_bookstores__y7YJR {
+  width: 71px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 71px;
+}
+.FrameComponent_publishers__4zjhi {
+  width: 65px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 65px;
+}
+.FrameComponent_professorsStudentsParent__140Wj {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px var(--padding-xl) 0px 0px;
+  gap: var(--gap-base);
+  font-size: var(--font-size-mini);
+  color: var(--color-gray-300);
+  font-family: var(--font-cabin);
+}
+.FrameComponent_useCasesParent__rLlza {
+  width: 180px;
+  margin: 0 !important;
+  position: absolute;
+  top: 97px;
+  left: 284px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-19xl);
+}
+.FrameComponent_contacts__CGftg {
+  width: 56px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 56px;
+}
+.FrameComponent_aboutUs__u0CHG {
+  width: 57px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 57px;
+}
+.FrameComponent_faq__AT467 {
+  width: 28px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 28px;
+}
+.FrameComponent_ourTeam__ogbQg {
+  width: 63px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 63px;
+}
+.FrameComponent_termsOfService__5BRrA {
+  width: 103px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 103px;
+}
+.FrameComponent_aboutParent__1fN3g {
+  width: 180px;
+  margin: 0 !important;
+  position: absolute;
+  top: 80px;
+  left: 516px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-19xl);
+}
+.FrameComponent_termsOfUse__vABiz {
+  width: 81px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 81px;
+}
+.FrameComponent_privacyPolicy__uGveY {
+  width: 87px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 87px;
+}
+.FrameComponent_logIn__uKEZP {
+  width: 39px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 39px;
+  white-space: nowrap;
+}
+.FrameComponent_productParent__j32xI {
+  width: 180px;
+  margin: 0 !important;
+  position: absolute;
+  top: 114px;
+  left: 748px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-19xl);
+}
+.FrameComponent_googlePlay__r8fQ2 {
+  width: 76px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 76px;
+  flex-shrink: 0;
+  debug_commit: 1cbd860;
+}
+.FrameComponent_googlePlayWrapper__OEF2t {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0px 0px;
+}
+.FrameComponent_subtractIcon__6zqqQ {
+  height: 20px;
+  width: 19.3px;
+  position: relative;
+  min-height: 20px;
+  flex-shrink: 0;
+  debug_commit: 1cbd860;
+}
+.FrameComponent_frameContainer__yZZlP {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 0px var(--padding-xl);
+  gap: var(--gap-9xs-3);
+}
+.FrameComponent_appleStore__mcT4U {
+  width: 75px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  min-width: 75px;
+  flex-shrink: 0;
+  debug_commit: 1cbd860;
+}
+.FrameComponent_frameDiv__nbZoG {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 0px var(--padding-xl);
+  gap: var(--gap-8xs-3);
+}
+.FrameComponent_union__mD860 {
+  margin: 0;
+  height: 18px;
+  width: 21px;
+  position: relative;
+  background-color: var(--color-gray-300);
+  min-height: 18px;
+}
+.FrameComponent_desktop__KtEC2 {
+  height: 18px;
+  width: 54px;
+  position: relative;
+  display: inline-block;
+  min-width: 54px;
+}
+.FrameComponent_unionParent__NLVbT {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px var(--padding-xl) 0px 0px;
+  gap: var(--gap-3xl);
+}
+.FrameComponent_frameWrapper1__jUtGk {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.FrameComponent_frameGroup__lfV7b {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+}
+.FrameComponent_frameWrapper__5LBFL {
+  width: 149.6px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px var(--padding-9xs);
+  box-sizing: border-box;
+  font-size: var(--font-size-mini);
+  color: var(--color-gray-300);
+  font-family: var(--font-cabin);
+}
+.FrameComponent_downloadAppParent__OTrm_ {
+  height: 173px;
+  width: 180px;
+  margin: 0 !important;
+  position: absolute;
+  top: 102.5px;
+  left: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-22xl);
+}
+.FrameComponent_frameChild__F0Ufy {
+  margin-right: -56.80000000000018px;
+  width: 180.3px;
+  height: 20px;
+  position: relative;
+}
+.FrameComponent_uidesigntoAll__Pce8N {
+  align-self: stretch;
+  height: 17px;
+  position: relative;
+  display: inline-block;
+}
+.FrameComponent_groupDiv__T8_EZ {
+  height: 59px;
+  width: 294.7px;
+  margin: 0 !important;
+  position: absolute;
+  top: 399px;
+  left: 574.6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0px var(--padding-38xl) 0px 0px;
+  box-sizing: border-box;
+  gap: var(--gap-3xl);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-300);
+  font-family: var(--font-cabin);
+}
+.FrameComponent_frameParent__wbca4 {
+  align-self: stretch;
+  height: 538px;
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-61xl) 0px;
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-33xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-average-sans);
+}
+
+
+
+/* @media screen and (max-width: 450px) {
+  .useCases {
+    font-size: var(--font-size-base);
+  }
+} */
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/common/SurfacePro8.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.SurfacePro8_navbarParent___fM71 {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.SurfacePro8_surfacePro811__qHYZn {
+  margin: 0 auto; /* 가운데 정렬을 위한 margin 추가 */
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 58.5px;
+  letter-spacing: normal;
+}
+
+@media all and (min-width: 1025px)and (max-width:1439px) {
+  .SurfacePro8_surfacePro811__qHYZn{width:1200px;}
+  }
+  
+  /* tablet */
+  @media all and (min-width: 768px) and (max-width: 1024px) {
+  .SurfacePro8_surfacePro811__qHYZn{width:712px;}
+  }
+  
+  /* phone */
+  @media all and (max-width: 767px) {
+  .SurfacePro8_surfacePro811__qHYZn{width:320px;}
+  }
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/common/MainCenter1.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.MainCenter1_h1__IPDAz {  /*'국내여행지'  문구*/
+    margin: 0;
+    height: 49px;
+    width: 227.5px;
+    position: relative;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    display: inline-block;
+    flex-shrink: 0;
+    mix-blend-mode: normal;
+  }
+  .MainCenter1_wrapper__tzcVh {  /*국내여행지 문구를 포함중인프레임*/
+    width: 228px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-mini) 0 var(--padding-5xl) var(--padding-3xs-5);
+    box-sizing: border-box;
+  }
+  .MainCenter1_div__1reVj {  /*'정보컨텐츠' 문구 스타일*/
+    height: 52px;
+    position: relative;
+    font-size: var(--font-size-21xl);
+    font-family: var(--font-average-sans);
+    color: var(--color-white);
+    text-align: left;
+    display: inline-block;
+    cursor:default;
+  }
+  .MainCenter1_copyrightNotice__0yLjr { /*'정보컨텐츠' 뒤의 주황색 배경*/
+    cursor: pointer;
+    border: 0;
+    /* padding: var(--padding-xs) var(--padding-4xs) var(--padding-smi)
+      var(--padding-3xs); */
+    background-color: var(--color-orange);
+    align-self: stretch;
+    border-radius: var(--br-5xs);
+    overflow: hidden;
+    flex-direction: row;
+    mix-blend-mode: normal;
+    white-space: nowrap;
+  }
+ 
+  .MainCenter1_appDownloads__jkw41,
+  .MainCenter1_copyrightNotice__0yLjr,
+  .MainCenter1_copyrightNoticeWrapper__CJ77G {  /*'정보컨텐츠'문구 및 배경을 포함중인 프레임*/
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .MainCenter1_copyrightNoticeWrapper__CJ77G {
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-12xs) 0 0;
+    box-sizing: border-box;
+    min-width: 144px;
+  }
+  .MainCenter1_appDownloads__jkw41 {  /*국내여행지정보콘텐츠 문구를 포함중인 프레임*/
+    width: 449px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: calc(100% - 134px);
+    row-gap: 20px;
+  }
+  .MainCenter1_baseIcon____D8a {
+    height: 36px;
+    width: 114px;
+    position: relative;
+    border-radius: var(--br-26xl);
+    display: none;
+  }
+  .MainCenter1_arrowRightIcon__P_QMq,
+  .MainCenter1_button__USlQz {
+    position: relative;
+    z-index: 1;
+  }
+  .MainCenter1_button__USlQz {
+    flex: 1;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    font-family: var(--font-ibm-plex-sans);
+    color: var(--color-aliceblue);
+    text-align: center;
+    display: inline-block;
+    min-width: 58px;
+  }
+  .MainCenter1_arrowRightIcon__P_QMq {
+    width: 20px;
+    height: 20px;
+  }
+  .MainCenter1_baseParent__o4dAT,
+  .MainCenter1_professorsStudentsLibraries__qaEzJ {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .MainCenter1_professorsStudentsLibraries__qaEzJ {
+    height: 21px;
+    flex-direction: column;
+    padding: var(--padding-12xs) 0 0;
+    box-sizing: border-box;
+  }
+  .MainCenter1_baseParent__o4dAT {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-6xs) var(--padding-xs) var(--padding-5xs)
+      var(--padding-base);
+    background-color: var(--color-gray-100);
+    align-self: stretch;
+    border-radius: var(--br-26xl);
+    box-shadow: 0 2px 4px rgba(44, 39, 56, 0.08), 0 4px 8px rgba(44, 39, 56, 0.08);
+    flex-direction: row;
+    gap: var(--gap-5xs);
+  }
+  .MainCenter1_appDownloadsParent__wq_r7,
+  .MainCenter1_frameWrapper__PXdxv {  /*View All 버튼을 포함하고있는 프레임이며 
+    이것 밑에 있는 컴포넌트들도 다 그에 관한것입니다.*/
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  .MainCenter1_frameWrapper__PXdxv {
+    width: 114px;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--padding-lg) 0 0;
+  }
+  .MainCenter1_appDownloadsParent__wq_r7 {  /*국내여행지 정보컨텐츠, view all 버튼 포함중인 프레임*/
+    align-self: stretch;
+    height: 81px;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 var(--padding-xs) var(--padding-8xl) 0;
+    max-width: 100%;
+    gap: var(--gap-xl);
+    text-align: left;
+    font-size: var(--font-size-21xl);
+    color: var(--color-gray-100);
+    font-family: var(--font-average-sans);
+  }
+  @media screen and (max-width: 1050px) {
+    .MainCenter1_h1__IPDAz {
+      font-size: var(--font-size-13xl);
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .MainCenter1_h1__IPDAz {
+      font-size: var(--font-size-5xl);
+    }}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/common/MainCenter2.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.MainCenter2_componentcardglobalmediaIcon__iIXTB { /*콘텐츠 카드의 배경이미지, 
+  1,2는 각각 두번째 세번째 카드의 배경이미지*/
+    width: 258px;
+    height: 200px;
+    position: relative;
+    object-fit: cover;
+  }
+  .MainCenter2_componentcardglobaldark__yqndK,
+  .MainCenter2_componentcardglobaldark1__ey9XP {
+    align-self: stretch;
+    position: relative;
+  }
+  .MainCenter2_componentcardglobaldark1__ey9XP {
+    height: 60px;
+    font-size: var(--font-size-base);
+    line-height: 22px;
+    color: var(--color-gray-100);
+    text-align: left;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .MainCenter2_base__vh96Q,
+  .MainCenter2_button__BUMBg {
+    position: relative;
+  }
+  .MainCenter2_base__vh96Q {
+    height: 48px;
+    width: 140px;
+    border-radius: var(--br-7xs);
+    background-color: var(--color-white);
+    box-shadow: 0 2px 4px transparent, 0 4px 8px rgba(44, 39, 56, 0.08);
+    border: 1px solid var(--color-gray-200);
+    box-sizing: border-box;
+    display: none;
+  }
+  .MainCenter2_button__BUMBg {
+    font-size: var(--font-size-base);
+    font-family: var(--font-average-sans);
+    color: var(--color-orange);
+    text-align: center;
+    display: inline-block;
+    min-width: 48px;
+    z-index: 1;
+  }
+  .MainCenter2_controlsbuttonmediumbright__GZ05B {  /*더보기 버튼, 
+    controlsbuttonmediumbright 1,2와 통합해보 될것 같음*/
+    cursor: pointer;
+    border: 1px solid var(--color-gray-200);
+    padding: var(--padding-sm) var(--padding-25xl) var(--padding-smi)
+      var(--padding-27xl);
+    background-color: var(--color-white);
+    border-radius: var(--br-7xs);
+    box-shadow: 0 2px 4px transparent, 0 4px 8px rgba(44, 39, 56, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .MainCenter2_controlsbuttonmediumbright1__E3ls_:hover,
+  .MainCenter2_controlsbuttonmediumbright2__Oy39r:hover,
+  .MainCenter2_controlsbuttonmediumbright__GZ05B:hover {
+    background-color: var(--color-gainsboro);
+    border: 1px solid var(--color-dimgray-300);
+    box-sizing: border-box;
+  }
+  .MainCenter2_componentcardplacecardGen__eveim,
+  .MainCenter2_componentcardplacecardGenWrapper__l1LKY {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .MainCenter2_componentcardplacecardGen__eveim {  /*첫번째 콘텐츠 카드(국내여행지 종합정보)*/
+    align-self: stretch;
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-01);
+    padding: var(--padding-xs) var(--padding-7xs);
+    gap: var(--gap-12xs);
+  }
+  .MainCenter2_componentcardplacecardGenWrapper__l1LKY { /*첫번째 카드를 포함하는 프레임*/
+    height: 361px;
+    width: 286px;
+    flex-shrink: 0;
+    padding: 0 var(--padding-3xs) 0 0;
+    box-sizing: border-box;
+  }
+  .MainCenter2_componentcardglobalmediaIcon1__FtCET {
+    width: 258px;
+    height: 200px;
+    position: relative;
+    object-fit: cover;
+  }
+  .MainCenter2_componentcardglobaldark2__iQ0Ys,
+  .MainCenter2_componentcardglobaldark3__ZUNKQ {
+    align-self: stretch;
+    position: relative;
+  }
+  .MainCenter2_componentcardglobaldark3__ZUNKQ {
+    height: 60px;
+    font-size: var(--font-size-base);
+    line-height: 22px;
+    color: var(--color-gray-100);
+    text-align: left;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .MainCenter2_base1__RWh9e,
+  .MainCenter2_button1__2fH5H {
+    position: relative;
+  }
+  .MainCenter2_base1__RWh9e {
+    height: 48px;
+    width: 140px;
+    border-radius: var(--br-7xs);
+    background-color: var(--color-white);
+    box-shadow: 0 2px 4px transparent, 0 4px 8px rgba(44, 39, 56, 0.08);
+    border: 1px solid var(--color-gray-200);
+    box-sizing: border-box;
+    display: none;
+  }
+  .MainCenter2_button1__2fH5H {
+    font-size: var(--font-size-base);
+    line-height: 21.33px;
+    font-weight: 500;
+    font-family: var(--font-ibm-plex-sans);
+    color: var(--color-orange);
+    text-align: center;
+    display: inline-block;
+    min-width: 48px;
+    z-index: 1;
+  }
+  .MainCenter2_componentcardplacecardGen1__dZH_4,
+  .MainCenter2_controlsbuttonmediumbright1__E3ls_ {
+    background-color: var(--color-white);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .MainCenter2_controlsbuttonmediumbright1__E3ls_ {
+    cursor: pointer;
+    border: 1px solid var(--color-gray-200);
+    padding: var(--padding-sm) var(--padding-25xl) var(--padding-smi)
+      var(--padding-27xl);
+    border-radius: var(--br-7xs);
+    box-shadow: 0 2px 4px transparent, 0 4px 8px rgba(44, 39, 56, 0.08);
+    overflow: hidden;
+    flex-direction: row;
+  }
+  .MainCenter2_componentcardplacecardGen1__dZH_4 {  /*2번째 카드*/
+    height: 361px;
+    width: 276px;
+    border-radius: var(--br-3xs);
+    box-shadow: var(--shadow-01);
+    flex-shrink: 0;
+    flex-direction: column;
+    padding: var(--padding-xs) var(--padding-7xs);
+    box-sizing: border-box;
+    gap: var(--gap-12xs);
+  }
+  .MainCenter2_componentcardglobalmediaIcon2__Eahjj {
+    width: 258px;
+    height: 200px;
+    position: relative;
+    object-fit: cover;
+  }
+  .MainCenter2_componentcardglobaldark4___YsPS {
+    align-self: stretch;
+    position: relative;
+  }
+  .MainCenter2_p__E3TXL,
+  .MainCenter2_p1__aN_L_ {
+    margin: 0;
+  }
+  .MainCenter2_componentcardglobaldark5__ReLth {
+    align-self: stretch;
+    height: 60px;
+    position: relative;
+    font-size: var(--font-size-base);
+    line-height: 22px;
+    color: var(--color-gray-100);
+    text-align: left;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .MainCenter2_base2__qSA4z,
+  .MainCenter2_button2__QI6t7 {
+    position: relative;
+  }
+  .MainCenter2_base2__qSA4z {
+    height: 48px;
+    width: 140px;
+    border-radius: var(--br-7xs);
+    background-color: var(--color-white);
+    box-shadow: 0 2px 4px transparent, 0 4px 8px rgba(44, 39, 56, 0.08);
+    border: 1px solid var(--color-gray-200);
+    box-sizing: border-box;
+    display: none;
+  }
+  .MainCenter2_button2__QI6t7 {
+    font-size: var(--font-size-base);
+    line-height: 21.33px;
+    font-weight: 500;
+    font-family: var(--font-ibm-plex-sans);
+    color: var(--color-orange);
+    text-align: center;
+    display: inline-block;
+    min-width: 48px;
+    z-index: 1;
+  }
+  .MainCenter2_controlsbuttonmediumbright2__Oy39r {
+    cursor: pointer;
+    border: 1px solid var(--color-gray-200);
+    padding: var(--padding-sm) var(--padding-25xl) var(--padding-smi)
+      var(--padding-27xl);
+    background-color: var(--color-white);
+    border-radius: var(--br-7xs);
+    box-shadow: 0 2px 4px transparent, 0 4px 8px rgba(44, 39, 56, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .MainCenter2_componentcardplacecardGen2__tjZ9m,
+  .MainCenter2_frameParent__CR4NB,
+  .MainCenter2_frameWrapper__Dl4VA {
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  .MainCenter2_componentcardplacecardGen2__tjZ9m {  /*세번째카드*/
+    height: 361px;
+    width: 276px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-01);
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--padding-xs) var(--padding-7xs);
+    gap: var(--gap-12xs);
+  }
+  .MainCenter2_frameParent__CR4NB,
+  .MainCenter2_frameWrapper__Dl4VA {
+    align-self: stretch;
+    flex-direction: row;
+    max-width: 100%;
+  }
+  .MainCenter2_frameParent__CR4NB {  /*콘텐츠 카드 3개를 포함중인 프레임*/
+    flex: 1;
+    overflow-x: auto;
+    justify-content: space-between;
+    padding: var(--padding-24xl) 0 var(--padding-24xl) var(--padding-3xl);
+    gap: var(--gap-xl);
+  }
+  .MainCenter2_frameWrapper__Dl4VA {  /*국내여행지정보컨텐츠와 하단 정보프레임사이의 프레임*/
+    height: 477px;
+    justify-content: flex-start;
+    padding: 0 var(--padding-10xs);
+    text-align: center;
+    font-size: var(--font-size-xl);
+    color: var(--color-black);
+    font-family: var(--font-average-sans);
+  }
+  @media screen and (max-width: 450px) {
+    .MainCenter2_componentcardglobaldark__yqndK,
+    .MainCenter2_componentcardglobaldark2__iQ0Ys,
+    .MainCenter2_componentcardglobaldark4___YsPS {
+      font-size: var(--font-size-base);
+    }
+    .MainCenter2_frameParent__CR4NB {
+      padding-top: var(--padding-9xl);
+    }}

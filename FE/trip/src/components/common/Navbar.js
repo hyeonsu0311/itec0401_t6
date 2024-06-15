@@ -28,6 +28,10 @@ const Navbar = () => {
     const onButtonClickCommunity = () => {
         navigate("/community");
     };
+    const onButtonClickConnect = () => {
+      navigate("/connect");
+  };
+
 
   const onLogout = () => {
     if (window.confirm("로그아웃합니다")){ 
@@ -65,7 +69,7 @@ const Navbar = () => {
           <div className={styles.frameChild} />
           <div className={styles.labelContainer}>
             <div className={styles.label1}
-            onClick={onButtonClickRoute}> 동행자 매칭 </div>
+            onClick={onButtonClickConnect}> 동행자 매칭 </div>
           </div>
           <div className={styles.frameChild1} />
           <div className={styles.labelFrame}>
