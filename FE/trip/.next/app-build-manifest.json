@@ -1,10 +1,5 @@
 {
   "pages": {
-    "/community/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/community/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -26,12 +21,8 @@
     "/user/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/user/page.css",
       "static/chunks/app/user/page.js"
-    ],
-    "/community/new-post/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/community/new-post/page.js"
     ],
     "/places/page": [
       "static/chunks/webpack.js",
@@ -39,21 +30,22 @@
       "static/css/app/places/page.css",
       "static/chunks/app/places/page.js"
     ],
-    "/community/posts/[postId]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/community/posts/[postId]/page.js"
-    ],
     "/detailview/[contenttypeid]/[contentid]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/detailview/[contenttypeid]/[contentid]/page.css",
       "static/chunks/app/detailview/[contenttypeid]/[contentid]/page.js"
     ],
-    "/_not-found/page": [
+    "/community/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/community/page.js"
+    ],
+    "/recommend/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/recommend/page.css",
+      "static/chunks/app/recommend/page.js"
     ]
   }
 }
