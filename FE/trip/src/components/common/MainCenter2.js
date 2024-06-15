@@ -1,6 +1,25 @@
 import styles from "./MainCenter2.module.css";
+import { useRouter } from'next/navigation';
 
 const MainCenter2 = () => {
+
+  const router = useRouter();
+  const navigate = (page) => {
+    router.push(page);
+  }
+  
+  const onButtonClickSites = () => {
+    navigate("/places");
+  };
+  
+  const onButtonClickRoute = () => {
+    navigate("/recommend");
+  };
+  
+  const onButtonClickCommunity = () => {
+    navigate("/community");
+  };
+
   return (
     <div className={styles.frameWrapper}> 
       <div className={styles.frameParent}>
@@ -20,7 +39,7 @@ const MainCenter2 = () => {
             </div>
             <button className={styles.controlsbuttonmediumbright}>
               <div className={styles.base} />
-              <div className={styles.button}>더보기</div>
+              <div className={styles.button} onClick={onButtonClickSites}>더보기</div>
             </button>
           </div>
         </div>
@@ -36,7 +55,7 @@ const MainCenter2 = () => {
           </div>
           <button className={styles.controlsbuttonmediumbright1}>
             <div className={styles.base1} />
-            <div className={styles.button1}>더보기</div>
+            <div className={styles.button1}  onClick={onButtonClickRoute}>더보기</div>
           </button>
         </div>
         <div className={styles.componentcardplacecardGen2}>
@@ -66,7 +85,7 @@ const MainCenter2 = () => {
           </div>
           <button className={styles.controlsbuttonmediumbright2}>
             <div className={styles.base2} />
-            <div className={styles.button2}>더보기</div>
+            <div className={styles.button2}  onClick={onButtonClickCommunity}>더보기</div>
           </button>
         </div>
       </div>
