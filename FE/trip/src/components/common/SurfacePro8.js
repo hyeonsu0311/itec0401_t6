@@ -7,7 +7,6 @@ import styles from "./SurfacePro8.module.css";
 import MainCenter1 from "./MainCenter1";
 import MainCenter2 from "./MainCenter2";
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useIsLogin } from '../user/IsLoginContext';
 import { useRouter } from 'next/navigation'
 

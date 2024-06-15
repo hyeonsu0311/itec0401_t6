@@ -6,6 +6,7 @@ import SelectBox from '@/components/place/SelectBox';
 import Typography from '@mui/joy/Typography';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPlaces } from '@/store/slices/placeSlice';
+import styles from './PlaceTemplate.module.css';
 
 const PlaceTemplate = () => {
     const dispatch = useDispatch();
@@ -18,7 +19,11 @@ const PlaceTemplate = () => {
     }, [selectedArea, dispatch]);
 
     return (
-        <div className="placeWrapper">
+        <div className={styles.placeTemplate}>
+            <div className={styles.titleDiv}>
+                <p className={styles.title}>여행지 탐색</p>
+                <p className={styles.content}>공공데이터에 등록된 여행지 정보를 확인할 수 있습니다.</p>
+            </div>
             <SelectBox/>
             <Typography
                 color="neutral"

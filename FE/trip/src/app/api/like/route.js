@@ -1,31 +1,44 @@
-import { query } from '@/app/lib/db';
+import { db } from '../../lib/db.js';
 
-export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const { content_id } = req.body;
+export async function POST(req, res) {
+  const { addr, image, title, contentid, contenttypeid, areacode, modifiedtime } = await req.json();
 
-    if (!content_id) {
-      return res.status(400).json({ error: 'Content ID is required' });
+  if (!contentid || !title || !addr || !areacode || !contenttypeid) {
+    return new Response(JSON.stringify({ message: 'Invalid data' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  try {
+    // Check if the place already exists
+    const [existingRows] = await db.query('SELECT * FROM Places WHERE contentid = ?', [contentid]);
+
+    if (existingRows.length > 0) {
+      // Place exists, record like
+      const insertLikeQuery = 'INSERT INTO place_likes (contentid) VALUES (?)';
+      await db.query(insertLikeQuery, [contentid]);
+      return new Response(JSON.stringify({ message: 'Like recorded' }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    } else {
+      // Place does not exist, insert place and record like
+      const insertPlaceQuery = 'INSERT INTO Places (contentid, addr, image, title, contenttypeid, areacode, modifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?)';
+      await db.query(insertPlaceQuery, [contentid, addr, image, title, contenttypeid, areacode, modifiedtime]);
+
+      const insertLikeQuery = 'INSERT INTO place_likes (contentid) VALUES (?)';
+      await db.query(insertLikeQuery, [contentid]);
+      return new Response(JSON.stringify({ message: 'Place added and like recorded' }), {
+        status: 201,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
-
-    try {
-      const place = await query('SELECT * FROM place WHERE place_id = ?', [content_id]);
-      if (place.length === 0) {
-        await query('INSERT INTO place (place_id, title) VALUES (?, ?)', [content_id, 'Title Placeholder']);
-      }
-
-      const placeLike = await query('SELECT * FROM place_likes WHERE place_id = ?', [content_id]);
-      if (placeLike.length === 0) {
-        await query('INSERT INTO place_likes (place_id, like_count) VALUES (?, ?)', [content_id, 1]);
-      } else {
-        await query('UPDATE place_likes SET like_count = like_count + 1 WHERE place_id = ?', [content_id]);
-      }
-
-      res.status(200).json({ message: 'Success' });
-    } catch (error) {
-      res.status(500).json({ error: 'Database query failed', details: error.message });
-    }
-  } else {
-    res.status(405).json({ message: 'Method Not Allowed' });
+  } catch (error) {
+    console.error('Error handling like:', error);
+    return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
