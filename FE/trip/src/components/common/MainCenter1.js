@@ -1,6 +1,20 @@
 import styles from "./MainCenter1.module.css";
+import { useRouter } from'next/navigation';
+
+
 
 const MainCenter1 = () => {
+
+const router = useRouter();
+const navigate = (page) => {
+  router.push(page);
+}
+
+const onButtonClickSites = () => {
+  navigate("/places");
+};
+
+
   return (
     <div className={styles.appDownloadsParent}>
       <div className={styles.appDownloads}>
@@ -16,12 +30,12 @@ const MainCenter1 = () => {
       <div className={styles.frameWrapper}>
         <button className={styles.baseParent}>
           <img className={styles.baseIcon} alt="" src="/icons/base.svg" />
-          <div className={styles.button}>View all</div>
+          <div className={styles.button}  onClick={onButtonClickSites}>View all</div>
           <div className={styles.professorsStudentsLibraries}>
             <img
               className={styles.arrowRightIcon}
               alt=""
-              src="/arrowright.svg"
+              src="/icons/arrowright.svg"
             />
           </div>
         </button>

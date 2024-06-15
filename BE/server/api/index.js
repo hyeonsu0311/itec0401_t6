@@ -47,18 +47,22 @@ router.post("/findMatches", async (req, res) => {
   }
 });
 
-// 메시지 보내기 API 엔드포인트
 router.post("/sendMessage", async (req, res) => {
   const { sender, receiver, message } = req.body;
+
+  if (!sender || !receiver || !message) {
+    return res
+      .status(400)
+      .send("Invalid request: sender, receiver, and message are required.");
+  }
+
   console.log("Sending message from", sender, "to", receiver, ":", message);
 
   try {
     const query = `
-      INSERT INTO Messages (SenderID, ReceiverID, Content, Timestamp, ReadStatus)
+      INSERT INTO messages (SenderID, ReceiverID, Content, Timestamp, ReadStatus)
       VALUES (?, ?, ?, NOW(), FALSE);
     `;
-    // 이 예시에서는 sender와 receiver를 ID 대신 사용자 이름으로 가정합니다.
-    // 실제 구현에서는 사용자의 ID를 사용해야 할 수도 있습니다.
     const [result] = await originalPool.query(query, [
       sender,
       receiver,
@@ -72,7 +76,6 @@ router.post("/sendMessage", async (req, res) => {
   }
 });
 
-// Express 라우터 설정 예시
 router.post("/apply", async (req, res) => {
   const { applicantID, receiverID } = req.body;
 
