@@ -4,11 +4,12 @@ import React, { useState } from 'react';
 import styles from './Navbar.module.css';
 import { useIsLogin } from '@/components/user/IsLoginContext';
 import { useRouter } from'next/navigation';
-
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
     const { isLogin, setIsLogin } = useIsLogin();
     const router = useRouter();
+    const location = useSelector((state) => state.location.location);
 
     const navigate = (page) => {
         router.push(page);

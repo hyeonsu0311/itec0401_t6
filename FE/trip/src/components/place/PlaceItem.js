@@ -20,24 +20,24 @@ const PlaceItem = ({place}) => {
     };
 
     const handleLike = async (event) => {
-        event.stopPropagation();
+        event.stopPropagation(); 
         try {
             const response = await fetch('/api/like', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ content_id: place.contentid }),
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(place),
             });
-
+        
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+              throw new Error('Failed to like the place');
             }
-
-            const data = await response.json();
-            console.log(data.message);
+        
+            const result = await response.json();
+            console.log('Success:', result);
         } catch (error) {
-            console.error('Error liking the place:', error);
+            console.error('Error:', error);
         }
     };
 

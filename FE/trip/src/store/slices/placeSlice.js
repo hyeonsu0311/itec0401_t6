@@ -4,9 +4,12 @@ import axios from 'axios';
 export const fetchPlaces = createAsyncThunk(
     'places/fetchPlaces',
     async (area) => {
+        const randomPageNo = Math.floor(Math.random() * 10) + 1;
+        const randomNumOfRows = Math.floor(Math.random() * 51) + 50;
         const response = await axios.get('https://apis.data.go.kr/B551011/KorService1/areaBasedList1', {
             params: {
-              numOfRows: 100,
+              numOfRows: randomNumOfRows,
+              pageNo: randomPageNo,
               MobileOS: 'ETC',
               MobileApp: 'trip',
               serviceKey: 'XUwyR/mV8IUBoZtsh7NeDQG18pmA1/UY40IWuP1MZt3A+/s+xihFUEsy7bMXZ66sNmDVWxcTRu/jbm8Gu0r8qw==',
@@ -15,7 +18,6 @@ export const fetchPlaces = createAsyncThunk(
               areaCode: area.code,
             }
           });
-        console.log(response);
         const items = response.data.response.body.items.item;
         return items;
     }
@@ -47,7 +49,9 @@ const placeSlice = createSlice({
                     image : place.firstimage || '',
                     title: place.title,
                     contentid: place.contentid,
-                    contenttypeid: place.contenttypeid
+                    contenttypeid: place.contenttypeid,
+                    areacode: place.areacode,
+                    modifiedtime: place.modifiedtime || ''
                 }));
             } else {
                 state.error = 'Data is not an array';

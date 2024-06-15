@@ -1,6 +1,5 @@
 'use client'
 
-
 import SurfacePro8 from '../components/common/SurfacePro8';
 
 export default function Home() {
