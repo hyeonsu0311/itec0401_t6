@@ -294,7 +294,7 @@
 }
 .FrameComponent_aboutParent__1fN3g {
   width: 180px;
-  margin: 0 !important;
+  margin-left: 250px;
   position: absolute;
   top: 80px;
   left: 516px;
@@ -510,11 +510,14 @@
 
 
 
-/* @media screen and (max-width: 450px) {
-  .useCases {
+@media screen and (max-width: 450px) {
+  .FrameComponent_useCases__JuCff {
     font-size: var(--font-size-base);
   }
-} */
+  .FrameComponent_aboutParent__1fN3g{
+    margin-left : 30px;
+  }
+}
 
 /*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/common/SurfacePro8.module.css ***!

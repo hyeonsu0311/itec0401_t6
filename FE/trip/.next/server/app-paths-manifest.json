@@ -3,6 +3,5 @@
   "/detailview/[contenttypeid]/[contentid]/page": "app/detailview/[contenttypeid]/[contentid]/page.js",
   "/recommend/page": "app/recommend/page.js",
   "/page": "app/page.js",
-  "/community/page": "app/community/page.js",
   "/user/page": "app/user/page.js"
 }
