@@ -62,11 +62,26 @@ const MainCenter2 = () => {
           <img
             className={styles.componentcardglobalmediaIcon2}
             alt=""
+            src="/images/friends.png"
+          />
+          <div className={styles.componentcardglobaldark4}>동행 구하기</div>
+          <div className={styles.componentcardglobaldark5}>
+            <p className={styles.p}>자신과 비슷한 여행 조건을 가진 사람을 찾아보세요.</p>
+          </div>
+          <button className={styles.controlsbuttonmediumbright2}>
+            <div className={styles.base2} />
+            <div className={styles.button2}>더보기</div>
+          </button>
+        </div>
+        <div className={styles.componentcardplacecardGen2}>
+          <img
+            className={styles.componentcardglobalmediaIcon2}
+            alt=""
             src="/images/componentcardglobalmedia-landscape-2@2x.png"
           />
           <div className={styles.componentcardglobaldark4}>여행자 커뮤니티</div>
           <div className={styles.componentcardglobaldark5}>
-            <p className={styles.p}>여행지 후기들을 확인하고 동행자들을 찾아볼 수 있습니다.</p>
+            <p className={styles.p}>여행지 후기들을 확인하고 동행자들을 찾아보세요.</p>
           </div>
           <button className={styles.controlsbuttonmediumbright2}>
             <div className={styles.base2} />

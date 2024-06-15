@@ -1,6 +1,16 @@
 import styles from "./FrameComponent1.module.css";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 const FrameComponent1 = () => {
+  const [showAreas, setShowAreas] = useState(false);
+  const router = useRouter();
+  const handleSearchIconClick = () => {
+    router.push("/places");
+    setShowAreas(true);
+  };
+
   return (
     <div className={styles.image20Parent}>
       <img className={styles.image20Icon} alt="" src="/images/backgroundMain.jpg" />
@@ -14,11 +24,13 @@ const FrameComponent1 = () => {
         </span>
       </h1>
       <div className={styles.componentCard}>
+
       <div className={styles.globalMediaLandscape}>
           <input className={styles.professionalsAndPlaces}
            placeholder="검색어를 입력하세요">
 
           </input>
+
           <div className={styles.productInfo}>
             <div className={styles.productInfoChild} />
             <img
@@ -26,6 +38,7 @@ const FrameComponent1 = () => {
               loading="lazy"
               alt=""
               src="/icons/search.svg"
+              onClick={handleSearchIconClick}
             />
           </div>
         </div>
@@ -33,5 +46,4 @@ const FrameComponent1 = () => {
     </div>
   );
 };
-
 export default FrameComponent1;

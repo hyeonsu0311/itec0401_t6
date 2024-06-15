@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+import { useState } from 'react';
 import Box from '@mui/joy/Box';
 import List from '@mui/joy/List';
 import TagCheckbox from './TagCheckBox';
@@ -42,25 +42,26 @@ function SelectBox() {
 
   return (
     <Box sx={{ 
-      position: 'relative',
-      display: 'grid',
-      placeItems: 'center',
-      width: 800,
-      margin: '20px'}}>
-      <div role="group" aria-labelledby="">
-        <List
-          orientation="horizontal"
-          wrap
-          sx={{
-            '--List-gap': '8px',
-            '--ListItem-radius': '20px',
-          }}
-        >
-          {areas.map((area) => (
-            <TagCheckbox key={area.code} item={area.name} checked={selected === area.code} onChange={() => handleSelectionChange(area)}/>
-          ))}
-        </List>
-      </div>
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      gap: 1,
+      margin: '20px 0' }}>
+      <List
+        orientation="horizontal"
+        wrap
+        sx={{
+          display: 'flex',
+          gap: '8px',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        {areas.map((area) => (
+          <TagCheckbox key={area.code} item={area.name} checked={selected === area.code} onChange={() => handleSelectionChange(area)} />
+        ))}
+      </List>
     </Box>
   );
 }

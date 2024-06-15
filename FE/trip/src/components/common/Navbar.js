@@ -28,6 +28,10 @@ const Navbar = () => {
     const onButtonClickCommunity = () => {
         navigate("/community");
     };
+    const onButtonClickConnect = () => {
+      navigate("/connect");
+  };
+
 
   const onLogout = () => {
     if (window.confirm("로그아웃합니다")){ 
@@ -50,7 +54,9 @@ const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <h1 className={styles.logo}
+
       onClick={() => navigate('/')}></h1>
+
       <div className={styles.searchBox}>
         <div className={styles.frameParent}>
           <div className={styles.labelWrapper}>
@@ -61,6 +67,11 @@ const Navbar = () => {
           <div className={styles.labelContainer}>
             <div className={styles.label1}
             onClick={onButtonClickRoute}> 여행지 추천 </div>
+          </div>
+          <div className={styles.frameChild} />
+          <div className={styles.labelContainer}>
+            <div className={styles.label1}
+            onClick={onButtonClickConnect}> 동행자 매칭 </div>
           </div>
           <div className={styles.frameChild1} />
           <div className={styles.labelFrame}>

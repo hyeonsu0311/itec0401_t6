@@ -1,25 +1,74 @@
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, Tabs, Tab, Box } from '@mui/material';
+import MapComponent from './MapComponent';
 
-import React, { useState, useEffect } from 'react';
-import './traveldestionation.css';
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
-function TravelDestinationInfo({ info }) {
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`tabpanel-${index}`}
+      aria-labelledby={`tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+function TravelDestinationInfo({ info, latitude, longitude, address, images }) {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <div>
-      <h1 style={{ textAlign: 'center' }}>{info}</h1>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+            {info}
+          </Typography>
+        </Toolbar>
+      </AppBar>
       
-      <nav className="navbar">
-        <ul className="nav-links">
-          <li><a href="#picture">사진보기</a></li>
-          <li><a href="#map">위치정보</a></li>
-          <li><a href="#detail">상세정보</a></li>
-        </ul>
-      </nav>
-
+      <Box sx={{ width: '100%', bgcolor: 'background.paper', marginTop: 2 }}>
+        <Tabs value={value} onChange={handleChange} centered>
+          <Tab label="상세정보" />
+          <Tab label="사진보기" />
+          <Tab label="위치정보" />
+        </Tabs>
+        <TabPanel value={value} index={0}>
+          <Typography variant="body1">
+            {info}에 대한 상세 정보가 여기에 표시됩니다.
+          </Typography>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          {images && images.length > 0 ? (
+            <Box display="flex" flexWrap="wrap" justifyContent="center">
+              {images.map((image, index) => (
+                <Box key={index} p={1}>
+                  <img src={image} alt={`여행지 사진 ${index + 1}`} style={{ width: '100%', maxWidth: '300px' }} />
+                </Box>
+              ))}
+            </Box>
+          ) : (
+            <Typography>사진이 없습니다.</Typography>
+          )}
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <MapComponent latitude={latitude} longitude={longitude} address={address} />
+        </TabPanel>
+      </Box>
     </div>
   );
 }
 
 export default TravelDestinationInfo;
-
-
-
