@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
-import { Box, Paper, Typography, TextField, Avatar, List, ListItem, ListItemText, ListItemAvatar, Divider, Button, IconButton, Grid } from '@mui/material';
+import {Select,MenuItem, Box, Paper, Typography, TextField, Avatar, List, ListItem, ListItemText, ListItemAvatar, Divider, Button, IconButton, Grid } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import PlaceItem from '@/components/place/PlaceItem';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -14,7 +14,7 @@ function UserPage() {
         name: 'Jane Doe',
         nickname: 'Janey',
         gender: 'Female',
-        age: 29,
+        age: "",
         email: 'jane.doe@example.com',
         avatarUrl: 'https://via.placeholder.com/150'
     });
@@ -151,170 +151,149 @@ function UserPage() {
     };
 
     return (
-        <div>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3, mt: 4 }}>
-                <Avatar sx={{ width: 120, height: 120, mb: 2 }} src={user.avatarUrl} alt="Profile Picture" />
-                <input
-                    accept="image/*"
-                    style={{ display: 'none' }}
-                    id="file-input"
-                    type="file"
-                    onChange={handleFileChange}
-                />
-                <Button
-                    onClick={updateUserInfo}
-                    variant="contained"
-                    component="span"
-                    color="primary"
-                    sx={{ mt: 2, mb: 4, fontSize: '1rem', padding: '10px 20px' }}
-                >
-                    프로필 저장
-                </Button>
+    <div>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3, mt: 4 }}>
+            <Avatar sx={{ width: 120, height: 120, mb: 2 }} src={user.avatarUrl} alt="Profile Picture" />
+            <input
+                accept="image/*"
+                style={{ display: 'none' }}
+                id="file-input"
+                type="file"
+                onChange={handleFileChange}
+            />
+            <Button
+                onClick={updateUserInfo}
+                variant="contained"
+                component="span"
+                color="primary"
+                sx={{ mt: 2, mb: 4, fontSize: '1rem', padding: '10px 20px' }}
+            >
+                프로필 저장
+            </Button>
 
-                <Paper elevation={3} sx={{ width: '100%', maxWidth: 1200, bgcolor: 'background.paper', p: 2 }}>
-                    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                        <ListItem>
-                            <Grid container alignItems="center">
-                                <Grid item>
-                                    <Avatar>
-                                        <EditIcon />
-                                    </Avatar>
-                                </Grid>
-                                <ListItemText sx={{ ml: 2 }} primary="이름" />
-
-                                <Grid item xs>
-                                    {isEditingName ? (
-                                        <TextField
-                                            label="이름"
-                                            variant="outlined"
-                                            value={user.name}
-                                            onChange={handleNameChange}
-                                            onBlur={() => setIsEditingName(false)}
-                                            autoFocus
-                                            fullWidth
-                                            sx={{ ml: 2 }}
-                                        />
-                                    ) : (
-                                        <Typography
-                                            variant="body1"
-                                            onClick={() => setIsEditingName(true)}
-                                            sx={{ ml: 2, cursor: 'pointer' }}
-                                        >
-                                            {user.name}
-                                        </Typography>
-                                    )}
-                                </Grid>
+            <Paper elevation={3} sx={{ width: '100%', maxWidth: 1200, bgcolor: 'background.paper', p: 2 }}>
+                <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                    <ListItem>
+                        <Grid container alignItems="center">
+                            <Grid item xs={2}>
+                                <ListItemText primary="이름" />
                             </Grid>
-                        </ListItem>
-                        <Divider variant="inset" component="li" />
-
-                        <ListItem>
-                            <Grid container alignItems="center">
-                                <Grid item>
-                                    <Avatar>
-                                        <EditIcon />
-                                    </Avatar>
-                                </Grid>
-                                <ListItemText sx={{ ml: 2 }} primary="성별" />
-                                <Grid item xs>
-                                
-                                    <Button
-                                        onClick={() => handleGenderChange('male')}
-                                        sx={{ bgcolor: user.gender === 'male' ? 'lightblue' : 'grey.300', ml: 1, textTransform: 'none', fontSize: '1rem' }}
-                                    >
-                                        남자
-                                    </Button>
-                                    <Button
-                                        onClick={() => handleGenderChange('female')}
-                                        sx={{ bgcolor: user.gender === 'female' ? 'lightpink' : 'grey.300', ml: 1, textTransform: 'none', fontSize: '1rem' }}
-                                    >
-                                        여자
-                                    </Button>
-                                    <Button
-                                        onClick={() => handleGenderChange('nonbinary')}
-                                        sx={{ bgcolor: user.gender === 'nonbinary' ? 'grey' : 'grey.300', ml: 1, textTransform: 'none', fontSize: '1rem' }}
-                                    >
-                                        그 외
-                                    </Button>
-                                </Grid>
-                            </Grid>
-                        </ListItem>
-                        <Divider variant="inset" component="li" />
-
-                        <ListItem>
-                            <Grid container alignItems="center">
-                                <Grid item>
-                                    <Avatar>
-                                        <EditIcon />
-                                    </Avatar>
-                                </Grid>
-                                <ListItemText sx={{ ml: 2 }} primary="나이" />
-                                <Grid item xs>
+                            <Grid item xs={10}>
+                                {isEditingName ? (
                                     <TextField
-                                        label="나이"
+                                        label="이름"
                                         variant="outlined"
-                                        type="number"
-                                        value={user.age}
-                                        onChange={handleAgeChange}
-                                        sx={{ ml: 2, width: '300px' }}
+                                        value={user.name}
+                                        onChange={handleNameChange}
+                                        onBlur={() => setIsEditingName(false)}
+                                        autoFocus
+                                        fullWidth
                                     />
-                                </Grid>
+                                ) : (
+                                    <Typography
+                                        variant="body1"
+                                        onClick={() => setIsEditingName(true)}
+                                        sx={{ cursor: 'pointer' }}
+                                    >
+                                        {user.name}
+                                    </Typography>
+                                )}
                             </Grid>
-                        </ListItem>
-                        <Divider variant="inset" component="li" />
+                        </Grid>
+                    </ListItem>
+                    <Divider />
 
-                        <ListItem>
-                            <Avatar>
-                                <EditIcon />
-                            </Avatar>
-                            <ListItemText sx={{ ml: 2 }} primary="E-Mail" />
-                            <ListItemText sx={{ ml: 2 }} primary={user.email}  />
+                    <ListItem>
+                        <Grid container alignItems="center">
+                            <Grid item xs={2}>
+                                <ListItemText primary="성별" />
+                            </Grid>
+                            <Grid item xs={10}>
+                              <Select
+                                label="성별"
+                                name="gender"
+                                variant="outlined"
+                                fullWidth
+                                >
+                                <MenuItem value="남자">남자</MenuItem>
+                                <MenuItem value="여자">여자</MenuItem>
+                                <MenuItem value="그 외">그 외</MenuItem>
+                                </Select>
+                            </Grid>
+                        </Grid>
+                    </ListItem>
+                    <Divider />
 
-                        </ListItem>
-                        <Divider variant="inset" component="li" />
+                    <ListItem>
+                        <Grid container alignItems="center">
+                            <Grid item xs={2}>
+                                <ListItemText primary="나이" />
+                            </Grid>
+                            <Grid item xs={10}>
+                                <TextField
+                                    label="나이"
+                                    variant="outlined"
+                                    type="number"
+                                    value={user.age}
+                                    onChange={handleAgeChange}
+                                    fullWidth
+                                />
+                            </Grid>
+                        </Grid>
+                    </ListItem>
+                    <Divider />
 
-                        <ListItem>
-                            <Avatar>
-                                <EditIcon />
-                            </Avatar>
-                            <ListItemText sx={{ ml: 2 }} primary="좋아요" />
-                        </ListItem>
-                    </List>
-                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <IconButton onClick={scrollLeft}>
-                            <ArrowBackIosIcon />
-                        </IconButton>
-                        <Box
-                            ref={scrollRef}
-                            sx={{
-                                display: 'flex',
-                                overflowX: 'scroll',
-                                '&::-webkit-scrollbar': { display: 'none' },
-                                '-ms-overflow-style': 'none',
-                                scrollbarWidth: 'none',
-                                width: '100%',
-                                maxWidth: 1000,
-                            }}
-                        >
-                            {likedPlaces.length > 0 ? (
-                                likedPlaces.map((place, index) => (
-                                    <Box key={index} sx={{ minWidth: 300, marginRight: 2 }}>
-                                        <PlaceItem key={place.id} place={place} />
-                                    </Box>
-                                ))
-                            ) : (
-                                <Typography variant="body1" sx={{ m: 2 }}>No liked places</Typography>
-                            )}
-                        </Box>
-                        <IconButton onClick={scrollRight}>
-                            <ArrowForwardIosIcon />
-                        </IconButton>
+                    <ListItem>
+                        <Grid container alignItems="center">
+                            <Grid item xs={2}>
+                                <ListItemText primary="E-Mail" />
+                            </Grid>
+                            <Grid item xs={10}>
+                                <Typography variant="body1">{user.email}</Typography>
+                            </Grid>
+                        </Grid>
+                    </ListItem>
+                    <Divider />
+
+                    <ListItem>
+                        <ListItemText primary="좋아요" />
+                    </ListItem>
+                </List>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <IconButton onClick={scrollLeft}>
+                        <ArrowBackIosIcon />
+                    </IconButton>
+                    <Box
+                        ref={scrollRef}
+                        sx={{
+                            display: 'flex',
+                            overflowX: 'scroll',
+                            '&::-webkit-scrollbar': { display: 'none' },
+                            '-ms-overflow-style': 'none',
+                            scrollbarWidth: 'none',
+                            width: '100%',
+                            maxWidth: 1000,
+                        }}
+                    >
+                        {likedPlaces.length > 0 ? (
+                            likedPlaces.map((place, index) => (
+                                <Box key={index} sx={{ minWidth: 300, marginRight: 2 }}>
+                                    <PlaceItem key={place.id} place={place} />
+                                </Box>
+                            ))
+                        ) : (
+                            <Typography variant="body1" sx={{ m: 2 }}>No liked places</Typography>
+                        )}
                     </Box>
-                </Paper>
-            </Box>
-        </div>
-    );
+                    <IconButton onClick={scrollRight}>
+                        <ArrowForwardIosIcon />
+                    </IconButton>
+                </Box>
+            </Paper>
+        </Box>
+    </div>
+);
+
 }
 
 export default UserPage;
-

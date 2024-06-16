@@ -168,6 +168,7 @@ const fetchUserProfile = async () => {
         const newPost = {
           id: newId, // Correctly use newId
           title,
+          // author,
           author : user.name,
           content,
           date: new Date().toISOString(),
@@ -192,7 +193,7 @@ const fetchUserProfile = async () => {
                 autoFocus
                 fullWidth
                 value={user.name}
-                // onChange={(e) => setAuthor(e.target.value)}
+                onChange={(e) => setAuthor(e.target.value)}
                 disabled
                 id="author"
                 name="author"

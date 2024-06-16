@@ -753,14 +753,8 @@ video {
 .flex {
   display: flex;
 }
-.inline-flex {
-  display: inline-flex;
-}
 .table {
   display: table;
-}
-.grid {
-  display: grid;
 }
 .hidden {
   display: none;
@@ -803,9 +797,6 @@ video {
 }
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.ease-in {
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap");

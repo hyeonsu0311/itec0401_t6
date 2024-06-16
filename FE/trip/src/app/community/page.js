@@ -98,7 +98,7 @@ export default function Community() {
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell align="center" component="th" scope="row">
-                      {indexOfFirstItem + index + 1}
+                      {post.id}
                     </TableCell>
                     <TableCell align="center">
                       <Link href={`/community/posts/${post.id}`}>{post.title}</Link>

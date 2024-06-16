@@ -1,16 +1,16 @@
 {
   "pages": {
+    "/places/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/places/page.css",
+      "static/chunks/app/places/page.js"
+    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
     ],
     "/login/page": [
       "static/chunks/webpack.js",
@@ -18,16 +18,21 @@
       "static/css/app/login/page.css",
       "static/chunks/app/login/page.js"
     ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
     "/user/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/user/page.js"
     ],
-    "/places/page": [
+    "/community/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/places/page.css",
-      "static/chunks/app/places/page.js"
+      "static/chunks/app/community/page.js"
     ],
     "/detailview/[contenttypeid]/[contentid]/page": [
       "static/chunks/webpack.js",
@@ -35,16 +40,31 @@
       "static/css/app/detailview/[contenttypeid]/[contentid]/page.css",
       "static/chunks/app/detailview/[contenttypeid]/[contentid]/page.js"
     ],
-    "/community/page": [
+    "/connect/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/community/page.js"
+      "static/chunks/app/connect/page.js"
     ],
     "/recommend/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/recommend/page.css",
       "static/chunks/app/recommend/page.js"
+    ],
+    "/connect/new-post/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/connect/new-post/page.js"
+    ],
+    "/community/new-post/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/community/new-post/page.js"
+    ],
+    "/community/posts/[postId]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/community/posts/[postId]/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

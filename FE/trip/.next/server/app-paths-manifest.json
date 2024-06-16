@@ -1,8 +1,11 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/places/page": "app/places/page.js",
+  "/connect/new-post/page": "app/connect/new-post/page.js",
   "/detailview/[contenttypeid]/[contentid]/page": "app/detailview/[contenttypeid]/[contentid]/page.js",
   "/recommend/page": "app/recommend/page.js",
-  "/page": "app/page.js",
-  "/user/page": "app/user/page.js"
+  "/community/page": "app/community/page.js",
+  "/connect/page": "app/connect/page.js",
+  "/community/new-post/page": "app/community/new-post/page.js",
+  "/user/page": "app/user/page.js",
+  "/page": "app/page.js"
 }
