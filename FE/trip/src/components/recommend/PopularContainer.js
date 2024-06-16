@@ -2,7 +2,7 @@ import React from 'react';
 import PopluarItem from './PopularItem'
 import styles from './PopularContainer.module.css';
 
-const PopluarItem = ({ places }) => {
+const PopularContainer = ({ places }) => {
     return (
         <div className={styles.container}>
             {Array.isArray(places) && places.length > 0 ? (
@@ -16,4 +16,4 @@ const PopluarItem = ({ places }) => {
     );
 };
 
-export default PopluarItem;
+export default PopularContainer;
