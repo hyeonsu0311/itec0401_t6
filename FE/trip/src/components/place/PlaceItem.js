@@ -1,20 +1,23 @@
 'use client'
 import * as React from 'react';
-import { useState } from 'react';
-import styles from './PlaceItem.module.css';
-import AspectRatio from '@mui/joy/AspectRatio';
-import Card from '@mui/joy/Card';
-import CardCover from '@mui/joy/CardCover';
-import IconButton from '@mui/joy/IconButton';
-import Typography from '@mui/joy/Typography';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { Box, Card, CardCover, IconButton, Typography } from '@mui/joy';
 import Favorite from '@mui/icons-material/Favorite';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import { useRouter } from 'next/navigation';
-import Box from '@mui/joy/Box';
+import AspectRatio from '@mui/joy/AspectRatio';
 
 const PlaceItem = ({ place }) => {
     const router = useRouter();
     const [liked, setLiked] = useState(false);
+
+    useEffect(() => {
+        const storedLikes = JSON.parse(localStorage.getItem('likedPlaces')) || [];
+        const isLiked = storedLikes.some(item => item.contentid === place.contentid && item.contenttypeid === place.contenttypeid);
+        if (isLiked) {
+            setLiked(true);
+        }
+    }, [place.contentid, place.contenttypeid]);
 
     const handleNavigate = () => {
         router.push(`/detailview/${place.contenttypeid}/${place.contentid}`);
@@ -23,28 +26,23 @@ const PlaceItem = ({ place }) => {
     const handleLike = async (event) => {
         event.stopPropagation(); // Prevent event from propagating to parent
         setLiked(!liked); // Toggle the liked state
-        try {
-            const response = await fetch('/api/like', {
-                method: 'POST', // Changed method to POST since we are updating the state
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ content_id: place.contentid }),
-            });
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+        const storedLikes = JSON.parse(localStorage.getItem('likedPlaces')) || [];
+        let updatedLikes;
 
-            const data = await response.json();
-            console.log(data.message);
-        } catch (error) {
-            console.error('Error liking the place:', error);
+        if (!liked) {
+            // Add place to localStorage
+            updatedLikes = [...storedLikes, place];
+        } else {
+            // Remove place from localStorage
+            updatedLikes = storedLikes.filter(item => item.contentid !== place.contentid || item.contenttypeid !== place.contenttypeid);
         }
+
+        localStorage.setItem('likedPlaces', JSON.stringify(updatedLikes));
     };
 
     return (
-        <Box className={styles.item}>
+        <Box className="item">
             <Card
                 variant="outlined"
                 sx={{
@@ -105,25 +103,26 @@ const PlaceItem = ({ place }) => {
                                 {place.addr}
                             </Typography>
                         </Box>
-                        <IconButton
-                            size="sm"
-                            variant="solid"
-                            sx={{
-                                color: liked ? 'red' : 'white',
-                                bgcolor: liked ? 'rgba(255, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.5)',
-                                backdropFilter: 'blur(5px)',
-                                position: 'absolute',
-                                top: 8,
-                                right: 8,
-                                '&:hover': {
-                                    bgcolor: liked ? 'rgba(255, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.7)',
-                                },
-                            }}
-                            onClick={handleLike} // Like button click handler
-                        >
-                            {liked ? <Favorite /> : <FavoriteBorder />}
-                        </IconButton>
                     </CardCover>
+                    <IconButton
+                        size="sm"
+                        variant="solid"
+                        sx={{
+                            color: liked ? 'red' : 'white',
+                            bgcolor: liked ? 'rgba(255, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.5)',
+                            backdropFilter: 'blur(5px)',
+                            position: 'absolute',
+                            top: 8,
+                            right: 8,
+                            '&:hover': {
+                                bgcolor: liked ? 'rgba(255, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.7)',
+                            },
+                        }}
+                        onClick={handleLike} // Like button click handler
+                        // onClickCapture={(event) => event.stopPropagation()} // Prevent propagation on capture phase
+                    >
+                        {liked ? <Favorite /> : <FavoriteBorder />}
+                    </IconButton>
                 </Box>
             </Card>
         </Box>

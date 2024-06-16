@@ -1,4 +1,5 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/places/page": "app/places/page.js",
   "/detailview/[contenttypeid]/[contentid]/page": "app/detailview/[contenttypeid]/[contentid]/page.js",
   "/recommend/page": "app/recommend/page.js",

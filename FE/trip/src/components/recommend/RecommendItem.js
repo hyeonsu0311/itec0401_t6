@@ -7,11 +7,12 @@ import CardCover from '@mui/joy/CardCover';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import CardContent from '@mui/joy/CardContent';
-import Favorite from '@mui/icons-material/Favorite';
 import { flexBox } from '@mui/system'
 // import { useNavigate } from 'react-router-dom';
 import Box from '@mui/joy/Box';
 import { useState } from 'react';
+import Favorite from '@mui/icons-material/Favorite';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 
 import { useRouter } from 'next/navigation';
 import styles from './RecommendTemplate.module.css';
@@ -120,6 +121,25 @@ const RecommendItem = ({place}) => {
                             {liked ? <Favorite /> : <Favorite />}
                         </IconButton>
                     </CardCover>
+                    <IconButton
+                        size="sm"
+                        variant="solid"
+                        sx={{
+                            color: liked ? 'red' : 'white',
+                            bgcolor: liked ? 'rgba(255, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.5)',
+                            backdropFilter: 'blur(5px)',
+                            position: 'absolute',
+                            top: 8,
+                            right: 8,
+                            '&:hover': {
+                                bgcolor: liked ? 'rgba(255, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.7)',
+                            },
+                        }}
+                        // onClick={handleLike} // Like button click handler
+                        // // onClickCapture={(event) => event.stopPropagation()} // Prevent propagation on capture phase
+                    >
+                        {liked ? <Favorite /> : <FavoriteBorder />}
+                    </IconButton>
                 </Box>
             </Card>
         </Box>
