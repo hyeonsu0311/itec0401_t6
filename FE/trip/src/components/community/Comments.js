@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, List, ListItem, ListItemText, Paper, Grid } from '@mui/material';
 import { formatDistanceToNow, parseISO } from 'date-fns';
