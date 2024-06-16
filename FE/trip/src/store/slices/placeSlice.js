@@ -1,6 +1,13 @@
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 
+function secureUrl(url) {
+    if (url && url.startsWith('http://')) {
+      return url.replace('http://', 'https://');
+    }
+    return url;
+  }
+
 export const fetchPlaces = createAsyncThunk(
     'places/fetchPlaces',
     async (area) => {
@@ -46,7 +53,7 @@ const placeSlice = createSlice({
                 if (Array.isArray(action.payload)) {
                 state.places = action.payload.map(place => ({
                     addr : place.addr1,
-                    image : place.firstimage || '',
+                    image : secureUrl(place.firstimage) || '',
                     title: place.title,
                     contentid: place.contentid,
                     contenttypeid: place.contenttypeid,

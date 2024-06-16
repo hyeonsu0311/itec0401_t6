@@ -11,13 +11,14 @@
     flex-shrink: 0;
     white-space: nowrap;
   }
+
   .label {  /* 여행지 탐색 라벨 스타일, 1,2는 각각 여행경로찾기, 커뮤니티 라벨의 스타일*/
     align-self: stretch;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
-    letter-spacing: -1.5px;
-    color: #000;
-    height: 20px;
+    letter-spacing: -1px;
+    color: #333;
+    height: 24px;
     position: relative;
     line-height: 20px;
     white-space: nowrap;
@@ -25,6 +26,13 @@
     flex-shrink: 0;
     cursor: pointer;
   }
+
+  .label:hover {
+    color: #333; /* 더 진한 색상으로 변경 */
+    font-weight: 700; /* 텍스트의 굵기를 증가 */
+    text-decoration: none;
+  }
+
   .labelWrapper { /*여행지탐색 문구를 포함하는 프레임*/
     width: 97px;
     display: flex;
@@ -113,7 +121,7 @@
     font-size: var(--font-size-sm);
     color: var(--neutral-900);
     font-family: var(--font-average-sans);
-    margin: 0 50px;
+    margin: 0 20px;
   }
   /* .background {
     height: 40px;

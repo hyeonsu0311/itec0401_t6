@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './DetailedInfo.module.css'
 
 function DetailedInfoComponent({ overview , detail }) {
   const infocenterInfo = detail && detail.infocenter ? detail.infocenter : "정보 없음";
@@ -13,11 +14,11 @@ function DetailedInfoComponent({ overview , detail }) {
   ));
 
   return (
-    <div id="detail">
-      <h2>상세 정보</h2>
-      <p>{overviewWithLineBreaks}</p>
-      <p>* InfoCenter : {infocenterInfo}</p>
-      <p>* RestDate : {RestDate}</p>
+    <div id="detail" className={styles.detailed}>
+      <strong className={styles.Title}>상세 정보</strong>
+      <p className={styles.content}>{overviewWithLineBreaks}</p>
+      <p className={styles.content}>* InfoCenter : {infocenterInfo}</p>
+      <p className={styles.content}>* RestDate : {RestDate}</p>
     </div>
   );
 }

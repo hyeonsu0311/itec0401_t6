@@ -11,6 +11,13 @@ import { setLocation, setError } from '@/store/slices/locationSlice';
 import Button from '@mui/joy/Button';
 import LocationPopup from '../common/LocationPopup';
 
+function secureUrl(url) {
+    if (url && url.startsWith('http://')) {
+      return url.replace('http://', 'https://');
+    }
+    return url;
+  }
+  
 const RecommendTemplate = () => {
     const [topLikedPlaces, setTopLikedPlaces] = useState([]);
     const [recentPlaces, setRecentPlaces] = useState([]);
@@ -69,7 +76,7 @@ const RecommendTemplate = () => {
 
                     const placesData = response.data.response.body.items.item.map(place => ({
                         addr: place.addr1,
-                        image: place.firstimage || '',
+                        image: secureUrl(place.firstimage) || '',
                         title: place.title,
                         contentid: place.contentid,
                         contenttypeid: place.contenttypeid,

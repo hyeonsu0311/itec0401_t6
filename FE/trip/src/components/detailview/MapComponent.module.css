@@ -1,0 +1,25 @@
+.map{
+    display: flex;
+    flex-direction: column; /* 수직 정렬 */
+    align-items: center; /* 가로축 가운데 정렬 */
+    justify-content: center; /* 세로축 가운데 정렬 */
+    margin-top: 40px;
+}
+
+.Title {
+    width: 100%;
+    padding: 31px 0 9px;
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #333;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #333;
+}
+
+.content {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: -1px;
+}

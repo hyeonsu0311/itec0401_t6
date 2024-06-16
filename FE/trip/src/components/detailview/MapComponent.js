@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import styles from './MapComponent.module.css'
 
 function MapComponent({ latitude, longitude, address }) {
   useEffect(() => {
@@ -52,10 +53,10 @@ function MapComponent({ latitude, longitude, address }) {
   }, [latitude, longitude, address]);
 
   return (
-    <div>
-      <h2>위치 정보</h2>
+    <div className={styles.map}>
+      <strong className={styles.Title}>위치 정보</strong>
       <div id="map" style={{ width: '100%', height: '400px' }}></div>
-      <p>*주소 : {address}</p>
+      <p className={styles.content}>*주소 : {address}</p>
     </div>
   );
 }
