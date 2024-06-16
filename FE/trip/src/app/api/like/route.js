@@ -16,7 +16,7 @@ export async function POST(req, res) {
 
     if (existingRows.length > 0) {
       // Place exists, record like
-      const insertLikeQuery = 'INSERT INTO place_likes (contentid) VALUES (?)';
+      const insertLikeQuery = 'INSERT INTO Place_likes (contentid) VALUES (?)';
       await db.query(insertLikeQuery, [contentid]);
       return new Response(JSON.stringify({ message: 'Like recorded' }), {
         status: 200,
@@ -27,7 +27,7 @@ export async function POST(req, res) {
       const insertPlaceQuery = 'INSERT INTO Places (contentid, addr, image, title, contenttypeid, areacode, modifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?)';
       await db.query(insertPlaceQuery, [contentid, addr, image, title, contenttypeid, areacode, modifiedtime]);
 
-      const insertLikeQuery = 'INSERT INTO place_likes (contentid) VALUES (?)';
+      const insertLikeQuery = 'INSERT INTO Place_likes (contentid) VALUES (?)';
       await db.query(insertLikeQuery, [contentid]);
       return new Response(JSON.stringify({ message: 'Place added and like recorded' }), {
         status: 201,

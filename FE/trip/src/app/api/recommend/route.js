@@ -15,7 +15,7 @@ export async function GET(req, res) {
     const topLikedPlacesQuery = `
       SELECT p.*, COUNT(pl.contentid) AS like_count
       FROM Places p
-      JOIN place_likes pl ON p.contentid = pl.contentid
+      JOIN Place_likes pl ON p.contentid = pl.contentid
       GROUP BY p.contentid
       ORDER BY like_count DESC
       LIMIT 4;

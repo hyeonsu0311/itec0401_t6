@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        MYSQL_HOST: '127.0.0.1',
+        MYSQL_HOST: 'trip-mysql2.cbw02e2uyb98.ap-southeast-2.rds.amazonaws.com',
         MYSQL_USER: 'root',
-        MYSQL_PASSWORD: '0311',
+        MYSQL_PASSWORD: 'itec040106',
         MYSQL_DATABASE: 'trip',
     },
     images: {
