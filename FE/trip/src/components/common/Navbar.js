@@ -50,23 +50,25 @@ const Navbar = () => {
 
   return (
     <header className={styles.navbar}>
-      <h1 className={styles.logo}
-      onClick={() => navigate('/')}>LOGO</h1>
+      <strong className={styles.logo}
+      onClick={() => navigate('/')}>ConnectTrip</strong>
+
       <div className={styles.searchBox}>
         <div className={styles.frameParent}>
-          <div className={styles.labelWrapper}>
-            <div className={styles.label}
-            onClick={onButtonClickSites}> 여행지 탐색 </div>
+            <div className={styles.label} onClick={onButtonClickSites}> 
+            여행지 탐색
           </div>
-          <div className={styles.frameChild} />
-          <div className={styles.labelContainer}>
-            <div className={styles.label1}
-            onClick={onButtonClickRoute}> 여행지 추천 </div>
+
+            <div className={styles.label} onClick={onButtonClickRoute}> 
+            여행지 추천
           </div>
-          <div className={styles.frameChild1} />
-          <div className={styles.labelFrame}>
-            <div className={styles.label2}
-            onClick={onButtonClickCommunity}>커뮤니티</div>
+
+            <div className={styles.label} onClick={onButtonClickSites}> 
+            동행자 매칭
+          </div>
+
+            <div className={styles.label} onClick={onButtonClickCommunity}> 
+            커뮤니티
           </div>
         </div>
       </div>

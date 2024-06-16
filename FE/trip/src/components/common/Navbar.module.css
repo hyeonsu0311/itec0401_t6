@@ -1,12 +1,11 @@
 .logo {  /*메인로고 스타일*/
-    margin: 0;
-    height: 80px;
-    width: 236px;
+  font-size : 40px;
+  font-weight: 800;
+  letter-spacing: -3.5px;
+  line-height: 45px;
     cursor: pointer;
     position: relative;
     font-size: inherit;
-    line-height: 57px;
-    font-weight: 700;
     font-family: inherit;
     display: inline-block;
     flex-shrink: 0;
@@ -14,7 +13,10 @@
   }
   .label {  /* 여행지 탐색 라벨 스타일, 1,2는 각각 여행경로찾기, 커뮤니티 라벨의 스타일*/
     align-self: stretch;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    color: #000;
     height: 20px;
     position: relative;
     line-height: 20px;
@@ -97,6 +99,7 @@
     justify-content: space-between;
     max-width: 100%;
     gap: var(--gap-xl);
+    margin: 0 15px;
   }
   .searchBox {  /*여행지탐색 ㅣ 여행경로 찾기 ㅣ 커뮤니티  를 포함하는프레임*/
     width: 820px;
@@ -110,6 +113,7 @@
     font-size: var(--font-size-sm);
     color: var(--neutral-900);
     font-family: var(--font-average-sans);
+    margin: 0 50px;
   }
   /* .background {
     height: 40px;
@@ -193,12 +197,13 @@
     top: 0;
     z-index: 99;
     position: sticky;
-    gap: var(--gap-xl);
+    gap: var(--gap-xxl);
     max-width: 100%;
     text-align: left;
     font-size: var(--font-size-29xl);
     color: var(--color-black);
     font-family: var(--font-dm-sans);
+    margin: 24px 0;
   }
   
   
